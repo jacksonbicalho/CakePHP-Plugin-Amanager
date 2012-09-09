@@ -45,28 +45,26 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
   </head>
   <body>
     <?php echo $this->element('navbar-fixed-top'); ?>
-  <div id="wrap">
     <div id="main" class="container">
       <?php echo $this->Session->flash(); ?>
       <?php echo $this->fetch('content'); ?>
-    </div>
-
-    <div class="footer">
-      <div class="vcard">
-        <span class="fn org">Organização</span>
-        <div class="adr">
-          <span class="street-address">Endereço</span>,
-          <span class="locality">Rio de Janeiro</span> / <abbr title="Rio de Janeiro" class="region">RJ</abbr>,
-          <span class="country-name">Brasil</span>
+      <hr />
+      <footer>
+        <div class="vcard">
+          <span class="fn org">Organização</span>
+          <div class="adr">
+            <span class="street-address">Endereço</span>,
+            <span class="locality">Rio de Janeiro</span> / <abbr title="Rio de Janeiro" class="region">RJ</abbr>,
+            <span class="country-name">Brasil</span>
+          </div>
+          <div>
+            <span class="email">contato@email.com.br</span> -
+            <span class="url">http://www.site.com.br/</span>
+          </div>
         </div>
-        <div>
-          <span class="email">contato@email.com.br</span> -
-          <span class="url">http://www.site.com.br/</span>
-        </div>
-      </div>
+      </footer>
     </div>
-  </div>
 <?php echo $this->Js->writeBuffer(); ?>
 <?php echo $this->element('sql_dump'); ?>
-    </body>
+  </body>
 </html>
