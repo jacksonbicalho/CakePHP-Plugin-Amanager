@@ -33,10 +33,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                        );
     echo $this->Html->script(
             array(
-                'jquery/jquery-1.7.2.min',
-                'jquery/plugins/jquery-ui-1.8.21.custom.min',
-                'bootstrap.min',
-                'sortable'
+                '/amanager/js/jquery/jquery-1.7.2.min',
+                '/amanager/js/jquery/plugins/jquery-ui-1.8.21.custom.min',
+                '/amanager/js/TwitterBootstrap/bootstrap.min',
             )
     );
     echo $this->fetch('meta');

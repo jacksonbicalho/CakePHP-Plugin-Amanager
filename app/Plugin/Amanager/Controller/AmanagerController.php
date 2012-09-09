@@ -1,5 +1,6 @@
 <?php
 App::uses('AmanagerAppController', 'Amanager.Controller');
+
 /**
  * Amanagers Controller
  *
@@ -13,9 +14,6 @@ class AmanagerController extends AmanagerAppController {
  */
 	public $uses = array();
 
-  public function index() {
-
-  }
-
+  public function index() {  }
 
 }
