@@ -84,8 +84,24 @@ class RulesController extends AmanagerAppController {
 		} else {
 			$this->request->data = $this->Rule->read(null, $id);
 		}
+
+		$_plugins = $this->Ctrl->get_plugins();
+    foreach($_plugins as $k => $v){
+      $plugins[$v] = $v;
+    }
+		$controllers = $this->Ctrl->get_controllers(true);
+    if($this->request->data['Rule']['plugin'])
+      $controllers = $this->Ctrl->get_controlles_plugins($this->request->data['Rule']['plugin'], true);
+
+    $_actions = $this->Ctrl->get_methods_controlles(key($controllers));
+    if($this->request->data['Rule']['controller'])
+      $_actions = $this->Ctrl->get_methods_controlles($this->request->data['Rule']['controller']);
+
+    foreach($_actions as $k => $v){
+      $actions[$v] = $v;
+    }
 		$groups = $this->Rule->Group->find('list');
-		$this->set(compact('groups'));
+		$this->set(compact('groups', 'plugins', 'controllers', 'actions'));
 	}
 
 /**
@@ -127,7 +143,6 @@ class RulesController extends AmanagerAppController {
     $this->render("/Elements/options");
   }
 
-
 /**
  * get_methods_controlles method
  * @param post data
@@ -143,11 +158,5 @@ class RulesController extends AmanagerAppController {
     $this->layout = 'ajax';
     $this->render("/Elements/options");
   }
-
-
-
-
-
-
 
 }
