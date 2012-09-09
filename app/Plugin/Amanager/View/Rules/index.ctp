@@ -1,6 +1,6 @@
 <div class="rules index">
 	<h2><?php echo __('Rules'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table class="table table-hover table-striped table-bordered">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -10,7 +10,6 @@
 			<th><?php echo $this->Paginator->sort('plugin'); ?></th>
 			<th><?php echo $this->Paginator->sort('params_pass'); ?></th>
 			<th><?php echo $this->Paginator->sort('alow'); ?></th>
-			<th><?php echo $this->Paginator->sort('order'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -24,11 +23,10 @@
 		<td><?php echo h($rule['Rule']['plugin']); ?>&nbsp;</td>
 		<td><?php echo h($rule['Rule']['params_pass']); ?>&nbsp;</td>
 		<td><?php echo h($rule['Rule']['alow']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['order']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $rule['Rule']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $rule['Rule']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id']), null, __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $rule['Rule']['id']), array('class'=>'btn')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $rule['Rule']['id']), array('class'=>'btn')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id']), array('class'=>'btn'), __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

@@ -9,6 +9,10 @@ div#main.container div#amanager-index.amanager img{
 }
 
 
+table.table tbody tr th.actions{
+  width:195px;
+}
+
 
 
 
