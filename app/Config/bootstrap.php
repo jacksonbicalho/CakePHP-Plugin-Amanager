@@ -180,5 +180,4 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-
 CakePlugin::loadAll(); // Loads all plugins at once

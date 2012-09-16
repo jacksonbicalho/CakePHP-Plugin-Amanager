@@ -1,13 +1,9 @@
 <?php
 
 class AmanagerAppController extends AppController {
-
-  public $components = array(
-      'Session',
-      'Amanager.Ctrl'
-  );
-
+  var $components = array( 'Amanager.Ctrl');
   public $theme = 'Amanager';
+
 
 }
 
