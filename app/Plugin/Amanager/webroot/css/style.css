@@ -1,20 +1,35 @@
+/* Global */
 * {margin:0;padding:0;}
 body {
   padding-bottom: 40px;
   padding-top: 60px;
 }
-
+.clr{clear:both;}
 div#main.container div#amanager-index.amanager img{
   float:right;
 }
 
-
+/* Actions for table */
 table.table tbody tr th.actions{
   width:195px;
 }
 
-
-
-
-
-
+/* form login */
+div#main.container div.form.login{
+  float:none;
+  margin:0 auto;
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 0 4px 0;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 7px;
+}
+div#main.container div.form.login form{
+  float:none;
+  margin:0 auto;
+  padding: 5px 10px 40px;
+}
+div#main.container div.form form#UserLoginForm.span3 div.submit{
+  margin:10px 0;
+}
