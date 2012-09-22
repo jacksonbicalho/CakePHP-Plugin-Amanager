@@ -1,5 +1,5 @@
 <?php
-App::uses('AuthComponent', 'Controller/Component');
+App::uses('Controller', 'Controller');
 class AmanagerComponent extends Component {
 
 /**
@@ -8,6 +8,13 @@ class AmanagerComponent extends Component {
  * @var array
  */
   var $components = array('Session');
+
+/**
+ * controller
+ *
+ * @var object
+ */
+  var $controller;
 
 /**
  * loginAction
@@ -40,8 +47,10 @@ class AmanagerComponent extends Component {
   }
 
   function initialize(&$controller) {
-    //pr ($controller->request->params);
-    //$controller->Auth = $controller->Components->load('Auth', $options);
+
+    $this->controller = $controller;
+   // pr($this->Session->read('Amanager'));
+    //$controller->Auth = $controller->Components->load('Security');
   }
 
   function startup(&$controller = null) {
@@ -51,6 +60,30 @@ class AmanagerComponent extends Component {
     //$controller->Auth->allow('*');
     //pr($controller->request->params);
   }
+
+  public function redirect() {
+    $this->controller->redirect($this->login_redirect);
+  }
+
+  public function logout() {
+    $this->Session->delete('Amanager');
+  }
+
+  public function set_login($user_data){
+    $this->Session->write('Amanager', $user_data);
+  }
+  public function logged(){
+    return $this->Session->read('Amanager')?true:false;
+  }
+  public function previous_url(){
+    $this->controller->redirect($this->controller->referer);
+  }
+  public function alogout() {
+    $this->Session->delete('Amanager');
+    $this->Session->setFlash(__('Você foi desconectado do sistema'));
+    $this->redirect($this->logout_redirect);
+  }
+
 
 }
 

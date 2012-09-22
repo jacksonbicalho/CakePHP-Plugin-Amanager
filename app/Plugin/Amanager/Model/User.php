@@ -73,10 +73,39 @@ class User extends AmanagerAppModel {
  * @return boolean
  */
   public function beforeSave($options = array()) {
+
     if (isset($this->data[$this->alias]['password'])) {
-      $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+      $this->data[$this->alias]['password'] = $this->encrypt_password( $this->data[$this->alias]['password'], $this->data[$this->alias]['username'] );
     }
     return true;
   }
+
+/**
+ * encrypt_password method
+ *
+ * @param string $password
+ * @param string $login
+ *
+ * @return string $encrypted
+ */
+  public function encrypt_password($password,$username){
+    return sha1 ( $username . "_" . $password );
+  }
+
+/**
+ * login method
+ *
+ * @param string $password
+ * @param string $login
+ *
+ * @return string $encrypted
+ */
+  public function login($data){
+    $username = $data[$this->alias]['username'];
+    $password = $this->encrypt_password( $data[$this->alias]['password'], $data[$this->alias]['username'] );
+    $user_data = $this->find('first', array('conditions'=>array('username'=>$username, 'password'=>$password)) );
+    return $user_data;
+  }
+
 
 }

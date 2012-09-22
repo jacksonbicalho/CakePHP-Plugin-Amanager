@@ -1448,3 +1448,417 @@
 2012-09-21 02:42:28 Error: [MissingControllerException] Controller class TesteController could not be found.
 #0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-09-22 00:26:12 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 19]
+2012-09-22 00:26:12 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 19)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 19, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 19, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:26:44 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 19]
+2012-09-22 00:26:44 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 19)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 19, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 19, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:31:35 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 00:31:35 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:32:25 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 00:32:25 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:32:56 Error: Fatal Error (4): syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 00:32:56 Error: [FatalErrorException] syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:33:10 Error: Fatal Error (1): Call to undefined method SecurityComponent::rijndael() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 00:33:10 Error: [FatalErrorException] Call to undefined method SecurityComponent::rijndael()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:35:09 Error: Fatal Error (4): syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 00:35:09 Error: [FatalErrorException] syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:36:13 Error: Fatal Error (1): Call to undefined method SecurityComponent::rijndael() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 00:36:13 Error: [FatalErrorException] Call to undefined method SecurityComponent::rijndael()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:52:11 Error: Fatal Error (1): Call to undefined function des_enc_hash() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 56]
+2012-09-22 00:52:11 Error: [FatalErrorException] Call to undefined function des_enc_hash()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 56)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 56, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 56, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 00:55:43 Error: Fatal Error (1): Call to undefined function des_enc_hash() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 62]
+2012-09-22 00:55:43 Error: [FatalErrorException] Call to undefined function des_enc_hash()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 62)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 62, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 62, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:09:05 Error: Fatal Error (1): Call to undefined method AmanagerComponent::decrypt_password() in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 19]
+2012-09-22 01:09:05 Error: [FatalErrorException] Call to undefined method AmanagerComponent::decrypt_password()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 19)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 19, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 19, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:11:38 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 58]
+2012-09-22 01:11:38 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 58)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 58, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 58, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:14:46 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 58]
+2012-09-22 01:14:46 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 58)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 58, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 58, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:22:20 Error: Fatal Error (1): Class 'Config' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 01:22:20 Error: [FatalErrorException] Class 'Config' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Config' ...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Config' ...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Config' ...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:23:20 Error: Fatal Error (1): Class 'Config' not found in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 01:23:20 Error: [FatalErrorException] Class 'Config' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Config' ...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Config' ...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Config' ...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:23:52 Error: Fatal Error (1): Call to undefined function mcrypt_encrypt() in [/var/www/ealbum/lib/Cake/Utility/Security.php, line 182]
+2012-09-22 01:23:52 Error: [FatalErrorException] Call to undefined function mcrypt_encrypt()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 182)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:27:27 Error: Fatal Error (1): Call to undefined function mcrypt_encrypt() in [/var/www/ealbum/lib/Cake/Utility/Security.php, line 182]
+2012-09-22 01:27:27 Error: [FatalErrorException] Call to undefined function mcrypt_encrypt()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 182)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:27:30 Error: Fatal Error (1): Call to undefined function mcrypt_encrypt() in [/var/www/ealbum/lib/Cake/Utility/Security.php, line 182]
+2012-09-22 01:27:30 Error: [FatalErrorException] Call to undefined function mcrypt_encrypt()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 182)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:27:31 Error: Fatal Error (1): Call to undefined function mcrypt_encrypt() in [/var/www/ealbum/lib/Cake/Utility/Security.php, line 182]
+2012-09-22 01:27:31 Error: [FatalErrorException] Call to undefined function mcrypt_encrypt()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 182)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:27:34 Error: Fatal Error (1): Call to undefined function mcrypt_encrypt() in [/var/www/ealbum/lib/Cake/Utility/Security.php, line 182]
+2012-09-22 01:27:34 Error: [FatalErrorException] Call to undefined function mcrypt_encrypt()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 182)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 182, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:35:57 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 65]
+2012-09-22 01:35:57 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 65)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 65, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 65, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:37:17 Error: Fatal Error (4): syntax error, unexpected T_ECHO, expecting ',' or ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 21]
+2012-09-22 01:37:17 Error: [FatalErrorException] syntax error, unexpected T_ECHO, expecting ',' or ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 21, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 21, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:37:38 Error: Fatal Error (4): syntax error, unexpected T_ECHO, expecting ',' or ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 21]
+2012-09-22 01:37:38 Error: [FatalErrorException] syntax error, unexpected T_ECHO, expecting ',' or ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 21, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 21, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:42:04 Error: Fatal Error (4): syntax error, unexpected T_RETURN in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 58]
+2012-09-22 01:42:04 Error: [FatalErrorException] syntax error, unexpected T_RETURN
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 58)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 58, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 58, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:43:55 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-09-22 01:43:55 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:49:20 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/Model/User.php, line 78]
+2012-09-22 01:49:20 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 78)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 78, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 78, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:50:07 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:50:54 Error: Fatal Error (1): Call to a member function encrypt_password() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Model/User.php, line 78]
+2012-09-22 01:50:54 Error: [FatalErrorException] Call to a member function encrypt_password() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 78)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 78, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 78, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:53:34 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:53:38 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:54:14 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:57:20 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:57:46 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:57:56 Error: Fatal Error (1): Call to a member function encrypt_password() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Model/User.php, line 77]
+2012-09-22 01:57:56 Error: [FatalErrorException] Call to a member function encrypt_password() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 77)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 77, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 77, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 01:58:27 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:59:23 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 01:59:47 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 02:00:04 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-22 02:01:52 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'jackson' for key 'username_UNIQUE'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php(43): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-22 02:02:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'jackson' for key 'username_UNIQUE'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php(43): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-22 02:19:26 Error: Fatal Error (4): syntax error, unexpected T_ARRAY in [/var/www/ealbum/app/Plugin/Amanager/Model/User.php, line 106]
+2012-09-22 02:19:26 Error: [FatalErrorException] syntax error, unexpected T_ARRAY
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 106)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 106, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 106, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 02:46:17 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-09-22 02:46:17 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 02:48:03 Error: Fatal Error (4): syntax error, unexpected T_STRING in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 112]
+2012-09-22 02:48:03 Error: [FatalErrorException] syntax error, unexpected T_STRING
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 112)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 112, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 112, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 02:57:01 Error: Fatal Error (64): Cannot redeclare AmanagerComponent::logout() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 81]
+2012-09-22 02:57:01 Error: [FatalErrorException] Cannot redeclare AmanagerComponent::logout()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/var/www/ealbum...', 81)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/var/www/ealbum...', 81, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/var/www/ealbum...', 81, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 02:57:24 Error: Fatal Error (64): Cannot redeclare AmanagerComponent::logout() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 81]
+2012-09-22 02:57:24 Error: [FatalErrorException] Cannot redeclare AmanagerComponent::logout()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/var/www/ealbum...', 81)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/var/www/ealbum...', 81, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/var/www/ealbum...', 81, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 02:59:20 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 83]
+2012-09-22 02:59:20 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 83)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 83, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 83, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-22 02:59:37 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 83]
+2012-09-22 02:59:37 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 83)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 83, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 83, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

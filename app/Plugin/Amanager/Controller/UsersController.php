@@ -109,11 +109,18 @@ class UsersController extends AmanagerAppController {
  */
   public function login() {
 
+    if($this->Amanager->logged()){
+      $this->Session->setFlash(__('Você já está logado'));
+      $this->Amanager->redirect($this->login_redirect);
+    }
+
     if ($this->request->is('post')) {
-      if ($this->Auth->login()) {
-          $this->redirect($this->Auth->redirect());
+
+      if ($user_data = $this->User->login($this->request->data)) {
+        $this->Amanager->set_login($user_data);
+        $this->redirect($this->Amanager->redirect());
       } else {
-          $this->Session->setFlash(__('Invalid username or password, try again'));
+        $this->Session->setFlash(__('Invalid username or password, try again'));
       }
     }
 
@@ -127,7 +134,7 @@ class UsersController extends AmanagerAppController {
  * @return void
  */
   public function logout() {
-    $this->redirect($this->Auth->logout());
+    $this->Amanager->alogout();
   }
 
 }
