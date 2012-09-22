@@ -59,7 +59,12 @@ class RulesController extends AmanagerAppController {
       $actions[$v] = $v;
     }
 		$groups = $this->Rule->Group->find('list');
-		$this->set(compact('groups', 'plugins', 'controllers', 'actions'));
+
+    $_prefixes = Configure::read('Routing.prefixes');
+    foreach($_prefixes as $k => $v){
+      $prefixes[$v] = $v;
+    }
+		$this->set(compact('groups', 'plugins', 'controllers', 'actions', 'prefixes'));
 	}
 
 /**

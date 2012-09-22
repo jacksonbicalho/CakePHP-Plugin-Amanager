@@ -35,7 +35,7 @@
       )
     );
 		echo $this->Form->input('action');
-		echo $this->Form->input('admin');
+		echo $this->Form->input('prefix', array('empty'=>''));
 		echo $this->Form->input('params_pass');
 		echo $this->Form->input('alow');
 		echo $this->Form->input('order');
