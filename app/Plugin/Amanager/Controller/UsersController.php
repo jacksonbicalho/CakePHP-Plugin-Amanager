@@ -100,4 +100,34 @@ class UsersController extends AmanagerAppController {
 		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+/**
+ * login method
+ *
+ * @param post
+ * @return void
+ */
+  public function login() {
+
+    if ($this->request->is('post')) {
+      if ($this->Auth->login()) {
+          $this->redirect($this->Auth->redirect());
+      } else {
+          $this->Session->setFlash(__('Invalid username or password, try again'));
+      }
+    }
+
+    $this->render('/Elements/login');
+
+  }
+
+/**
+ * logout method
+ *
+ * @return void
+ */
+  public function logout() {
+    $this->redirect($this->Auth->logout());
+  }
+
 }

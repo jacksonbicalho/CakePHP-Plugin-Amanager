@@ -1,11 +1,12 @@
 <?php
 App::uses('AmanagerAppModel', 'Amanager.Model');
 /**
- * User Model
+ * Module Model
  *
- * @property Group $Group
+ * @property Rule $Rule
+ * @property Action $Action
  */
-class User extends AmanagerAppModel {
+class Module extends AmanagerAppModel {
 
 /**
  * Use database config
@@ -15,14 +16,21 @@ class User extends AmanagerAppModel {
 	public $useDbConfig = 'acessmanager';
 
 /**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'name';
+
+/**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'username' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+		'rule_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -30,7 +38,7 @@ class User extends AmanagerAppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'password' => array(
+		'name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
@@ -45,38 +53,39 @@ class User extends AmanagerAppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasAndBelongsToMany associations
+ * belongsTo associations
  *
  * @var array
  */
-	public $hasAndBelongsToMany = array(
-		'Group' => array(
-			'className' => 'Group',
-			'joinTable' => 'groups_users',
-			'foreignKey' => 'user_id',
-			'associationForeignKey' => 'group_id',
-			'unique' => 'keepExisting',
+	public $belongsTo = array(
+		'Rule' => array(
+			'className' => 'Rule',
+			'foreignKey' => 'rule_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Action' => array(
+			'className' => 'Action',
+			'foreignKey' => 'module_id',
+			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
+			'exclusive' => '',
 			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'counterQuery' => ''
 		)
 	);
-
-/**
- * beforeSave method
- * @param array $options
- * @return boolean
- */
-  public function beforeSave($options = array()) {
-    if (isset($this->data[$this->alias]['password'])) {
-      $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
-    }
-    return true;
-  }
 
 }
