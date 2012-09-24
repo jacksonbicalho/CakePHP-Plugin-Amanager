@@ -7,6 +7,13 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
  */
 class AmanagerController extends AmanagerAppController {
 
+  public function beforeFilter() {
+      //Configure AuthComponent
+ //   $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
+ //   $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
+ //   $this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'add');
+  }
+
 /**
  * uses
  *

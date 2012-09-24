@@ -77,3 +77,12 @@ div#main.container div.form form#UserLoginForm.span3 div.submit{
   background: #efefef;
   color: #c73e14;
 }
+
+/* Rules list */
+div#rules_list{
+    float: right;
+    margin-left: 20px;
+    width: 70%;
+}
+
+

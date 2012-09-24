@@ -1,87 +1,78 @@
 <?php
 App::uses('AmanagerAppModel', 'Amanager.Model');
 /**
- * Rule Model
+ * User Model
  *
  * @property Group $Group
  */
 class Rule extends AmanagerAppModel {
 
 /**
- * Use database config
- *
- * @var string
- */
-	public $useDbConfig = 'acessmanager';
-
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'name';
-
-/**
- * Validation rules
+ * belongsTo associations
  *
  * @var array
  */
-	public $validate = array(
-		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'alow' => array(
-			'boolean' => array(
-				'rule' => array('boolean'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'order' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-	);
-
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
+  var $belongsTo = array(
+          'Group' => array(
+          'className'  => 'Group',
+          'foreignKey' => 'group_id',
+          //'order' => 'Rule.order ASC'
+          )
+      );
 
 /**
- * hasAndBelongsToMany associations
+ * hasMany associations
  *
  * @var array
  */
-	public $hasAndBelongsToMany = array(
-		'Group' => array(
-			'className' => 'Group',
-			'joinTable' => 'groups_rules',
-			'foreignKey' => 'rule_id',
-			'associationForeignKey' => 'group_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		)
-	);
+  var $hasMany = array(
+    'Action' => array(
+      'className' => 'Action',
+      'exclusive' => false,
+      'dependent' => false,
+      'foreignKey' => 'rule_id',
+      'dependent'     => true,
+      //'order' => 'Rule.order ASC'
+    )
+  );
+
+
+
+  function getRules($group_ids, $cleanRegex = false) {
+      if(is_array($group_ids)){ //if no group get rules for the all users (with group_id is null)
+          $groups = implode(',', $group_ids);
+          $conditions = "Rule.group_id IN ({$groups}) OR Rule.group_id is NULL";
+      } else {
+          $conditions = "Rule.group_id is NULL";
+      }
+
+      $fields = '';
+      $order = 'Rule.order ASC, Rule.group_id ASC';
+      $data = $this->find('all', array('conditions'=>$conditions, 'fields'=>$fields, 'order'=>$order, 'contain'=>array()));
+
+      if ($cleanRegex) {
+          $nb = count($data);
+          for($i=0; $i<$nb; $i++) {
+              $data[$i]['Rule']['action'] = str_replace(array('/','*',' or '), array('\/', '.*','|'), $data[$i]['Rule']['action']);
+          }
+      }
+      return $data;
+  }
+
+	function beforeValidate(){
+
+		return true;
+
+	}
+
+function get_sql_insert_id() {
+   $db =& ConnectionManager::getDataSource($this->useDbConfig);
+   return $db->lastInsertId();
+}
+
+
+
+
 
 }
+?>

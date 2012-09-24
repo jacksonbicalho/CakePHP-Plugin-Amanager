@@ -1,18 +1,11 @@
 <?php
-App::uses('AmanagerAppModel', 'Amanager.Model');
+App::uses('AppModel', 'Model');
 /**
  * User Model
  *
  * @property Group $Group
  */
-class User extends AmanagerAppModel {
-
-/**
- * Use database config
- *
- * @var string
- */
-	public $useDbConfig = 'acessmanager';
+class User extends AppModel {
 
 /**
  * Validation rules
@@ -45,32 +38,17 @@ class User extends AmanagerAppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasAndBelongsToMany associations
+ * belongsTo associations
  *
  * @var array
  */
-  var $hasAndBelongsToMany = array(
-    'Group' => array(
-      'className' => 'Group',
-      'joinTable' => 'groups_users',
-      'foreignKey' => 'user_id',
-      'associationForeignKey' => 'group_id',
-      'conditions' => '',
-      'fields' => '',
-      'order' => '',
-      'limit' => '',
-      'offset' => '',
-      'finderQuery' => '',
-      'deleteQuery' => '',
-      'insertQuery' => ''
-    ),
-  );
-
-  public function beforeSave($options = array()) {
-    //$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
-    return true;
-  }
-
-
-
+	public $belongsTo = array(
+		'Group' => array(
+			'className' => 'Group',
+			'foreignKey' => 'group_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }

@@ -1,11 +1,11 @@
 <?php
-App::uses('AmanagerAppController', 'Amanager.Controller');
+App::uses('AppController', 'Controller');
 /**
  * Users Controller
  *
  * @property User $User
  */
-class UsersController extends AmanagerAppController {
+class UsersController extends AppController {
 
 /**
  * index method
@@ -100,19 +100,4 @@ class UsersController extends AmanagerAppController {
 		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-
-  public function login() {
-      if ($this->request->is('post')) {
-          if ($this->Amanager->login()) {
-              $this->redirect($this->Amanager->redirect());
-          } else {
-              $this->Session->setFlash(__('Invalid username or password, try again'));
-          }
-      }
-  }
-
-  public function logout() {
-      $this->redirect($this->Auth->logout());
-  }
-
 }

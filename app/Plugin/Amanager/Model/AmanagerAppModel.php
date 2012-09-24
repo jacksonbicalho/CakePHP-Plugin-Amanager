@@ -8,5 +8,11 @@ class AmanagerAppModel extends AppModel {
  */
 	public $useDbConfig = 'acessmanager';
 
-}
+/**
+ * ctsAs
+ *
+ * @var string
+ */
+  public $actsAs = array();
 
+}

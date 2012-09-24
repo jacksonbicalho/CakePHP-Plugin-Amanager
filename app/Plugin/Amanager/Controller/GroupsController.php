@@ -47,9 +47,6 @@ class GroupsController extends AmanagerAppController {
 				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
 			}
 		}
-		$rules = $this->Group->Rule->find('list');
-		$users = $this->Group->User->find('list');
-		$this->set(compact('rules', 'users'));
 	}
 
 /**
@@ -74,9 +71,6 @@ class GroupsController extends AmanagerAppController {
 		} else {
 			$this->request->data = $this->Group->read(null, $id);
 		}
-		$rules = $this->Group->Rule->find('list');
-		$users = $this->Group->User->find('list');
-		$this->set(compact('rules', 'users'));
 	}
 
 /**
@@ -102,4 +96,5 @@ class GroupsController extends AmanagerAppController {
 		$this->Session->setFlash(__('Group was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
 }

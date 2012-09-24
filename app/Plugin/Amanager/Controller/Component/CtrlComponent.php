@@ -147,7 +147,7 @@ if(!$plugin)
   * @return array
   */
 
-  private function _str_controller($data){
+  public function _str_controller($data){
     return str_replace('Controller', '', $data);
 
   }

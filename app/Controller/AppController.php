@@ -32,16 +32,6 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-  var $components = array(
-    'Amanager.Amanager' => array(
-      'login_action' => Array(
-        'controller' => 'users',
-        'action' => 'login',
-        'plugin' => 'amanager',
-      ),
-      'login_redirect' => array('controller' => 'amanager', 'action' => 'index'),
-      'logout_redirect' => array('controller' => 'pages', 'action' => 'display'),
-    )
-  );
+  var $components = array('Amanager.Amanager');
 
 }

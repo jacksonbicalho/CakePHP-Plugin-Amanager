@@ -1986,3 +1986,758 @@
 #1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2012-09-23 03:03:24 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+"
+#0 /var/www/ealbum/lib/Cake/Model/Behavior/AclBehavior.php(89): AclNode->node(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Behavior/AclBehavior.php(135): AclBehavior->node(Object(Group), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(Group))
+#3 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /var/www/ealbum/app/Plugin/Amanager/Controller/GroupsController.php(92): Model->delete()
+#8 [internal function]: GroupsController->delete('2')
+#9 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-09-23 12:32:44 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 53]
+2012-09-23 12:32:45 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 53)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 53, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 53, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 12:36:21 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-23 12:38:55 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 52]
+2012-09-23 12:38:55 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 52, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 52, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 12:39:18 Error: [MissingControllerException] Controller class AmanagerController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-23 12:39:25 Error: [MissingActionException] Action UsersController::login() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 12:42:15 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/login.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 13:09:27 Error: [MissingControllerException] Controller class AclManagerController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-23 13:09:42 Error: [MissingTableException] Table roles for model Role was not found in datasource default.
+#0 /var/www/ealbum/lib/Cake/Model/Model.php(3179): Model->setSource('roles')
+#1 /var/www/ealbum/lib/Cake/Model/Model.php(2630): Model->getDataSource()
+#2 /var/www/ealbum/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#3 /var/www/ealbum/lib/Cake/Controller/Controller.php(1081): PaginatorComponent->paginate('Role', Array, Array)
+#4 /var/www/ealbum/app/Plugin/AclManager/Controller/AclController.php(110): Controller->paginate('Role')
+#5 [internal function]: AclController->permissions()
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(AclController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AclController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 13:10:08 Error: Fatal Error (1): Call to a member function setFlash() on a non-object in [/var/www/ealbum/app/Plugin/AclManager/Controller/AclController.php, line 425]
+2012-09-23 13:10:08 Error: [FatalErrorException] Call to a member function setFlash() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 425)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 425, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 425, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 13:10:20 Error: [MissingTableException] Table roles for model Role was not found in datasource default.
+#0 /var/www/ealbum/lib/Cake/Model/Model.php(3179): Model->setSource('roles')
+#1 /var/www/ealbum/lib/Cake/Model/Model.php(2630): Model->getDataSource()
+#2 /var/www/ealbum/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#3 /var/www/ealbum/lib/Cake/Controller/Controller.php(1081): PaginatorComponent->paginate('Role', Array, Array)
+#4 /var/www/ealbum/app/Plugin/AclManager/Controller/AclController.php(110): Controller->paginate('Role')
+#5 [internal function]: AclController->permissions()
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(AclController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AclController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 13:10:31 Error: [MissingTableException] Table roles for model Role was not found in datasource default.
+#0 /var/www/ealbum/lib/Cake/Model/Model.php(3179): Model->setSource('roles')
+#1 /var/www/ealbum/lib/Cake/Model/Model.php(2630): Model->getDataSource()
+#2 /var/www/ealbum/app/Plugin/AclManager/Controller/AclController.php(274): Model->find('all')
+#3 [internal function]: AclController->update_aros()
+#4 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(AclController), Array)
+#5 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AclController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-09-23 15:01:55 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /var/www/ealbum/lib/Cake/Model/Permission.php(219): AclNode->node(Object(AppModel))
+#1 /var/www/ealbum/lib/Cake/Model/Permission.php(170): Permission->getAclLink(Object(AppModel), 'controllers')
+#2 /var/www/ealbum/lib/Cake/Controller/Component/Acl/DbAcl.php(85): Permission->allow(Object(AppModel), 'controllers', '*', 1)
+#3 /var/www/ealbum/lib/Cake/Controller/Component/AclComponent.php(121): DbAcl->allow(Object(AppModel), 'controllers', '*')
+#4 /var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php(108): AclComponent->allow(Object(AppModel), 'controllers')
+#5 [internal function]: UsersController->initDB()
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 15:03:23 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/init_d_b.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 15:04:10 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/init_d_b.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 15:04:13 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/init_d_b.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 15:04:56 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/init_d_b.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 15:04:58 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/init_d_b.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 15:08:51 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /var/www/ealbum/lib/Cake/Model/Permission.php(219): AclNode->node(Object(AppModel))
+#1 /var/www/ealbum/lib/Cake/Model/Permission.php(170): Permission->getAclLink(Object(AppModel), 'controllers')
+#2 /var/www/ealbum/lib/Cake/Controller/Component/Acl/DbAcl.php(85): Permission->allow(Object(AppModel), 'controllers', '*', 1)
+#3 /var/www/ealbum/lib/Cake/Controller/Component/AclComponent.php(121): DbAcl->allow(Object(AppModel), 'controllers', '*')
+#4 /var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php(108): AclComponent->allow(Object(AppModel), 'controllers')
+#5 [internal function]: UsersController->initDB()
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 15:09:19 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Users/init_d_b.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 15:13:21 Error: [MissingPluginException] Plugin AclManager could not be found.
+#0 /var/www/ealbum/app/Config/bootstrap.php(184): CakePlugin::load('AclManager', Array)
+#1 /var/www/ealbum/lib/Cake/Core/Configure.php(92): include('/var/www/ealbum...')
+#2 /var/www/ealbum/lib/Cake/bootstrap.php(146): Configure::bootstrap(true)
+#3 /var/www/ealbum/app/webroot/index.php(77): include('/var/www/ealbum...')
+#4 {main}
+2012-09-23 15:13:25 Error: [MissingPluginException] Plugin AclManager could not be found.
+#0 /var/www/ealbum/app/Config/bootstrap.php(184): CakePlugin::load('AclManager', Array)
+#1 /var/www/ealbum/lib/Cake/Core/Configure.php(92): include('/var/www/ealbum...')
+#2 /var/www/ealbum/lib/Cake/bootstrap.php(146): Configure::bootstrap(true)
+#3 /var/www/ealbum/app/webroot/index.php(77): include('/var/www/ealbum...')
+#4 {main}
+2012-09-23 15:13:48 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-23 15:17:42 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 15:27:58 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 59]
+2012-09-23 15:27:58 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 59)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 59, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 59, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 16:19:10 Error: [MissingComponentException] Component class CtrlComponent could not be found.
+#0 /var/www/ealbum/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('Ctrl', Array)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(634): ComponentCollection->init(Object(RulesController))
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 16:23:48 Error: [MissingDatasourceConfigException] The datasource configuration "authake" was not found in database.php
+#0 /var/www/ealbum/lib/Cake/Model/ConnectionManager.php(94): ConnectionManager::_getConnectionObject('authake')
+#1 /var/www/ealbum/lib/Cake/Model/Model.php(3157): ConnectionManager::getDataSource('authake')
+#2 /var/www/ealbum/lib/Cake/Model/Model.php(1092): Model->setDataSource('authake')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(3179): Model->setSource('authake_rules')
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2630): Model->getDataSource()
+#5 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(12): Model->find('all')
+#6 [internal function]: RulesController->index()
+#7 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-23 16:25:31 Error: [MissingViewException] View file "/var/www/ealbum/app/Plugin/Amanager/View/Rules/index.ctp" is missing.
+#0 /var/www/ealbum/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-23 16:28:08 Error: Fatal Error (1): Call to undefined method CtrlComponent::get() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 39]
+2012-09-23 16:28:08 Error: [FatalErrorException] Call to undefined method CtrlComponent::get()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 39)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 39, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 39, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 16:28:53 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'getEnumValues' at line 1
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('getEnumValues', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('getEnumValues', Array, Array)
+#3 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(610): DboSource->fetchAll('getEnumValues', Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(784): DboSource->query('getEnumValues', Array, Object(Rule))
+#5 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(54): Model->__call('getEnumValues', Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(54): Rule->getEnumValues('permission')
+#7 [internal function]: RulesController->add()
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-23 16:30:32 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'getEnumValues' at line 1
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('getEnumValues', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('getEnumValues', Array, Array)
+#3 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(610): DboSource->fetchAll('getEnumValues', Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(784): DboSource->query('getEnumValues', Array, Object(Rule))
+#5 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(54): Model->__call('getEnumValues', Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(54): Rule->getEnumValues('permission')
+#7 [internal function]: RulesController->add()
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-23 16:49:26 Error: Fatal Error (1): Call to undefined method CtrlComponent::get() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 39]
+2012-09-23 16:49:26 Error: [FatalErrorException] Call to undefined method CtrlComponent::get()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 39)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 39, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 39, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 16:58:16 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 42]
+2012-09-23 16:58:16 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 42, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 42, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 16:58:32 Error: Fatal Error (1): Call to undefined function get_methods_controlles() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 41]
+2012-09-23 16:58:32 Error: [FatalErrorException] Call to undefined function get_methods_controlles()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 41, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 41, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 17:00:57 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 45]
+2012-09-23 17:00:57 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 45)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 45, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 45, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 17:03:07 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 41]
+2012-09-23 17:03:07 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 41, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 41, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 17:03:17 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 41]
+2012-09-23 17:03:17 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 41, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 41, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 17:03:19 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 41]
+2012-09-23 17:03:19 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 41, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 41, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 17:17:52 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 45]
+2012-09-23 17:17:52 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 45)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 45, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 45, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 17:28:41 Error: [MissingActionException] Action RulesController::get_controlles_plugins() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:41 Error: [MissingActionException] Action RulesController::get_methods_controlles() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:46 Error: [MissingActionException] Action RulesController::get_methods_controlles() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:47 Error: [MissingActionException] Action RulesController::get_controlles_plugins() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:47 Error: [MissingActionException] Action RulesController::get_methods_controlles() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:50 Error: [MissingActionException] Action RulesController::get_controlles_plugins() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:50 Error: [MissingActionException] Action RulesController::get_methods_controlles() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:53 Error: [MissingActionException] Action RulesController::get_controlles_plugins() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:28:53 Error: [MissingActionException] Action RulesController::get_methods_controlles() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:29:58 Error: [MissingActionException] Action RulesController::get_controlles_plugins() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 17:29:58 Error: [MissingActionException] Action RulesController::get_methods_controlles() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 19:19:24 Error: [MissingActionException] Action RulesController::update_rules_list() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 19:20:29 Error: [MissingActionException] Action RulesController::update_rules_list() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 19:53:31 Error: [MissingHelperException] Helper class FormatacaoHelper could not be found.
+#0 /var/www/ealbum/lib/Cake/View/View.php(856): HelperCollection->load('Formatacao', Array)
+#1 /var/www/ealbum/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2012-09-23 19:59:52 Error: Fatal Error (4): syntax error, unexpected ')', expecting ']' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 170]
+2012-09-23 19:59:52 Error: [FatalErrorException] syntax error, unexpected ')', expecting ']'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 170)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 170, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 170, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:27:03 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [/var/www/ealbum/app/Plugin/Amanager/View/Rules/add.ctp, line 15]
+2012-09-23 20:27:03 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 15, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 15, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:33 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:33 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:34 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:34 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:38 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:38 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:39 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:39 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:39 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:39 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:40 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:40 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:41:41 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 8]
+2012-09-23 20:41:41 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 20:54:43 Error: Fatal Error (1): Call to private method CtrlComponent::_str_controller() from context 'RulesController' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 171]
+2012-09-23 20:54:43 Error: [FatalErrorException] Call to private method CtrlComponent::_str_controller() from context 'RulesController'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to private...', '/var/www/ealbum...', 171)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to private...', '/var/www/ealbum...', 171, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to private...', '/var/www/ealbum...', 171, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 21:15:26 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 3]
+2012-09-23 21:15:26 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 3)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 3, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 3, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 21:15:29 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 3]
+2012-09-23 21:15:29 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 3)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 3, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 3, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 21:23:42 Error: Fatal Error (4): syntax error, unexpected '{' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 182]
+2012-09-23 21:23:42 Error: [FatalErrorException] syntax error, unexpected '{'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 182)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 182, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 182, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 21:52:03 Error: Fatal Error (4): syntax error, unexpected '[' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 196]
+2012-09-23 21:52:03 Error: [FatalErrorException] syntax error, unexpected '['
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 196)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 196, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 196, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:02:50 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/update_rules_list.ctp, line 4]
+2012-09-23 22:02:50 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 4)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 4, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 4, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:11:20 Error: Fatal Error (4): syntax error, unexpected '{' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 200]
+2012-09-23 22:11:20 Error: [FatalErrorException] syntax error, unexpected '{'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 200)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 200, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 200, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:11:37 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 202]
+2012-09-23 22:11:37 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 202)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 202, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 202, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:11:54 Error: Fatal Error (1): Call to undefined function in_arr() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 200]
+2012-09-23 22:11:54 Error: [FatalErrorException] Call to undefined function in_arr()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 200)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 200, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 200, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:11:56 Error: Fatal Error (1): Call to undefined function in_arr() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 200]
+2012-09-23 22:11:56 Error: [FatalErrorException] Call to undefined function in_arr()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 200)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 200, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 200, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:11:57 Error: Fatal Error (1): Call to undefined function in_arr() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 200]
+2012-09-23 22:11:57 Error: [FatalErrorException] Call to undefined function in_arr()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 200)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 200, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 200, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:13:08 Error: Fatal Error (4): syntax error, unexpected T_IF in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 202]
+2012-09-23 22:13:08 Error: [FatalErrorException] syntax error, unexpected T_IF
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 202)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 202, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 202, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:23:23 Error: Fatal Error (4): syntax error, unexpected T_STRING in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 201]
+2012-09-23 22:23:23 Error: [FatalErrorException] syntax error, unexpected T_STRING
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 201)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 201, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 201, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:33:47 Error: Fatal Error (4): syntax error, unexpected T_EXIT in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 201]
+2012-09-23 22:33:47 Error: [FatalErrorException] syntax error, unexpected T_EXIT
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 201)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 201, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 201, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:33:56 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 203]
+2012-09-23 22:33:56 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 203)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 203, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 203, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:38:15 Error: Fatal Error (4): syntax error, unexpected '{' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 200]
+2012-09-23 22:38:15 Error: [FatalErrorException] syntax error, unexpected '{'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 200)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 200, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 200, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 22:41:35 Error: [MissingActionException] Action RulesController::delete_rule() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 22:42:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Rule.order' in 'order clause'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Group`....', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Group`....', Array, Array)
+#3 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1271): DboSource->fetchAll('SELECT `Group`....', false)
+#4 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->queryAssociation(Object(Rule), Object(AppModel), 'belongsTo', 'Group', Array, Array, true, Array, -1, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Rule), Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(20): Model->find('all')
+#7 [internal function]: RulesController->index()
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-23 22:42:36 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Rule.order' in 'order clause'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Group`....', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Group`....', Array, Array)
+#3 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1271): DboSource->fetchAll('SELECT `Group`....', false)
+#4 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1114): DboSource->queryAssociation(Object(Rule), Object(AppModel), 'belongsTo', 'Group', Array, Array, true, Array, -1, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Rule), Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(20): Model->find('all')
+#7 [internal function]: RulesController->index()
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-23 22:45:23 Error: [MissingHelperException] Helper class HtmlbisHelper could not be found.
+#0 /var/www/ealbum/lib/Cake/View/HelperCollection.php(65): HelperCollection->load('Amanager.Htmlbi...')
+#1 /var/www/ealbum/lib/Cake/View/View.php(807): HelperCollection->__isset('Htmlbis')
+#2 /var/www/ealbum/app/Plugin/Amanager/View/Rules/index.ctp(31): View->__get('Htmlbis')
+#3 /var/www/ealbum/lib/Cake/View/View.php(915): include('/var/www/ealbum...')
+#4 /var/www/ealbum/lib/Cake/View/View.php(878): View->_evaluate('/var/www/ealbum...', Array)
+#5 /var/www/ealbum/lib/Cake/View/View.php(470): View->_render('/var/www/ealbum...')
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 22:46:17 Error: [MissingHelperException] Helper class HtmlbisHelper could not be found.
+#0 /var/www/ealbum/lib/Cake/View/HelperCollection.php(65): HelperCollection->load('Amanager.Htmlbi...')
+#1 /var/www/ealbum/lib/Cake/View/View.php(807): HelperCollection->__isset('Htmlbis')
+#2 /var/www/ealbum/app/Plugin/Amanager/View/Rules/index.ctp(31): View->__get('Htmlbis')
+#3 /var/www/ealbum/lib/Cake/View/View.php(915): include('/var/www/ealbum...')
+#4 /var/www/ealbum/lib/Cake/View/View.php(878): View->_evaluate('/var/www/ealbum...', Array)
+#5 /var/www/ealbum/lib/Cake/View/View.php(470): View->_render('/var/www/ealbum...')
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 22:47:33 Error: [MissingHelperException] Helper class HtmlbisHelper could not be found.
+#0 /var/www/ealbum/lib/Cake/View/HelperCollection.php(65): HelperCollection->load('Amanager.Htmlbi...')
+#1 /var/www/ealbum/lib/Cake/View/View.php(807): HelperCollection->__isset('Htmlbis')
+#2 /var/www/ealbum/app/Plugin/Amanager/View/Rules/index.ctp(57): View->__get('Htmlbis')
+#3 /var/www/ealbum/lib/Cake/View/View.php(915): include('/var/www/ealbum...')
+#4 /var/www/ealbum/lib/Cake/View/View.php(878): View->_evaluate('/var/www/ealbum...', Array)
+#5 /var/www/ealbum/lib/Cake/View/View.php(470): View->_render('/var/www/ealbum...')
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-23 23:02:02 Error: Fatal Error (1): [] operator not supported for strings in [/var/www/ealbum/app/Plugin/Amanager/Model/Rule.php, line 76]
+2012-09-23 23:02:02 Error: [FatalErrorException] [] operator not supported for strings
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, '[] operator not...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, '[] operator not...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, '[] operator not...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-23 23:06:38 Error: [PDOException] SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2225): Model->save(Array, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2087): Model->saveAssociated(Array, Array)
+#6 /var/www/ealbum/lib/Cake/Model/Model.php(2269): Model->saveMany(Array, Array)
+#7 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(37): Model->saveAssociated(Array, Array)
+#8 [internal function]: RulesController->add()
+#9 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-09-23 23:13:06 Error: [PDOException] SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2225): Model->save(Array, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2087): Model->saveAssociated(Array, Array)
+#6 /var/www/ealbum/lib/Cake/Model/Model.php(2269): Model->saveMany(Array, Array)
+#7 /var/www/ealbum/lib/Cake/Model/Model.php(2031): Model->saveAssociated(Array, Array)
+#8 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(37): Model->saveAll(Array, Array)
+#9 [internal function]: RulesController->add()
+#10 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#11 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-09-23 23:30:22 Error: [PDOException] SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2225): Model->save(Array, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2087): Model->saveAssociated(Array, Array)
+#6 /var/www/ealbum/lib/Cake/Model/Model.php(2269): Model->saveMany(Array, Array)
+#7 /var/www/ealbum/lib/Cake/Model/Model.php(2031): Model->saveAssociated(Array, Array)
+#8 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(36): Model->saveAll(Array, Array)
+#9 [internal function]: RulesController->add()
+#10 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#11 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-09-23 23:37:16 Error: [PDOException] SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded; try restarting transaction
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2089): Model->save(Array, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2269): Model->saveMany(Array, Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(36): Model->saveAssociated(Array)
+#7 [internal function]: RulesController->add()
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-23 23:42:11 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2089): Model->save(Array, Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2269): Model->saveMany(Array, Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(36): Model->saveAssociated(Array, Array)
+#7 [internal function]: RulesController->add()
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

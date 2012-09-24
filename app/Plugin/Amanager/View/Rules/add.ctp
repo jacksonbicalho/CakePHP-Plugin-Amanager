@@ -1,9 +1,33 @@
 <div class="rules form">
 <?php echo $this->Form->create('Rule'); ?>
-	<fieldset>
+
+  <div id="rules_list">
+    <h3><?php echo __('Rules list', true)?></h3>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Regra</th>
+    <th>Permitir?</th>
+    <th>Delete</th>
+  </tr>
+  <tbody id="sortable">
+    <tr id="Module_<?php echo "ALTERAR"; ?>">
+      <td><?php echo $this->Form->input('Action.0.alias', array('label'=>false, 'value'=>'/pages/display')); ?></td>
+      <td><?php  echo $this->Form->checkbox('Action.alow', array('hiddenField' => false)); ?></td>
+      <td class="actions">
+        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_rule', 'ALTERAR'), array('class' => "btn btn-danger"), __('Are you sure you want to delete # %s?', 'ALTERAR')); ?>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+  <fieldset>
 		<legend><?php echo __('Add Rule'); ?></legend>
 	<?php
     echo $this->Form->input('name');
+		echo $this->Form->input('group_id');
 		echo $this->Form->input('plugin', array('empty'=> 'Selecione se for para Plugin'));
     $this->Js->get('#RulePlugin');
     $this->Js->get('#RulePlugin')->event(
@@ -34,14 +58,24 @@
         )
       )
     );
-		echo $this->Form->input('action');
-		echo $this->Form->input('prefix', array('empty'=>''));
-		echo $this->Form->input('params_pass');
-		echo $this->Form->input('alow');
-		echo $this->Form->input('order');
-		echo $this->Form->input('Group');
+		echo $this->Form->input('action', array('multiple'=>false, 'size'=>10));
+    $this->Js->get('#RuleAction');
+    $this->Js->get('#RuleAction')->event(
+      'dblclick', $this->Js->request(
+        array('action' => 'update_rules_list'),
+        array(
+          'update' => '#sortable',
+          'dataExpression' => true,
+          'method' => 'post',
+          'data' => $this->Js->serializeForm(array('isForm' => false, 'inline' => true))
+        )
+      )
+    );
+
 	?>
 	</fieldset>
+
+
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">

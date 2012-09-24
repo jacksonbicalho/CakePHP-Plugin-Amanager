@@ -1,56 +1,93 @@
+<div id="authake">
 <div class="rules index">
-	<h2><?php echo __('Rules'); ?></h2>
-	<table class="table table-hover table-striped table-bordered">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('controller'); ?></th>
-			<th><?php echo $this->Paginator->sort('action'); ?></th>
-			<th><?php echo $this->Paginator->sort('admin'); ?></th>
-			<th><?php echo $this->Paginator->sort('plugin'); ?></th>
-			<th><?php echo $this->Paginator->sort('params_pass'); ?></th>
-			<th><?php echo $this->Paginator->sort('alow'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php
-	foreach ($rules as $rule): ?>
-	<tr>
-		<td><?php echo h($rule['Rule']['id']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['name']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['controller']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['action']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['admin']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['plugin']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['params_pass']); ?>&nbsp;</td>
-		<td><?php echo h($rule['Rule']['alow']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $rule['Rule']['id']), array('class'=>'btn')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $rule['Rule']['id']), array('class'=>'btn')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id']), array('class'=>'btn'), __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?>
+
+<h2><?php echo __('Rules');?></h2>
+<div class="actions">
+    <ul>
+        <li class="icon add"><?php echo $this->Html->link(__('New Rule'), array('action'=>'add')); ?></li>
+    </ul>
+</div>
+
+<table class="listing table table-bordered table-striped" cellpadding="0" cellspacing="0">
+<tr>
+	<th><?php echo __('Description');?></th>
+	<th><?php echo __('Group');?></th>
+    <th>&nbsp;</th>
+	<th><?php echo __('Action');?></th>
+	<th class="actions"><?php echo __('Actions');?></th>
+    <th><?php echo __('Order');?></th>
+</tr>
+<?php
+$i = 0;
+$up = null;
+foreach ($rules as $k => $rule):
+	$class = null;
+	if ($i++ % 2 == 0) {
+		$class = ' class="altrow"';
+	}
+?>
+	<tr<?php echo $class;?>>
+		<td>
+			<?php echo $this->Html->link($rule['Rule']['name'], array('action'=>'view', $rule['Rule']['id'])); ?>
 		</td>
+		<td>
+			<?php
+
+             $groupname = $rule['Group']['name'];
+
+             if ($rule['Group']['id'])
+                echo $this->Html->link($groupname, array('controller'=> 'groups', 'action'=>'view', $rule['Group']['id']));
+            else
+                echo $groupname;
+
+            ?>
+		</td>
+        <td style="text-align: center;">
+            <?php
+            echo $rule['Rule']['permission'];
+             ?>
+        </td>
+		<td>
+			<?php
+             echo str_replace(' or ', '<br/>', $rule['Rule']['action']);
+              ?>
+		</td>
+		<td class="actions">
+            <?php if ($rule['Rule']['id'] != 1) { ?>
+            <?php echo $this->Html->iconlink('information', __('View'), array('action'=>'view', $rule['Rule']['id'])); ?>
+            <?php echo $this->Html->iconlink('pencil', __('Edit'), array('action'=>'edit', $rule['Rule']['id'])); ?>
+			<?php echo $this->Html->link('cross', __('Delete'), array('action'=>'delete', $rule['Rule']['id']), null, sprintf(__('Are you sure you want to delete the rule \'%s\'?'), $rule['Rule']['name'])); ?>
+            <?php
+
+            if ($up) {
+                echo $this->Html->link('arrow_up', __('Move up'), array('action'=>'up', $rule['Rule']['id'], $up));
+            } else {
+                echo $this->Html->link('empty', '', array('action'=>''));
+            }
+            $up = $rule['Rule']['id'];
+
+            $down = $rules[$k+1]['Rule']['id'];
+            if ($down>1) {
+                echo $this->Html->link('arrow_down', __('Move down'), array('action'=>'up', $rule['Rule']['id'], $down));
+            } else {
+                echo $this->Html->link('empty', '', array('action'=>''));
+            }
+
+        }
+ ?>
+		</td>
+        <td>
+            <?php if (($rule['Rule']['id']) != 1) echo $rule['Rule']['order']; ?>
+        </td>
 	</tr>
 <?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
+</table>
 </div>
+</div>
+
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Rule'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
+        <li class="icon user"><?php echo $this->Html->link(__('Manage users'), array('controller'=> 'users', 'action'=>'index')); ?> </li>
+        <li class="icon lock"><?php echo $this->Html->link(__('Manage groups'), array('controller'=> 'groups', 'action'=>'index')); ?> </li>
 	</ul>
 </div>

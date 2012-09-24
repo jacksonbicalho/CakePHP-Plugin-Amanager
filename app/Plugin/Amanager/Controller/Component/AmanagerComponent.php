@@ -7,8 +7,7 @@ class AmanagerComponent extends Component {
  *
  * @var array
  */
-  var $components = array('Session');
-
+  public $components = array( 'Session');
 /**
  * controller
  *
@@ -38,19 +37,15 @@ class AmanagerComponent extends Component {
   var $logout_redirect = array();
 
   function __construct(ComponentCollection $collection, $settings = array()) {
-
-    $this->login_action = $settings['login_action'];
-    $this->login_action = $settings['login_redirect'];
-    $this->login_action = $settings['logout_redirect'];
-
     parent::__construct($collection, $settings);
   }
 
   function initialize(&$controller) {
 
     $this->controller = $controller;
-   // pr($this->Session->read('Amanager'));
-    //$controller->Auth = $controller->Components->load('Security');
+    //$controller->Acl = $controller->Components->load('Acl');
+
+    //$controller->Auth->allow('*');
   }
 
   function startup(&$controller = null) {
