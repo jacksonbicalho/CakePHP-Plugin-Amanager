@@ -28,6 +28,9 @@ class RulesController extends AmanagerAppController {
 	public function add() {
 		if ($this->request->is('post')) {
 
+      $data['Rule'] = $this->request->data['Rule'];
+      $data['Action'] = $this->request->data['Action'];
+
 			$this->Rule->create();
 			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
 				$this->Session->setFlash(__('The rule has been saved'));
@@ -41,6 +44,7 @@ class RulesController extends AmanagerAppController {
     foreach($_plugins as $k => $v){
       $plugins[$v] = $v;
     }
+
 		$controllers = $this->Ctrl->get_controllers(true);
 
     $_actions = $this->Ctrl->get_methods_controlles($controllers[key($controllers)]);
@@ -170,6 +174,8 @@ class RulesController extends AmanagerAppController {
   public function update_rules_list() {
 
     $rule = $this->request->data['Rule'];
+    $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
+
     unset($rule['name']);
     unset($rule['group_id']);
     $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
@@ -188,12 +194,15 @@ class RulesController extends AmanagerAppController {
     $novo_alias = strtolower(Router::url($rule + array("base" => false)));
     $alias[]['alias'] =  strtolower(Router::url($rule + array("base" => false)));
 
-    foreach($this->request->data['Action'] as $k => $v){
-      if ( in_array($novo_alias, $v) ){
-         $alias = array();
+    foreach($action as $k => $v){
+      if( is_array($v) ){
+        if ( in_array($novo_alias, $v) ){
+           $alias = array();
+        }
       }
+
     }
-    $alias = array_merge( $this->request->data['Action'],$alias );
+    $alias = array_merge( $action,$alias );
 
     $this->set('alias', $alias);
     $this->autoRender=false;

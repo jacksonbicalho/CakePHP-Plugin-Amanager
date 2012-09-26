@@ -12,11 +12,8 @@
   </tr>
   <tbody id="sortable">
     <tr id="Module_<?php echo "ALTERAR"; ?>">
-      <td><?php echo $this->Form->input('Action.0.alias', array('label'=>false, 'value'=>'/pages/display')); ?></td>
-      <td><?php  echo $this->Form->checkbox('Action.alow', array('hiddenField' => false)); ?></td>
-      <td class="actions">
-        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_rule', 'ALTERAR'), array('class' => "btn btn-danger"), __('Are you sure you want to delete # %s?', 'ALTERAR')); ?>
-      </td>
+
+
     </tr>
   </tbody>
 </table>
