@@ -8,7 +8,7 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
 class RulesController extends AmanagerAppController {
 
     function index($tableonly = false) {
-        $this->Rule->recursive = 0;
+        $this->Rule->recursive = 2;
         $this->set('rules', $this->Rule->find('all'));
     }
 
@@ -73,6 +73,7 @@ class RulesController extends AmanagerAppController {
             }
         }
         if (empty($this->data)) {
+            $this->Rule->recursive = 3;
             $this->data = $this->Rule->read(null, $id);
 
 			// Tranforma em array cada ações da regra

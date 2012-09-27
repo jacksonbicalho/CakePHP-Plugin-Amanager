@@ -9,6 +9,12 @@ div#main.container div#amanager-index.amanager img{
   float:right;
 }
 
+
+/* Caminho dos icones do bootstrap */
+[class^="icon-"], [class*=" icon-"] {
+    background-image: url("TwitterBootstrap/img/glyphicons-halflings.png");
+}
+
 /* Actions for table */
 table.table tbody tr th.actions{
   width:195px;

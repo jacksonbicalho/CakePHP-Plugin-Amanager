@@ -1,93 +1,50 @@
 <div id="authake">
-<div class="rules index">
+  <div class="rules index">
 
-<h2><?php echo __('Rules');?></h2>
-<div class="actions">
-    <ul>
-        <li class="icon add"><?php echo $this->Html->link(__('New Rule'), array('action'=>'add')); ?></li>
-    </ul>
-</div>
+    <h2><?php echo __('Rules');?></h2>
 
-<table class="listing table table-bordered table-striped" cellpadding="0" cellspacing="0">
-<tr>
-	<th><?php echo __('Description');?></th>
-	<th><?php echo __('Group');?></th>
-    <th>&nbsp;</th>
-	<th><?php echo __('Action');?></th>
-	<th class="actions"><?php echo __('Actions');?></th>
-    <th><?php echo __('Order');?></th>
-</tr>
-<?php
-$i = 0;
-$up = null;
-foreach ($rules as $k => $rule):
-	$class = null;
-	if ($i++ % 2 == 0) {
-		$class = ' class="altrow"';
-	}
-?>
-	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $this->Html->link($rule['Rule']['name'], array('action'=>'view', $rule['Rule']['id'])); ?>
-		</td>
-		<td>
-			<?php
+    <table class="table table-bordered table-striped" cellpadding="0" cellspacing="0">
+      <tr>
+        <th><?php echo __('Name');?></th>
+        <th><?php echo __('Group');?></th>
+        <th><?php echo __('Action');?></th>
+        <th class="actions"><?php echo __('Actions');?></th>
+      </tr>
 
-             $groupname = $rule['Group']['name'];
-
-             if ($rule['Group']['id'])
-                echo $this->Html->link($groupname, array('controller'=> 'groups', 'action'=>'view', $rule['Group']['id']));
-            else
-                echo $groupname;
-
-            ?>
-		</td>
-        <td style="text-align: center;">
-            <?php
-            echo $rule['Rule']['permission'];
-             ?>
-        </td>
-		<td>
-			<?php
-             echo str_replace(' or ', '<br/>', $rule['Rule']['action']);
-              ?>
-		</td>
-		<td class="actions">
-            <?php if ($rule['Rule']['id'] != 1) { ?>
-            <?php echo $this->Html->iconlink('information', __('View'), array('action'=>'view', $rule['Rule']['id'])); ?>
-            <?php echo $this->Html->iconlink('pencil', __('Edit'), array('action'=>'edit', $rule['Rule']['id'])); ?>
-			<?php echo $this->Html->link('cross', __('Delete'), array('action'=>'delete', $rule['Rule']['id']), null, sprintf(__('Are you sure you want to delete the rule \'%s\'?'), $rule['Rule']['name'])); ?>
-            <?php
-
-            if ($up) {
-                echo $this->Html->link('arrow_up', __('Move up'), array('action'=>'up', $rule['Rule']['id'], $up));
-            } else {
-                echo $this->Html->link('empty', '', array('action'=>''));
-            }
-            $up = $rule['Rule']['id'];
-
-            $down = $rules[$k+1]['Rule']['id'];
-            if ($down>1) {
-                echo $this->Html->link('arrow_down', __('Move down'), array('action'=>'up', $rule['Rule']['id'], $down));
-            } else {
-                echo $this->Html->link('empty', '', array('action'=>''));
-            }
-
-        }
- ?>
-		</td>
+    <?php foreach ($rules as $k => $rule): ?>
+      <tr>
+        <td><?php echo $rule['Rule']['name']; ?></td>
+        <td><?php if ($rule['Group']['name']) echo  $rule['Group']['name']; ?></td>
         <td>
-            <?php if (($rule['Rule']['id']) != 1) echo $rule['Rule']['order']; ?>
-        </td>
-	</tr>
-<?php endforeach; ?>
-</table>
-</div>
-</div>
+          <div id="actions_<?php echo $rule['Rule']['id']; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-<div class="actions">
-	<ul>
-        <li class="icon user"><?php echo $this->Html->link(__('Manage users'), array('controller'=> 'users', 'action'=>'index')); ?> </li>
-        <li class="icon lock"><?php echo $this->Html->link(__('Manage groups'), array('controller'=> 'groups', 'action'=>'index')); ?> </li>
-	</ul>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="actions_<?php echo $rule['Rule']['id']; ?>Label"><?php echo $rule['Rule']['name']; ?></h3>
+            </div>
+            <div class="modal-body">
+              <h4><?php echo __('Rules', true); ?></h4>
+              <hr />
+              <ul>
+              <?php foreach( $rule['Action'] as $action){ ?>
+              <li><?php echo $action['alias']; ?> <i class="<?php echo $action['alow']==1?'icon-ok-circle':'icon-ban-circle'; ?>"></i></li>
+              <?php } ?>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal"><?php echo __('close', true)?></button>
+            </div>
+          </div>
+          <?php echo $this->Html->link('See actions of this rule', "#actions_{$rule['Rule']['id']}", array('class'=>'btn', 'data-toggle'=>'modal'))?>
+        </td>
+        <td class="actions">
+          Ver | Editar | Excluir
+        </td>
+            <td>
+                <?php if (($rule['Rule']['id']) != 1) echo $rule['Rule']['order']; ?>
+            </td>
+      </tr>
+    <?php endforeach; ?>
+    </table>
+  </div>
 </div>
