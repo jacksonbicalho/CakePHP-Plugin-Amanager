@@ -10,9 +10,9 @@
         <th><?php echo __('Action');?></th>
         <th class="actions"><?php echo __('Actions');?></th>
       </tr>
-
+      <tbody id="sortable">
     <?php foreach ($rules as $k => $rule): ?>
-      <tr>
+      <tr id="Rule_<?php echo $rule['Rule']['id']; ?>">
         <td><?php echo $rule['Rule']['name']; ?></td>
         <td><?php if ($rule['Group']['name']) echo  $rule['Group']['name']; ?></td>
         <td>
@@ -40,11 +40,10 @@
         <td class="actions">
           Ver | Editar | Excluir
         </td>
-            <td>
-                <?php if (($rule['Rule']['id']) != 1) echo $rule['Rule']['order']; ?>
-            </td>
       </tr>
     <?php endforeach; ?>
+      </tbody>
     </table>
   </div>
 </div>
+<?php echo $this->element('sortable', array('plugin' => 'Amanager')); ?>

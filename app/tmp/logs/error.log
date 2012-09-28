@@ -2865,3 +2865,74 @@
 2012-09-27 20:41:53 Error: [MissingControllerException] Controller class CssController could not be found.
 #0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-09-27 21:01:45 Error: Fatal Error (4): syntax error, unexpected T_ARRAY in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/sortable.ctp, line 16]
+2012-09-27 21:01:45 Error: [FatalErrorException] syntax error, unexpected T_ARRAY
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 21:03:48 Error: Fatal Error (4): syntax error, unexpected T_ARRAY in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/sortable.ctp, line 16]
+2012-09-27 21:03:48 Error: [FatalErrorException] syntax error, unexpected T_ARRAY
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 21:04:38 Error: Fatal Error (4): syntax error, unexpected T_ARRAY in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/sortable.ctp, line 16]
+2012-09-27 21:04:38 Error: [FatalErrorException] syntax error, unexpected T_ARRAY
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 21:06:26 Error: Fatal Error (4): syntax error, unexpected T_ARRAY in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/sortable.ctp, line 16]
+2012-09-27 21:06:26 Error: [FatalErrorException] syntax error, unexpected T_ARRAY
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 16, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 21:09:32 Error: [MissingActionException] Action RulesController::admin_reorder() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-27 21:11:29 Error: [MissingActionException] Action RulesController::admin_reorder() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-27 21:13:53 Error: Fatal Error (64): Cannot redeclare RulesController::reorder() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 234]
+2012-09-27 21:13:53 Error: [FatalErrorException] Cannot redeclare RulesController::reorder()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/var/www/ealbum...', 234)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/var/www/ealbum...', 234, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/var/www/ealbum...', 234, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 21:14:28 Error: [MissingActionException] Action RulesController::admin_reorder() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-27 21:20:30 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 12]
+2012-09-27 21:20:30 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 12, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 12, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 21:33:00 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/lib/Cake/View/Helper/FormHelper.php, line 1538]
+2012-09-27 21:33:00 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 1538)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 1538, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 1538, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -9,7 +9,7 @@ class RulesController extends AmanagerAppController {
 
     function index($tableonly = false) {
         $this->Rule->recursive = 2;
-        $this->set('rules', $this->Rule->find('all'));
+        $this->set('rules', $this->Rule->find('all', array('order'=>'order')));
     }
 
     function view($id = null) {
@@ -218,13 +218,12 @@ class RulesController extends AmanagerAppController {
  * @return void
  */
   public function reorder() {
-    foreach ($this->data[$this->alias] as $key => $value) {
-      $this->{$this->alias}->id = $value;
-      $this->{$this->alias}->saveField("order", $key + 1);
+    foreach ($this->data['Rule'] as $key => $value) {
+      $this->Rule->id = $value;
+      $this->Rule->saveField("order", $key + 1);
     }
     exit();
   }
-
 
 }
 
