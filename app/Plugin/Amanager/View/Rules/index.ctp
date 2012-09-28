@@ -8,14 +8,15 @@
         <th><?php echo __('Name');?></th>
         <th><?php echo __('Group');?></th>
         <th><?php echo __('Action');?></th>
-        <th class="actions"><?php echo __('Actions');?></th>
+        <th class="actions"><?php echo __('Actions', true);?></th>
+        <th class="reorder"><?php echo __('Reorder', true);?></th>
       </tr>
       <tbody id="sortable">
     <?php foreach ($rules as $k => $rule): ?>
       <tr id="Rule_<?php echo $rule['Rule']['id']; ?>">
-        <td><?php echo $rule['Rule']['name']; ?></td>
-        <td><?php if ($rule['Group']['name']) echo  $rule['Group']['name']; ?></td>
-        <td>
+        <td class="cancel"><?php echo $rule['Rule']['name']; ?></td>
+        <td class="cancel"><?php if ($rule['Group']['name']) echo  $rule['Group']['name']; ?></td>
+        <td class="cancel">
           <div id="actions_<?php echo $rule['Rule']['id']; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
             <div class="modal-header">
@@ -37,9 +38,10 @@
           </div>
           <?php echo $this->Html->link('See actions of this rule', "#actions_{$rule['Rule']['id']}", array('class'=>'btn', 'data-toggle'=>'modal'))?>
         </td>
-        <td class="actions">
+        <td class="actions cancel">
           Ver | Editar | Excluir
         </td>
+        <td class="reorder"><i class="icon-th-list"></i></td>
       </tr>
     <?php endforeach; ?>
       </tbody>

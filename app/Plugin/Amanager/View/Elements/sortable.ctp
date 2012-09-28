@@ -11,7 +11,7 @@
 
       // Inicia os elementos com id sortable
       $("#sortable").sortable({
-        helper: fixHelper
+        helper: fixHelper,
       })
     });
 
@@ -21,36 +21,35 @@
     function closeSortTableModal(){
       $("#actions-order").modal("toggle");
     }
-
     ',
       array('inline' => false)
   );
-?>
-
-<?php
-$this->Js->get('#salvar');
-$this->Js->event('click', $this->Js->request(
-                array(
-            'action' => 'reorder',
-            //'admin' => 'false',
-                ), array(
-            'method' => 'post',
-            'dataExpression' => true,
-            'data' => '$("#sortable").sortable("serialize")',
-            'async' => true,
-            'complete' => 'closeSortTableModal()'
-                )
-        )
-);
-
-$this->Js->get('#sortable');
-$this->Js->sortable(
-        array(
-            'cursor' => 'move',
-            'axis' => 'y',
-            'update' => 'openSortTableModal()',
-        )
-);
+  $this->Js->get('#salvar');
+  $this->Js->event(
+    'click',
+    $this->Js->request(
+      array(
+        'action' => 'reorder',
+        //'admin' => 'false',
+      ),
+      array(
+        'method' => 'post',
+        'dataExpression' => true,
+        'data' => '$("#sortable").sortable("serialize")',
+        'async' => true,
+        'complete' => 'closeSortTableModal()'
+      )
+    )
+  );
+  $this->Js->get('#sortable');
+  $this->Js->sortable(
+    array(
+      'cursor' => 'move',
+      'axis' => 'y',
+      'cancel'=> '.cancel',
+      'update' => 'openSortTableModal()',
+    )
+  );
 ?>
     <div id="actions-order" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="actions-order-Label" aria-hidden="true">
       <div class="alert-info">

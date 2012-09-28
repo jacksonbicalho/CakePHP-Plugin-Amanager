@@ -91,4 +91,9 @@ div#rules_list{
     width: 70%;
 }
 
+/* Reorder */
+table.table tbody#sortable.ui-sortable tr td.reorder{
+  text-align:center;
+  cursor:all-scroll;
+}
 
