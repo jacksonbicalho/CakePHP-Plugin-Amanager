@@ -1,10 +1,16 @@
 <?php
   echo $this->Html->scriptBlock(
     '$(window).load(function () {
+
       // Return a helper with preserved width of cells
       var fixHelper = function(e, ui) {
         ui.children().each(function() {
           $(this).width($(this).width());
+
+          $(this).children().each(function() {
+            $(this).width($(this).width());
+          });
+
         });
         return ui;
       };
@@ -13,6 +19,8 @@
       $("#sortable").sortable({
         helper: fixHelper,
       })
+
+
     });
 
     function openSortTableModal(){
@@ -47,6 +55,7 @@
       'cursor' => 'move',
       'axis' => 'y',
       'cancel'=> '.cancel',
+      'helper'=> 'fixHelper',
       'update' => 'openSortTableModal()',
     )
   );
