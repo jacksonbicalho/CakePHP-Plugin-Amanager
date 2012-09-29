@@ -2936,3 +2936,120 @@
 #3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-09-29 12:20:52 Error: [MissingHelperException] Helper class HtmlbisHelper could not be found.
+#0 /var/www/ealbum/lib/Cake/View/HelperCollection.php(65): HelperCollection->load('Amanager.Htmlbi...')
+#1 /var/www/ealbum/lib/Cake/View/View.php(807): HelperCollection->__isset('Htmlbis')
+#2 /var/www/ealbum/app/Plugin/Amanager/View/Rules/view.ctp(40): View->__get('Htmlbis')
+#3 /var/www/ealbum/lib/Cake/View/View.php(915): include('/var/www/ealbum...')
+#4 /var/www/ealbum/lib/Cake/View/View.php(878): View->_evaluate('/var/www/ealbum...', Array)
+#5 /var/www/ealbum/lib/Cake/View/View.php(470): View->_render('/var/www/ealbum...')
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-29 12:20:56 Error: Fatal Error (1): Call to undefined method CtrlComponent::get() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 89]
+2012-09-29 12:20:56 Error: [FatalErrorException] Call to undefined method CtrlComponent::get()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 89)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 89, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 89, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:14:18 Error: Fatal Error (4): syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 40]
+2012-09-29 14:14:18 Error: [FatalErrorException] syntax error, unexpected T_CONSTANT_ENCAPSED_STRING
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 40)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 40, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 40, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:14:47 Error: Fatal Error (1): Call to undefined method CtrlComponent::get() in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 93]
+2012-09-29 14:14:47 Error: [FatalErrorException] Call to undefined method CtrlComponent::get()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 93)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 93, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 93, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:16:29 Error: Fatal Error (1): Class 'Functions' not found in [/var/www/ealbum/app/Plugin/Amanager/View/Rules/edit.ctp, line 26]
+2012-09-29 14:16:29 Error: [FatalErrorException] Class 'Functions' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Function...', '/var/www/ealbum...', 26)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Function...', '/var/www/ealbum...', 26, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Function...', '/var/www/ealbum...', 26, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:18:14 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'name_UNIQUE'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('INSERT INTO `ac...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1006): DboSource->execute('INSERT INTO `ac...')
+#3 /var/www/ealbum/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Rule), Array, Array)
+#4 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(71): Model->save(Array)
+#5 [internal function]: RulesController->edit('17')
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-29 14:18:28 Error: [MissingActionException] Action RulesController::delete_rule() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-29 14:24:46 Error: Fatal Error (4): syntax error, unexpected ':' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 223]
+2012-09-29 14:24:46 Error: [FatalErrorException] syntax error, unexpected ':'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 223)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 223, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 223, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:25:02 Error: Fatal Error (4): syntax error, unexpected ';', expecting T_FUNCTION in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 231]
+2012-09-29 14:25:02 Error: [FatalErrorException] syntax error, unexpected ';', expecting T_FUNCTION
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 231)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 231, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 231, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:28:10 Error: Fatal Error (1): Call to a member function read() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 78]
+2012-09-29 14:28:10 Error: [FatalErrorException] Call to a member function read() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 78)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 78, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 78, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:28:26 Error: Fatal Error (1): Call to a member function read() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 78]
+2012-09-29 14:28:26 Error: [FatalErrorException] Call to a member function read() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 78)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 78, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 78, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:33:29 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 80]
+2012-09-29 14:33:29 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 80)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 80, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 80, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 14:36:41 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 79]
+2012-09-29 14:36:41 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 79)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 79, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 79, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-29 15:57:34 Error: Fatal Error (4): syntax error, unexpected T_IF in [/var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php, line 76]
+2012-09-29 15:57:34 Error: [FatalErrorException] syntax error, unexpected T_IF
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

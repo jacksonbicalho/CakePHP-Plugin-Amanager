@@ -36,10 +36,12 @@
               <button class="btn" data-dismiss="modal"><?php echo __('close', true)?></button>
             </div>
           </div>
-          <?php echo $this->Html->link('See actions of this rule', "#actions_{$rule['Rule']['id']}", array('class'=>'btn', 'data-toggle'=>'modal'))?>
+          <?php echo $this->Html->link('See actions of this rule', "#actions_{$rule['Rule']['id']}", array('class'=>'btn btn-link', 'data-toggle'=>'modal'))?>
         </td>
         <td class="actions cancel">
-          Ver | Editar | Excluir
+          <?php echo $this->Html->link(__('View', true), array('action'=>'view', $rule['Rule']['id']), array('class'=>'btn btn-link'))?>
+          <?php echo $this->Html->link(__('Edit', true), array('action'=>'edit', $rule['Rule']['id']), array('class'=>'btn btn-link'))?>
+          <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id']), array('class'=>'btn btn-link'), __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?>
         </td>
         <td class="reorder"><i class="icon-th-list"></i></td>
       </tr>

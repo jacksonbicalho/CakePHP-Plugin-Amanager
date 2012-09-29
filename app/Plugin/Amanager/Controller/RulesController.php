@@ -1,24 +1,24 @@
 <?php
 App::uses('AmanagerAppController', 'Amanager.Controller');
 /**
- * Users Controller
+ * Rules Controller
  *
- * @property User $User
+ * @property Rule $Rule
  */
 class RulesController extends AmanagerAppController {
 
-    function index($tableonly = false) {
-        $this->Rule->recursive = 2;
-        $this->set('rules', $this->Rule->find('all', array('order'=>'order')));
-    }
+  function index($tableonly = false) {
+    $this->Rule->recursive = 2;
+    $this->set('rules', $this->Rule->find('all', array('order'=>'order')));
+  }
 
-    function view($id = null) {
-        if (!$id) {
-            $this->Session->setFlash(__('Invalid Rule.'), 'error');
-            $this->redirect(array('action'=>'index'));
-        }
-        $this->set('rule', $this->Rule->read(null, $id));
+  function view($id = null) {
+    if (!$id) {
+      $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
+      $this->redirect(array('action'=>'index'));
     }
+    $this->set('rule', $this->Rule->read(null, $id));
+  }
 
 /**
  * add method
@@ -26,7 +26,7 @@ class RulesController extends AmanagerAppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
+    if ($this->request->is('post')) {
 
       $data['Rule'] = $this->request->data['Rule'];
       $data['Action'] = $this->request->data['Action'];
@@ -36,7 +36,7 @@ class RulesController extends AmanagerAppController {
 				$this->Session->setFlash(__('The rule has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The rule could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'message/error');
 			}
 		}
 
@@ -55,59 +55,56 @@ class RulesController extends AmanagerAppController {
 		$this->set(compact('groups', 'plugins', 'controllers', 'actions'));
 	}
 
-    function edit($id = null) {//$this->Rule->getEnumValues('permission'));
-        if (!$id && empty($this->data)) {
-            $this->Session->setFlash(__('Invalid Rule'), 'error');
-            $this->redirect(array('action'=>'index'));
+/**
+ * edit method
+ *
+ * @return void
+ */
+  function edit($id = null) {
+
+    $this->check_ruler($id);
+
+    if (!empty($this->data)) {
+
+      foreach( $this->request->data['Action'] as $k =>$v){
+        if( !isset($v['alow']) ){
+          $this->request->data['Action'][$k]['alow'] = null;
         }
-        if ($id == '1') { // do not touch to the admin rule
-            $this->Session->setFlash(__('Impossible to edit this rule!'), 'warning');
-            $this->redirect(array('action'=>'index'));
-        }
-        if (!empty($this->data)) {
-            if ($this->Rule->save($this->data)) {
-                $this->Session->setFlash(__('The Rule has been saved'), 'success');
-                $this->redirect(array('action'=>'index'));
-            } else {
-                $this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'warning');
-            }
-        }
-        if (empty($this->data)) {
-            $this->Rule->recursive = 3;
-            $this->data = $this->Rule->read(null, $id);
+      }
+      $data['Rule'] = $this->request->data['Rule'];
+      $data['Action'] = $this->request->data['Action'];
 
-			// Tranforma em array cada ações da regra
-			$actions = explode(' or ', $this->data['Rule']['action']);
-			$actions_salvas = array();
-			foreach($actions as $k =>$v){
-				$actions_salvas[$k]= trim($v);
-			}
-        }
-
-		// Obtém lista de controladores e retira controladores e funções não necessárias
-		$a_retirar = array('beforeSave', 'parentNode');
-		$controllers = $this->Ctrl->get();
-
-		foreach($controllers as $k => $v){
-			foreach($v as $k2 => $v2){
-				if (in_array($v2, $a_retirar)){
-					unset($controllers[$k][$k2]);
-				}
-			}
-		}
-
-		$this->set(compact('controllers'));
-		$this->set(compact('actions_salvas'));
-
-        // fix groups dropdown menu
-        $groups = $this->Rule->Group->find('list');
-        $this->set(compact('groups'));
-
-
-        // fix permissions dropdown menu
-        $permissions = $this->Rule->getEnumValues('permission');
-        $this->set(compact('permissions'));
+			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
+				$this->Session->setFlash(__('The rule has been saved.'), 'message/success');
+        $this->redirect(array('action'=>'index'));
+      } else {
+				$this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'message/warning');
+      }
     }
+    if (empty($this->data)) {
+
+      $this->request->data = $this->Rule->read();
+      $actions_salvas = $this->request->data['Action'];
+
+      $this->set(compact('actions_salvas'));
+
+      $_plugins = $this->Ctrl->get_plugins();
+      foreach($_plugins as $k => $v){
+        $plugins[$v] = $v;
+      }
+
+      $controllers = $this->Ctrl->get_controllers(true);
+
+      $_actions = $this->Ctrl->get_methods_controlles($controllers[key($controllers)]);
+      foreach($_actions as $k => $v){
+        $actions[$v] = $v;
+      }
+      $groups = $this->Rule->Group->find('list');
+      $this->set(compact('groups', 'plugins', 'controllers', 'actions'));
+
+    }
+
+  }
 
     function delete($id = null) {
         if (!$id) {
@@ -175,8 +172,10 @@ class RulesController extends AmanagerAppController {
   public function update_rules_list() {
 
     $rule = $this->request->data['Rule'];
+
     $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
 
+    unset($rule['id']);
     unset($rule['name']);
     unset($rule['group_id']);
     $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
@@ -223,6 +222,25 @@ class RulesController extends AmanagerAppController {
       $this->Rule->saveField("order", $key + 1);
     }
     exit();
+  }
+
+/**
+ * check_ruler method
+ *
+ * @return booleam
+ */
+  public function check_ruler($id = null) {
+
+    if (!$id && empty($this->data)) {
+      $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
+      $this->redirect(array('action'=>'index'));
+    }
+    $id = isset($this->data['Rule']['id'])?$this->data['Rule']['id']:$id;
+    $this->Rule->id = $id;
+    if (!$this->Rule->exists()) {
+      $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
+      $this->redirect(array('action'=>'index'));
+    }
   }
 
 }
