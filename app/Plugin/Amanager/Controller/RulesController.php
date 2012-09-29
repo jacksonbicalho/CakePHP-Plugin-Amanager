@@ -62,7 +62,7 @@ class RulesController extends AmanagerAppController {
  */
   function edit($id = null) {
 
-    $this->check_ruler($id);
+    $this->check_rule($id);
 
     if (!empty($this->data)) {
 
@@ -106,18 +106,26 @@ class RulesController extends AmanagerAppController {
 
   }
 
-    function delete($id = null) {
-        if (!$id) {
-            $this->Session->setFlash(__('Invalid id for Rule'), 'error');
-        } else
-        if ($id == '1') { // do not touch to the admin rule
-            $this->Session->setFlash(__('Impossible to delete this rule!'), 'warning');
-        } else
-        if ($this->Rule->delete($id)) {
-            $this->Session->setFlash(__('Rule deleted'), 'success');
-        }
-        $this->redirect(array('action'=>'index'));
-    }
+/**
+ * delete method
+ *
+ * @param string $id
+ * @return void
+ */
+  public function delete($id = null) {
+      if (!$this->request->is('post')) {
+        throw new MethodNotAllowedException();
+      }
+
+      $this->check_rule($id);
+
+      if ($this->Rule->delete()) {
+        $this->Session->setFlash(__('Rule deleted.'), 'message/success');
+        $this->redirect(array('action' => 'index'));
+      }
+      $this->Session->setFlash(__('Rule was not deleted.'), 'message/error');
+      $this->redirect(array('action' => 'index'));
+  }
 
     function up($id1, $id2) {   // swap order of two rules
         if ($id1 != 1 && $id2 != 1) {
@@ -225,17 +233,18 @@ class RulesController extends AmanagerAppController {
   }
 
 /**
- * check_ruler method
+ * check_rule method
  *
  * @return booleam
  */
-  public function check_ruler($id = null) {
+  public function check_rule($id = null) {
 
     if (!$id && empty($this->data)) {
       $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
       $this->redirect(array('action'=>'index'));
     }
     $id = isset($this->data['Rule']['id'])?$this->data['Rule']['id']:$id;
+
     $this->Rule->id = $id;
     if (!$this->Rule->exists()) {
       $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
