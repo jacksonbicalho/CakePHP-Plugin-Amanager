@@ -3279,3 +3279,41 @@
 #10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
 #11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2012-09-30 16:11:29 Error: [MissingControllerException] Controller class Getting-started.htmlController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-30 16:13:48 Error: [MissingControllerException] Controller class Getting-started.htmlController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-30 16:13:48 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/navbar-fixed-top.ctp, line 14]
+2012-09-30 16:13:48 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 14, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 14, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-30 16:13:55 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/navbar-fixed-top.ctp, line 14]
+2012-09-30 16:13:55 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 14, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 14, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-30 16:38:30 Error: Fatal Error (4): syntax error, unexpected T_CLASS, expecting ']' in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/navbar-fixed-top.ctp, line 7]
+2012-09-30 16:38:30 Error: [FatalErrorException] syntax error, unexpected T_CLASS, expecting ']'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 7, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 7, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-30 16:43:48 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/navbar-fixed-top.ctp, line 19]
+2012-09-30 16:43:48 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 19, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 19, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

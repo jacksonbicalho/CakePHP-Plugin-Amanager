@@ -1,3 +1,12 @@
+<?php
+// Define o ítem ativo do menu
+$menu['Amanager']['class'] = 'Amanager';
+$menu['Users']['class'] = 'Users';
+$menu['Groups']['class'] = 'Groups';
+$menu['Rules']['class'] = 'Rules';
+$menu[$this->name]['class'] .= ' active';
+?>
+
 <?php echo $this->Html->script('jquery/plugins/bootstrap-dropdown', array('inline' => false)); // Include jQuery library  ?>
 <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -7,20 +16,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="/" class="brand">Acess Manager</a>
+          <?php echo $this->Html->link( __('Acess Manager', true), array('controller'=>'amanager', 'action'=>'index', 'plugin'=>'amanager'), array('class'=>'brand ' . $menu['Amanager']['class'] )); ?>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="">
-                <a href="./index.html">Home</a>
+              <li class="<?php echo $menu['Users']['class']; ?>">
+                <?php echo $this->Html->link( __('Manager Users', true), array('controller'=>'users', 'action'=>'index', 'plugin'=>'amanager')); ?>
               </li>
-              <li class="active">
-                <a href="./getting-started.html">Manager Users </a>
+              <li class="<?php echo $menu['Groups']['class']; ?>">
+                <?php echo $this->Html->link( __('Manager Groups', true), array('controller'=>'groups', 'action'=>'index', 'plugin'=>'amanager')); ?>
               </li>
-              <li class="">
-                <a href="./scaffolding.html">Manger Groups</a>
-              </li>
-              <li class="">
-                <a href="./base-css.html">Manger Rules</a>
+              <li class="<?php echo $menu['Rules']['class']; ?>">
+                <?php echo $this->Html->link( __('Manger Rules', true), array('controller'=>'rules', 'action'=>'index', 'plugin'=>'amanager')); ?>
               </li>
             </ul>
           </div>
