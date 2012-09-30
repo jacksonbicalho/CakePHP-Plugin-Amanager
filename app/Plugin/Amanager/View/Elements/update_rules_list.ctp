@@ -13,7 +13,7 @@
       </td>
 
       <td class="actions">
-        <?php echo $this->Html->Link(__('Delete'), "javascript:removeTr({$k})", array('class' => "btn btn-danger"), __('Are you sure you want to delete # %s?', 'ALTERAR')); ?>
+        <?php echo $this->Html->Link(__('Delete'), "javascript:removeTr({$k})", array('class' => "btn btn-danger"), __('Are you sure you want to delete this action: %s?', $action['alias'])); ?>
       </td>
     </tr>
 <?php } ?>
