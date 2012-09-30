@@ -23,7 +23,7 @@
       </td>
       <td><?php  echo $this->Form->checkbox("Action.{$k}.alow", array('hiddenField' => false)  ); ?></td>
       <td class="actions">
-        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete_rule', 'ALTERAR'), array('class' => "btn btn-danger"), __('Are you sure you want to delete # %s?', 'ALTERAR')); ?>
+        <?php echo $this->Html->Link(__('Delete'), "javascript:removeTr({$k})", array('class' => "btn btn-danger"), __('Are you sure you want to delete # %s?', 'ALTERAR')); ?>
       </td>
     </tr>
 <?php } ?>
@@ -88,6 +88,22 @@
 
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
+
+
+<?php
+echo $this->Html->scriptBlock(
+    'function removeTr(id){
+      $("#action_" + id).fadeOut(500, function() {
+        $(this).remove();
+        return false;
+      });
+     }',
+    array('inline' => false)
+);
+?>
+
+
+
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>

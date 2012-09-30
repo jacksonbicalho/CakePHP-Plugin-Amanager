@@ -74,6 +74,14 @@ class RulesController extends AmanagerAppController {
       $data['Rule'] = $this->request->data['Rule'];
       $data['Action'] = $this->request->data['Action'];
 
+      // Exclui as ações que foram removidas da lista da regra
+      $actions_salvas = $this->Rule->read();
+      $excluir = Set::extract(
+        '/id',
+        array_diff_assoc($actions_salvas['Action'], $data['Action'])
+      );
+      $this->Rule->Action->deleteAll($excluir);
+
 			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
 				$this->Session->setFlash(__('The rule has been saved.'), 'message/success');
         $this->redirect(array('action'=>'index'));
