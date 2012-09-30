@@ -71,9 +71,9 @@ class RulesController extends AmanagerAppController {
       if ( isset($this->request->data['Action']) ){
         $data['Action'] = $this->request->data['Action'];
 
-        foreach( $this->request->data['Action'] as $k =>$v){
+        foreach( $data['Action'] as $k =>$v){
           if( !isset($v['alow']) ){
-            $this->request->data['Action'][$k]['alow'] = null;
+            $data['Action'][$k]['alow'] = null;
           }
         }
 
