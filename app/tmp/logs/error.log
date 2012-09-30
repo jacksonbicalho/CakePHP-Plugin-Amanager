@@ -3265,3 +3265,17 @@
 #1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
 #2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2012-09-30 16:03:49 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'conditions' in 'where clause'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `Action`...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `Action`...', Array, Array)
+#3 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1079): DboSource->fetchAll('SELECT `Action`...', false)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2630): DboSource->read(Object(AppModel), Array)
+#5 /var/www/ealbum/lib/Cake/Model/Model.php(2489): Model->find('all', Array)
+#6 /var/www/ealbum/app/Plugin/Amanager/Controller/RulesController.php(88): Model->deleteAll(Array)
+#7 [internal function]: RulesController->edit('17')
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(RulesController), Array)
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

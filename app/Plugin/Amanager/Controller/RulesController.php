@@ -66,21 +66,28 @@ class RulesController extends AmanagerAppController {
 
     if (!empty($this->data)) {
 
-      foreach( $this->request->data['Action'] as $k =>$v){
-        if( !isset($v['alow']) ){
-          $this->request->data['Action'][$k]['alow'] = null;
-        }
-      }
       $data['Rule'] = $this->request->data['Rule'];
-      $data['Action'] = $this->request->data['Action'];
 
-      // Exclui as ações que foram removidas da lista da regra
-      $actions_salvas = $this->Rule->read();
-      $excluir = Set::extract(
-        '/id',
-        array_diff_assoc($actions_salvas['Action'], $data['Action'])
-      );
-      $this->Rule->Action->deleteAll($excluir);
+      if ( isset($this->request->data['Action']) ){
+        $data['Action'] = $this->request->data['Action'];
+
+        foreach( $this->request->data['Action'] as $k =>$v){
+          if( !isset($v['alow']) ){
+            $this->request->data['Action'][$k]['alow'] = null;
+          }
+        }
+
+        // Exclui as ações que foram removidas da lista da regra
+        $actions_salvas = $this->Rule->read();
+        $excluir = Set::extract(
+          '/id',
+          array_diff_assoc($actions_salvas['Action'], $data['Action'])
+        );
+        $this->Rule->Action->deleteAll($excluir);
+
+      }else{ //Exclui todas as ações da regra em questão
+        $this->Rule->Action->deleteAll( array('rule_id'=>$data['Rule']['id'])) ;
+      }
 
 			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
 				$this->Session->setFlash(__('The rule has been saved.'), 'message/success');
