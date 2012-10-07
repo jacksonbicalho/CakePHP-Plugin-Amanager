@@ -8,6 +8,7 @@ class AmanagerComponent extends Component {
  * @var array
  */
   public $components = array( 'Session');
+
 /**
  * controller
  *
@@ -20,21 +21,33 @@ class AmanagerComponent extends Component {
  *
  * @var array
  */
-  var $login_action = array();
+  var $login_action = array(
+    'controller'=>'users',
+    'plugin' => 'amanager',
+    'action'=>'login'
+  );
 
 /**
  * loginRedirect
  *
  * @var array
  */
-  var $login_redirect = array();
+  var $login_redirect = array(
+    'controller'=>'amanager',
+    'plugin' => 'amanager',
+    'action'=>'index'
+  );
 
 /**
  * logoutRedirect
  *
  * @var array
  */
-  var $logout_redirect = array();
+  var $logout_redirect = array(
+    'controller'=>'pages',
+    'plugin' => false,
+    'action'=>'display'
+  );
 
   function __construct(ComponentCollection $collection, $settings = array()) {
     parent::__construct($collection, $settings);
@@ -44,17 +57,22 @@ class AmanagerComponent extends Component {
 
     $this->controller = $controller;
 
-   // $AuthConfig = array(
-   //   'loginAction' => array('plugin'=>'amanager','controller' => 'users', 'action' => 'login'),
-   //   'loginRedirect' => array('controller' => 'amanager', 'action' => 'index'),
-   //   'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
-   // );
     //$controller->Auth = $controller->Components->load('Auth', $AuthConfig);
 
     //$controller->Auth->allow('*');
   }
 
   function startup(&$controller = null) {
+
+    if( isset($this->settings->login_action) )
+      $this->login_action = $this->settings->login_action;
+
+    if( isset($this->settings->login_redirect) )
+      $this->login_redirect = $this->settings->login_redirect;
+
+    if( isset($this->settings->logout_redirect) )
+      $this->logout_redirect = $this->settings->logout_redirect;
+
   }
 
   public function auth(&$controller) {
@@ -66,9 +84,6 @@ class AmanagerComponent extends Component {
     $this->controller->redirect($this->login_redirect);
   }
 
-  public function logout() {
-    $this->Session->delete('Amanager');
-  }
 
   public function set_login($user_data){
     $this->Session->write('Amanager', $user_data);
@@ -76,10 +91,10 @@ class AmanagerComponent extends Component {
   public function logged(){
     return $this->Session->read('Amanager')?true:false;
   }
-  public function previous_url(){
-    $this->controller->redirect($this->controller->referer);
+  public function previous_url($url = null){
+
   }
-  public function alogout() {
+  public function logout() {
     $this->Session->delete('Amanager');
     $this->Session->setFlash(__('Você foi desconectado do sistema'));
     $this->redirect($this->logout_redirect);
