@@ -120,7 +120,6 @@ class UsersController extends AmanagerAppController {
 				$this->redirect(array('action' => 'login'));
       }
 
-
     }
   }
 
