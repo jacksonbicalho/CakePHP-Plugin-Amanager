@@ -113,18 +113,20 @@ class UsersController extends AmanagerAppController {
     if ($this->request->is('post')) {
       $password = $this->User->encripty_password( $this->request->data['User']['password'], $this->request->data['User']['username'] );
       $username = $this->request->data['User']['username'];
-      $data_login = $this->User->find('all', array('recursive' => 3, 'conditions'=> array('password'=>$password, 'username'=>$username) ));
+      $data_login = $this->User->find('first', array('recursive' => 3, 'conditions'=> array('password'=>$password, 'username'=>$username) ));
 
       if (!$data_login){
 				$this->Session->setFlash(__('Username or password invalid'), 'message/error');
 				$this->redirect(array('action' => 'login'));
       }
 
+      $this->Amanager->login($data_login);
+      pr( $this->Session->read('Amanager') );
     }
   }
 
   public function logout() {
-      $this->redirect($this->Auth->logout());
+      $this->redirect($this->Amanager->logout());
   }
 
   public function beforeFilter() {

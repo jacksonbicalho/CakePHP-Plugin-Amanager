@@ -85,8 +85,8 @@ class AmanagerComponent extends Component {
   }
 
 
-  public function set_login($user_data){
-    $this->Session->write('Amanager', $user_data);
+  public function login($data_login){
+    $this->Session->write('Amanager', $data_login);
   }
   public function logged(){
     return $this->Session->read('Amanager')?true:false;
