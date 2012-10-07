@@ -6,6 +6,11 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
  * @property User $User
  */
 class UsersController extends AmanagerAppController {
+  public $components = array(
+   'Security' => array(
+      'csrfCheck' =>false // Permite que seja feita n tentativas de requisições (Alterar!)
+    )
+  );
 
 /**
  * index method
@@ -59,11 +64,13 @@ class UsersController extends AmanagerAppController {
  * @return void
  */
 	public function edit($id = null) {
+
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -102,17 +109,33 @@ class UsersController extends AmanagerAppController {
 	}
 
   public function login() {
-      if ($this->request->is('post')) {
-          if ($this->Amanager->login()) {
-              $this->redirect($this->Amanager->redirect());
-          } else {
-              $this->Session->setFlash(__('Invalid username or password, try again'));
-          }
+      $this->User->recursive = 3;
+    if ($this->request->is('post')) {
+      $password = $this->User->encripty_password( $this->request->data['User']['password'], $this->request->data['User']['username'] );
+      $username = $this->request->data['User']['username'];
+      $data_login = $this->User->find('all', array('recursive' => 3, 'conditions'=> array('password'=>$password, 'username'=>$username) ));
+
+      if (!$data_login){
+				$this->Session->setFlash(__('Username or password invalid'), 'message/error');
+				$this->redirect(array('action' => 'login'));
       }
+
+
+    }
   }
 
   public function logout() {
       $this->redirect($this->Auth->logout());
   }
+
+  public function beforeFilter() {
+    $this->Security->blackHoleCallback = 'blackhole';
+    parent::beforeFilter();
+  }
+
+  public function blackhole($type) {
+      die("Erro: Informe o administrador: (". $type . ")");
+  }
+
 
 }

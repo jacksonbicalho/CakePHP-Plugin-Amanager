@@ -43,7 +43,13 @@ class AmanagerComponent extends Component {
   function initialize(&$controller) {
 
     $this->controller = $controller;
-    //$controller->Acl = $controller->Components->load('Acl');
+
+   // $AuthConfig = array(
+   //   'loginAction' => array('plugin'=>'amanager','controller' => 'users', 'action' => 'login'),
+   //   'loginRedirect' => array('controller' => 'amanager', 'action' => 'index'),
+   //   'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+   // );
+    //$controller->Auth = $controller->Components->load('Auth', $AuthConfig);
 
     //$controller->Auth->allow('*');
   }

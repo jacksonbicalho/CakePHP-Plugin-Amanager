@@ -3317,3 +3317,763 @@
 #3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-10-04 20:24:24 Error: [MissingActionException] Action UsersController::login() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-10-04 20:54:38 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 47]
+2012-10-04 20:54:38 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 47, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 47, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 20:54:48 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 47]
+2012-10-04 20:54:48 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 47, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 47, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 20:56:15 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 47]
+2012-10-04 20:56:15 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 47, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 47, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 20:56:46 Error: [MissingActionException] Action UsersController::login() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-10-04 20:56:59 Error: [MissingActionException] Action UsersController::login() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-10-04 21:01:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.group_id' in 'on clause'
+#0 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(668): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /var/www/ealbum/lib/Cake/Model/Datasource/DboSource.php(1079): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /var/www/ealbum/lib/Cake/Model/Model.php(2630): DboSource->read(Object(User), Array)
+#5 /var/www/ealbum/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(1081): PaginatorComponent->paginate(NULL, Array, Array)
+#7 /var/www/ealbum/app/Controller/UsersController.php(17): Controller->paginate()
+#8 [internal function]: UsersController->index()
+#9 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-04 21:01:55 Error: [MissingControllerException] Controller class UserController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-04 21:06:44 Error: [CakeException] $controller does not implement an isAuthorized() method.
+#0 /var/www/ealbum/lib/Cake/Controller/Component/Auth/BaseAuthorize.php(72): ControllerAuthorize->controller(Object(UsersController))
+#1 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(414): BaseAuthorize->__construct(Object(ComponentCollection), Array)
+#2 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(376): AuthComponent->constructAuthorize()
+#3 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#4 [internal function]: AuthComponent->startup(Object(UsersController))
+#5 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-10-04 21:07:27 Error: [CakeException] $controller does not implement an isAuthorized() method.
+#0 /var/www/ealbum/lib/Cake/Controller/Component/Auth/BaseAuthorize.php(72): ControllerAuthorize->controller(Object(UsersController))
+#1 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(414): BaseAuthorize->__construct(Object(ComponentCollection), Array)
+#2 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(376): AuthComponent->constructAuthorize()
+#3 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#4 [internal function]: AuthComponent->startup(Object(UsersController))
+#5 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#8 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#10 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-10-04 21:07:54 Error: [CakeException] Authorization adapter "plugin" was not found.
+#0 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(376): AuthComponent->constructAuthorize()
+#1 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#2 [internal function]: AuthComponent->startup(Object(UsersController))
+#3 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-04 21:08:32 Error: [CakeException] Authorization adapter "plugin" was not found.
+#0 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(376): AuthComponent->constructAuthorize()
+#1 /var/www/ealbum/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#2 [internal function]: AuthComponent->startup(Object(UsersController))
+#3 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-04 21:09:20 Error: [MissingControllerException] Controller class PagesController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-04 21:16:36 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/View/Elements/navbar-fixed-top.ctp, line 3]
+2012-10-04 21:16:36 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 3)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 3, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 3, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:17:47 Error: Fatal Error (4): syntax error, unexpected ']', expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/AmanagerAppController.php, line 4]
+2012-10-04 21:17:47 Error: [FatalErrorException] syntax error, unexpected ']', expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 4)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 4, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 4, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:18:08 Error: Fatal Error (4): syntax error, unexpected ']', expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/AmanagerAppController.php, line 4]
+2012-10-04 21:18:08 Error: [FatalErrorException] syntax error, unexpected ']', expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 4)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 4, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 4, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:18:17 Error: Fatal Error (4): syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/AmanagerAppController.php, line 8]
+2012-10-04 21:18:17 Error: [FatalErrorException] syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 8, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:20:34 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 61]
+2012-10-04 21:20:34 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 61)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 61, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 61, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:50:25 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:50:42 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:50:48 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:50:52 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:51:39 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:52:40 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 109]
+2012-10-04 21:52:40 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 109)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 109, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 109, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:52:50 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:52:52 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:54:57 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:56:41 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:58:02 Error: Fatal Error (4): syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 110]
+2012-10-04 21:58:02 Error: [FatalErrorException] syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 110)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 110, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 110, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 21:58:20 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 21:58:40 Error: [MissingPluginException] Plugin Amananager could not be found.
+#0 /var/www/ealbum/lib/Cake/Core/App.php(364): CakePlugin::path('Amananager')
+#1 /var/www/ealbum/lib/Cake/Core/App.php(225): App::pluginPath('Amananager')
+#2 /var/www/ealbum/lib/Cake/Core/App.php(542): App::path('Model', 'Amananager')
+#3 [internal function]: App::load('User')
+#4 [internal function]: spl_autoload_call('User')
+#5 /var/www/ealbum/lib/Cake/Utility/ClassRegistry.php(136): class_exists('User')
+#6 /var/www/ealbum/lib/Cake/Model/Model.php(1016): ClassRegistry::init(Array)
+#7 /var/www/ealbum/lib/Cake/Model/Model.php(842): Model->_constructLinkedModel('User', 'User', 'Amananager')
+#8 /var/www/ealbum/lib/Cake/Model/Model.php(872): Model->__isset('User')
+#9 /var/www/ealbum/lib/Cake/Model/Model.php(1061): Model->__get('User')
+#10 /var/www/ealbum/lib/Cake/Model/Model.php(987): Model->_generateAssociation('hasAndBelongsTo...', 'User')
+#11 /var/www/ealbum/lib/Cake/Model/Model.php(732): Model->_createLinks()
+#12 [internal function]: Model->__construct(Array)
+#13 /var/www/ealbum/lib/Cake/Utility/ClassRegistry.php(156): ReflectionClass->newInstance(Array)
+#14 /var/www/ealbum/lib/Cake/Controller/Controller.php(733): ClassRegistry::init(Array)
+#15 /var/www/ealbum/lib/Cake/Controller/Controller.php(366): Controller->loadModel('Amanager.Group')
+#16 /var/www/ealbum/lib/Cake/Controller/Controller.php(404): Controller->__isset('Group')
+#17 /var/www/ealbum/app/Plugin/Amanager/Controller/GroupsController.php(16): Controller->__get('Group')
+#18 [internal function]: GroupsController->index()
+#19 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#20 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#21 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#22 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#23 {main}
+2012-10-04 21:59:08 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-04 22:02:01 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:02:01 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:02:09 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:02:09 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:02:47 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:02:47 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:03:22 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:03:22 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:03:56 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:03:56 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:04:36 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:04:36 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:04:47 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:04:47 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:04:52 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:04:52 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:05:02 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:05:02 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:05:04 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:05:04 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:05:17 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:05:17 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:05:18 Error: Fatal Error (1): Call to a member function find() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 108]
+2012-10-04 22:05:18 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 108, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:05:43 Error: [MissingActionException] Action UsersController::base-css.html() could not be found.
+#0 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-10-04 22:09:14 Error: Fatal Error (4): syntax error, unexpected T_DNUMBER in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 107]
+2012-10-04 22:09:14 Error: [FatalErrorException] syntax error, unexpected T_DNUMBER
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 107)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:09:19 Error: Fatal Error (4): syntax error, unexpected T_DNUMBER in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 107]
+2012-10-04 22:09:19 Error: [FatalErrorException] syntax error, unexpected T_DNUMBER
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 107)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:09:23 Error: Fatal Error (4): syntax error, unexpected T_DNUMBER in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 107]
+2012-10-04 22:09:23 Error: [FatalErrorException] syntax error, unexpected T_DNUMBER
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 107)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:09:39 Error: Fatal Error (4): syntax error, unexpected T_DNUMBER in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 107]
+2012-10-04 22:09:39 Error: [FatalErrorException] syntax error, unexpected T_DNUMBER
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 107)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 107, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:18:19 Error: Fatal Error (4): syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in [/var/www/ealbum/app/Plugin/Amanager/Model/Group.php, line 37]
+2012-10-04 22:18:19 Error: [FatalErrorException] syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 37)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 37, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 37, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:34:48 Error: Fatal Error (4): syntax error, unexpected T_OBJECT_OPERATOR in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 109]
+2012-10-04 22:34:48 Error: [FatalErrorException] syntax error, unexpected T_OBJECT_OPERATOR
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 109)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 109, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 109, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:34:53 Error: Fatal Error (4): syntax error, unexpected T_OBJECT_OPERATOR in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 109]
+2012-10-04 22:34:53 Error: [FatalErrorException] syntax error, unexpected T_OBJECT_OPERATOR
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 109)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 109, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 109, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 22:40:35 Error: [MissingHelperException] Helper class HtmlbisHelper could not be found.
+#0 /var/www/ealbum/lib/Cake/View/HelperCollection.php(65): HelperCollection->load('Amanager.Htmlbi...')
+#1 /var/www/ealbum/lib/Cake/View/View.php(807): HelperCollection->__isset('Htmlbis')
+#2 /var/www/ealbum/app/Plugin/Amanager/View/Rules/view.ctp(40): View->__get('Htmlbis')
+#3 /var/www/ealbum/lib/Cake/View/View.php(915): include('/var/www/ealbum...')
+#4 /var/www/ealbum/lib/Cake/View/View.php(878): View->_evaluate('/var/www/ealbum...', Array)
+#5 /var/www/ealbum/lib/Cake/View/View.php(470): View->_render('/var/www/ealbum...')
+#6 /var/www/ealbum/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(RulesController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-05 18:09:03 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:12:42 Error: Fatal Error (4): syntax error, unexpected '>', expecting T_STRING or T_VARIABLE or '{' or '$' in [/var/www/ealbum/app/Plugin/Amanager/Controller/UsersController.php, line 111]
+2012-10-05 18:12:42 Error: [FatalErrorException] syntax error, unexpected '>', expecting T_STRING or T_VARIABLE or '{' or '$'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 111)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 111, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 111, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-05 18:12:58 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:13:37 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:14:16 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:14:53 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:16:18 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:16:47 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:17:32 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:18:44 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:18:46 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-05 18:19:22 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 22:48:42 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 22:53:06 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 22:53:09 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 22:53:19 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Model/User.php, line 64]
+2012-10-06 22:53:19 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 64)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 64, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 64, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-06 22:53:46 Error: Fatal Error (1): Class 'Security' not found in [/var/www/ealbum/app/Plugin/Amanager/Model/User.php, line 64]
+2012-10-06 22:53:46 Error: [FatalErrorException] Class 'Security' not found
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Security...', '/var/www/ealbum...', 64)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Security...', '/var/www/ealbum...', 64, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Security...', '/var/www/ealbum...', 64, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-06 22:54:45 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:01:19 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:01:29 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:01:38 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:04:42 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:04:51 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:06:40 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:09:37 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-06 23:09:41 Error: [BadRequestException] The request has been black-holed
+#0 /var/www/ealbum/lib/Cake/Controller/Component/SecurityComponent.php(228): SecurityComponent->blackHole(Object(UsersController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(UsersController))
+#2 /var/www/ealbum/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /var/www/ealbum/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#5 /var/www/ealbum/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}

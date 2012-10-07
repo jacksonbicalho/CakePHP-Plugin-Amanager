@@ -7,8 +7,8 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
  */
 class RulesController extends AmanagerAppController {
 
-  function index($tableonly = false) {
-    $this->Rule->recursive = 2;
+  function index() {
+    //$this->Rule->recursive = 2;
     $this->set('rules', $this->Rule->find('all', array('order'=>'order')));
   }
 
@@ -30,6 +30,8 @@ class RulesController extends AmanagerAppController {
 
       $data['Rule'] = $this->request->data['Rule'];
       $data['Action'] = $this->request->data['Action'];
+      if ( isset($this->request->data['Group']) )
+        $data['Group'] = $this->request->data['Group'];
 
 			$this->Rule->create();
 			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
@@ -67,6 +69,8 @@ class RulesController extends AmanagerAppController {
     if (!empty($this->data)) {
 
       $data['Rule'] = $this->request->data['Rule'];
+      if ( isset($this->request->data['Group']) )
+        $data['Group'] = $this->request->data['Group'];
 
       if ( isset($this->request->data['Action']) ){
         $data['Action'] = $this->request->data['Action'];

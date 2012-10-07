@@ -37,7 +37,7 @@
 	<?php
     echo $this->Form->input('id');
     echo $this->Form->input('name');
-		echo $this->Form->input('group_id');
+		echo $this->Form->input('Group');
 		echo $this->Form->input('plugin', array('empty'=> 'Selecione se for para Plugin'));
     $this->Js->get('#RulePlugin');
     $this->Js->get('#RulePlugin')->event(

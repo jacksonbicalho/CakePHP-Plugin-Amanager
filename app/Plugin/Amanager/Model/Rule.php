@@ -8,17 +8,15 @@ App::uses('AmanagerAppModel', 'Amanager.Model');
 class Rule extends AmanagerAppModel {
 
 /**
- * belongsTo associations
+ * hasAndBelongsToMany associations
  *
  * @var array
  */
-  var $belongsTo = array(
-          'Group' => array(
-          'className'  => 'Group',
-          'foreignKey' => 'group_id',
-          //'order' => 'Rule.order ASC'
-          )
-      );
+  var $hasAndBelongsToMany = array(
+    'Group' => array(
+      'className' => 'Amanager.Group'
+    )
+  );
 
 /**
  * hasMany associations
@@ -28,15 +26,9 @@ class Rule extends AmanagerAppModel {
   var $hasMany = array(
     'Action' => array(
       'className' => 'Action',
-      'exclusive' => false,
-      'dependent' => false,
-      'foreignKey' => 'rule_id',
       'dependent'     => true,
-      //'order' => 'Rule.order ASC'
     )
   );
-
-
 
   function getRules($group_ids, $cleanRegex = false) {
       if(is_array($group_ids)){ //if no group get rules for the all users (with group_id is null)

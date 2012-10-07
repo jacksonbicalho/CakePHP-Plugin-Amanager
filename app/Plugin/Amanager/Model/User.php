@@ -51,26 +51,18 @@ class User extends AmanagerAppModel {
  */
   var $hasAndBelongsToMany = array(
     'Group' => array(
-      'className' => 'Group',
-      'joinTable' => 'groups_users',
-      'foreignKey' => 'user_id',
-      'associationForeignKey' => 'group_id',
-      'conditions' => '',
-      'fields' => '',
-      'order' => '',
-      'limit' => '',
-      'offset' => '',
-      'finderQuery' => '',
-      'deleteQuery' => '',
-      'insertQuery' => ''
+      'className' => 'Amanager.Group'
     ),
   );
 
   public function beforeSave($options = array()) {
-    //$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+    $this->data['User']['password'] = $this->encripty_password( $this->data['User']['password'], $this->data['User']['username'] );
     return true;
   }
 
+  public function encripty_password($password, $username) {
+    return Security::hash( $password, 'sha1', Configure::read('Security.key') . $username );
 
+  }
 
 }

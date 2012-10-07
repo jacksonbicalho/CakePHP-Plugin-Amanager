@@ -4,7 +4,8 @@ $menu['Amanager']['class'] = 'Amanager';
 $menu['Users']['class'] = 'Users';
 $menu['Groups']['class'] = 'Groups';
 $menu['Rules']['class'] = 'Rules';
-$menu[$this->name]['class'] .= ' active';
+if(isset($menu[$this->name]))
+  $menu[$this->name]['class'] .= ' active';
 ?>
 
 <?php echo $this->Html->script('jquery/plugins/bootstrap-dropdown', array('inline' => false)); // Include jQuery library  ?>

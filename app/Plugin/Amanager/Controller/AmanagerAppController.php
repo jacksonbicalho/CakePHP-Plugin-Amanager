@@ -1,7 +1,11 @@
 <?php
 
 class AmanagerAppController extends AppController {
-  var $components = array('Session', 'RequestHandler', 'Amanager.Ctrl');
+  var $components = array(
+   'Session',
+   'RequestHandler',
+   'Amanager.Ctrl'
+  );
   public $theme = 'Amanager';
   public $helpers = array(
     'Form',
@@ -10,7 +14,6 @@ class AmanagerAppController extends AppController {
     'Session',
     'Js',
   );
-
 
 }
 
