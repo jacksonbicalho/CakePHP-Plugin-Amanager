@@ -55,6 +55,15 @@ class AmanagerComponent extends Component {
 
   function initialize(&$controller) {
 
+    if( $controller->name == 'Users' && $controller->action == 'login' ){
+      if( $this->is_logged() ){
+
+        $url = $this->previous_url();
+
+        $controller->redirect( urldecode(Router::url($url + array('base' => false))) );
+      }
+    }
+
     $this->controller = $controller;
 
     //$controller->Auth = $controller->Components->load('Auth', $AuthConfig);
@@ -63,6 +72,8 @@ class AmanagerComponent extends Component {
   }
 
   function startup(&$controller = null) {
+
+    $this->previous_url($controller->request->params);
 
     if( isset($this->settings->login_action) )
       $this->login_action = $this->settings->login_action;
@@ -87,19 +98,32 @@ class AmanagerComponent extends Component {
 
   public function login($data_login){
     $this->Session->write('Amanager', $data_login);
+
+    $this->controller->redirect($this->login_redirect);
   }
-  public function logged(){
-    return $this->Session->read('Amanager')?true:false;
+
+  public function is_logged(){
+    return $this->Session->read('Amanager.User')?true:false;
   }
+
   public function previous_url($url = null){
+    if( !$url )
+      return $this->Session->read('Amanager.previous_url')?$this->Session->read('Amanager.previous_url'):false;
 
+      $this->Session->write('Amanager.previous_url', $url);
   }
+
   public function logout() {
-    $this->Session->delete('Amanager');
-    $this->Session->setFlash(__('Você foi desconectado do sistema'));
-    $this->redirect($this->logout_redirect);
-  }
 
+    if(!$this->is_logged()){
+      $this->Session->setFlash(__('Você tentou acessar um endereço não acessível neste momento'));
+      $this->controller->redirect($this->logout_redirect);
+    }
+
+    $this->Session->delete('Amanager');
+    $this->Session->setFlash(__('Você foi desconectado do sistema'), 'message/warning');
+    $this->controller->redirect($this->logout_redirect);
+  }
 
 }
 

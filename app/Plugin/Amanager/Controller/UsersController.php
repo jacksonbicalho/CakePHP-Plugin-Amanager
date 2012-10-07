@@ -109,7 +109,8 @@ class UsersController extends AmanagerAppController {
 	}
 
   public function login() {
-      $this->User->recursive = 3;
+
+    $this->User->recursive = 3;
     if ($this->request->is('post')) {
       $password = $this->User->encripty_password( $this->request->data['User']['password'], $this->request->data['User']['username'] );
       $username = $this->request->data['User']['username'];
@@ -121,15 +122,16 @@ class UsersController extends AmanagerAppController {
       }
 
       $this->Amanager->login($data_login);
-      pr( $this->Session->read('Amanager') );
+
     }
   }
 
   public function logout() {
-      $this->redirect($this->Amanager->logout());
+      $this->Amanager->logout();
   }
 
   public function beforeFilter() {
+
     $this->Security->blackHoleCallback = 'blackhole';
     parent::beforeFilter();
   }
