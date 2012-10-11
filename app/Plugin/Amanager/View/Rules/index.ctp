@@ -15,7 +15,7 @@
     <?php foreach ($rules as $k => $rule): ?>
       <tr id="Rule_<?php echo $rule['Rule']['id']; ?>">
         <td class="cancel"><?php echo $rule['Rule']['name']; ?></td>
-        <td class="cancel"><?php pr( $rule['Group'] ); ?></td>
+        <td class="cancel"><?php //pr( $rule['Group'] ); ?></td>
         <td class="cancel">
           <div id="actions_<?php echo $rule['Rule']['id']; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 

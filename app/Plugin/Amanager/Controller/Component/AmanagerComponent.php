@@ -66,9 +66,9 @@ class AmanagerComponent extends Component {
 
     $this->controller = $controller;
 
-    //$controller->Auth = $controller->Components->load('Auth', $AuthConfig);
+    // Verifica se o usuário tem permissão para a área
+    $this->isAllowed($this->controller->request->params);
 
-    //$controller->Auth->allow('*');
   }
 
   function startup(&$controller = null) {
@@ -123,6 +123,39 @@ class AmanagerComponent extends Component {
     $this->Session->delete('Amanager');
     $this->Session->setFlash(__('Você foi desconectado do sistema'), 'message/warning');
     $this->controller->redirect($this->logout_redirect);
+  }
+
+
+
+  // Função que checa se o(s) grupo(s) do usuário logado
+  //... tem acesso a área solicitada
+  function isAllowed($params = null) {
+
+pr($params);
+die('#EASWQ321');
+
+
+    $groups = $this->Session->read('Amanager.Group');
+    $alow = false;
+    foreach( $groups as $group ){
+      $rules = Hash::sort($group['Rule'], '{n}.order', 'asc');
+      foreach( $rules as $actions ){
+        foreach( $actions['Action'] as $action ){
+          $permission = Router::parse($action['alias'], false);
+          $result = Hash::diff($permission, $params);
+          $action_alow =  $action['alow'];
+          if( !$result && $action_alow ){
+            $alow = true;
+          }
+          if( !$result && $action_alow == null ){
+            $alow = false;
+          }
+        }
+      }
+    }
+
+    return $alow;
+
   }
 
 }
