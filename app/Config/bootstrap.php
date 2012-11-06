@@ -180,4 +180,6 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-CakePlugin::loadAll(); // Loads all plugins at once
+CakePlugin::loadAll(array(
+  'Amanager' => array('bootstrap' => true),
+));

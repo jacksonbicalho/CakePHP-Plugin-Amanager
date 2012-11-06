@@ -4514,3 +4514,276 @@
 #3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-10-14 19:59:22 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 74]
+2012-10-14 19:59:22 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 74)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 74, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 74, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 20:02:00 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-14 20:40:04 Error: Fatal Error (4): syntax error, unexpected T_IF, expecting T_FUNCTION in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 69]
+2012-10-14 20:40:04 Error: [FatalErrorException] syntax error, unexpected T_IF, expecting T_FUNCTION
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 20:40:06 Error: Fatal Error (4): syntax error, unexpected T_IF, expecting T_FUNCTION in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 69]
+2012-10-14 20:40:06 Error: [FatalErrorException] syntax error, unexpected T_IF, expecting T_FUNCTION
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 20:40:19 Error: Fatal Error (4): syntax error, unexpected T_IF, expecting T_FUNCTION in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 69]
+2012-10-14 20:40:19 Error: [FatalErrorException] syntax error, unexpected T_IF, expecting T_FUNCTION
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 20:40:36 Error: Fatal Error (4): syntax error, unexpected T_IF, expecting T_FUNCTION in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 69]
+2012-10-14 20:40:36 Error: [FatalErrorException] syntax error, unexpected T_IF, expecting T_FUNCTION
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 69, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 20:47:17 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/ealbum/app/Config/bootstrap.php, line 183]
+2012-10-14 20:47:17 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 183)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 183, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 183, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 20:48:25 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 57]
+2012-10-14 20:48:25 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 57, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:52:59 Error: [MissingControllerException] Controller class UserController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-31 19:54:47 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:54:47 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:55:18 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:55:18 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:55:21 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:55:21 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:55:24 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:55:24 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:56:32 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:56:33 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:56:34 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:56:34 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:56:35 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:56:35 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:56:35 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:56:35 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:56:35 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:56:35 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 19:56:35 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 76]
+2012-10-31 19:56:35 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 76)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 76, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 20:28:35 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 79]
+2012-10-31 20:28:35 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 79)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 79, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 79, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-31 20:28:47 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 79]
+2012-10-31 20:28:47 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 79)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 79, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 79, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:32:21 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 152]
+2012-11-05 22:32:21 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 152)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 152, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 152, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:45:25 Error: Fatal Error (4): syntax error, unexpected T_FOREACH in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 195]
+2012-11-05 22:45:25 Error: [FatalErrorException] syntax error, unexpected T_FOREACH
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 195)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:46:01 Error: Fatal Error (4): syntax error, unexpected T_FOREACH in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 195]
+2012-11-05 22:46:01 Error: [FatalErrorException] syntax error, unexpected T_FOREACH
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 195)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:46:13 Error: Fatal Error (4): syntax error, unexpected T_FOREACH in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 195]
+2012-11-05 22:46:13 Error: [FatalErrorException] syntax error, unexpected T_FOREACH
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 195)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:46:15 Error: Fatal Error (4): syntax error, unexpected T_FOREACH in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 195]
+2012-11-05 22:46:15 Error: [FatalErrorException] syntax error, unexpected T_FOREACH
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 195)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:46:16 Error: Fatal Error (4): syntax error, unexpected T_FOREACH in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 195]
+2012-11-05 22:46:16 Error: [FatalErrorException] syntax error, unexpected T_FOREACH
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 195)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:46:31 Error: Fatal Error (4): syntax error, unexpected T_FOREACH in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 195]
+2012-11-05 22:46:31 Error: [FatalErrorException] syntax error, unexpected T_FOREACH
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 195)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 195, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:56:23 Error: Fatal Error (1): Unsupported operand types in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 115]
+2012-11-05 22:56:23 Error: [FatalErrorException] Unsupported operand types
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Unsupported ope...', '/var/www/ealbum...', 115)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', '/var/www/ealbum...', 115, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', '/var/www/ealbum...', 115, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:59:01 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 174]
+2012-11-05 22:59:01 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 174)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 174, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 174, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 22:59:06 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 169]
+2012-11-05 22:59:06 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 169)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 23:01:58 Error: [MissingControllerException] Controller class LoginController could not be found.
+#0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-05 23:09:27 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 169]
+2012-11-05 23:09:27 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 169)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 23:11:13 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 169]
+2012-11-05 23:11:13 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 169)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 23:11:15 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 169]
+2012-11-05 23:11:15 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 169)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-05 23:11:16 Error: Fatal Error (1): Call to a member function redirect() on a non-object in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 169]
+2012-11-05 23:11:16 Error: [FatalErrorException] Call to a member function redirect() on a non-object
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/ealbum...', 169)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/ealbum...', 169, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

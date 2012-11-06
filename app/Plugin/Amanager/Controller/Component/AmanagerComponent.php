@@ -17,7 +17,10 @@ class AmanagerComponent extends Component {
   var $controller;
 
 /**
- * loginAction
+ *
+ * Armazena a url responsável por exibir o formulário de login.
+ *
+ * login_action
  *
  * @var array
  */
@@ -28,7 +31,11 @@ class AmanagerComponent extends Component {
   );
 
 /**
- * loginRedirect
+ *
+ * Armazena a url para onde o usuário é redirecionado após o login.
+ * A ideia é que a mesma só seja usada se previous_url estiver vazio.
+ *
+ * login_redirect
  *
  * @var array
  */
@@ -39,7 +46,10 @@ class AmanagerComponent extends Component {
   );
 
 /**
- * logoutRedirect
+ *
+ * Armazena a url para onde o usuário é redirecionado após se deslogar do sistema.
+ *
+ * logout_redirect
  *
  * @var array
  */
@@ -49,11 +59,53 @@ class AmanagerComponent extends Component {
     'action'=>'display'
   );
 
+/**
+ *
+ * Armazena a url para onde o usuário é redirecionado quando o mesmo não tem acesso ao endereço
+ * acessado.
+ *
+ * access_denied
+ *
+ * @var array
+ */
+  var $access_denied = array(
+    'controller'=>'pages',
+    'plugin' => false,
+    'action'=>'display'
+  );
+
   function __construct(ComponentCollection $collection, $settings = array()) {
     parent::__construct($collection, $settings);
   }
 
-  function initialize(&$controller) {
+
+
+
+/**
+ *
+ * Método acionado pelo controlador do projeto
+ *
+ * beforeFilter method
+ *
+ * @param object $controller
+ * @return void
+ *
+ **/
+  function beforeFilter(&$controller) {
+
+    // Verifica se o usuário tem permissão para a área
+    if( !$this->isAllowed($controller->request->params) ){
+        echo 'Não pode!';
+    }else{
+      if( $this->is_logged() ){
+
+        $this->Session->setFlash(__('Acesso negado!'), 'message/error');
+        $url = $this->previous_url();
+
+        if(!$url) $url =$this->login_redirect;
+        $controller->redirect( urldecode(Router::url($url + array('base' => false))) );
+      }
+    }
 
     if( $controller->name == 'Users' && $controller->action == 'login' ){
       if( $this->is_logged() ){
@@ -64,11 +116,10 @@ class AmanagerComponent extends Component {
       }
     }
 
+  }
+
+  function initialize(&$controller) {
     $this->controller = $controller;
-
-    // Verifica se o usuário tem permissão para a área
-    $this->isAllowed($this->controller->request->params);
-
   }
 
   function startup(&$controller = null) {
@@ -109,7 +160,6 @@ class AmanagerComponent extends Component {
   public function previous_url($url = null){
     if( !$url )
       return $this->Session->read('Amanager.previous_url')?$this->Session->read('Amanager.previous_url'):false;
-
       $this->Session->write('Amanager.previous_url', $url);
   }
 
@@ -131,11 +181,18 @@ class AmanagerComponent extends Component {
   //... tem acesso a área solicitada
   function isAllowed($params = null) {
 
-pr($params);
-die('#EASWQ321');
+    $urls_livres = Configure::read('Amanager.urls_livres');
+    unset($params['named']);
+    unset($params['pass']);
+    if( empty($params['plugin']) ) unset( $params['plugin'] );
+    foreach($urls_livres as $url_livre){
+      $result = Hash::diff($url_livre, $params);;
 
+      if(!$result) return true;
+    }
 
     $groups = $this->Session->read('Amanager.Group');
+    if(!$groups) return false;
     $alow = false;
     foreach( $groups as $group ){
       $rules = Hash::sort($group['Rule'], '{n}.order', 'asc');

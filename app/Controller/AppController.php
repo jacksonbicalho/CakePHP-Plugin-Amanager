@@ -40,4 +40,8 @@ class AppController extends Controller {
     ),
   );
 
+  public function beforeFilter(){
+    $this->Amanager->beforeFilter($this);
+  }
+
 }
