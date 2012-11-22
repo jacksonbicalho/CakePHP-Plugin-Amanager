@@ -34,7 +34,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
   var $components = array(
     'Amanager.Amanager' => array(
-      'login_action' => array('controller'=>'users', 'plugin' => 'amanager', 'action'=>'login' ),
+      'login_action' => array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager'),
       'login_redirect' => array('controller'=>'amanager', 'plugin' => 'amanager', 'action'=>'index' ),
       'logout_redirect' => array('controller'=>'pages', 'plugin' => false, 'action'=>'display' )
     ),

@@ -4787,3 +4787,51 @@
 #3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-11-22 14:53:40 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 96]
+2012-11-22 14:53:40 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 96)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 96, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 96, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-22 15:15:58 Error: Fatal Error (1): Call to undefined method UsersController::previous_url() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 147]
+2012-11-22 15:15:58 Error: [FatalErrorException] Call to undefined method UsersController::previous_url()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 147)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 147, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 147, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-22 15:29:30 Error: Fatal Error (1): Call to undefined method UsersController::previous_url() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 147]
+2012-11-22 15:29:30 Error: [FatalErrorException] Call to undefined method UsersController::previous_url()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 147)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 147, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 147, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-22 15:35:27 Error: Fatal Error (1): Call to undefined method AmanagerComponent::url_prev() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 105]
+2012-11-22 15:35:27 Error: [FatalErrorException] Call to undefined method AmanagerComponent::url_prev()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 105)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 105, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 105, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-22 15:35:52 Error: Fatal Error (1): Call to undefined method AmanagerComponent::previous_url() in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 111]
+2012-11-22 15:35:52 Error: [FatalErrorException] Call to undefined method AmanagerComponent::previous_url()
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/ealbum...', 111)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/ealbum...', 111, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/ealbum...', 111, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-11-22 16:04:51 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/ealbum/app/Plugin/Amanager/Controller/Component/AmanagerComponent.php, line 112]
+2012-11-22 16:04:51 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 112)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 112, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 112, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

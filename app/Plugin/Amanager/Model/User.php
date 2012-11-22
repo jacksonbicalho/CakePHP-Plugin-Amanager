@@ -61,8 +61,7 @@ class User extends AmanagerAppModel {
   }
 
   public function encripty_password($password, $username) {
-    return Security::hash( $password, 'sha1', Configure::read('Security.key') . $username );
-
+    return md5($password . $username);
   }
 
 }

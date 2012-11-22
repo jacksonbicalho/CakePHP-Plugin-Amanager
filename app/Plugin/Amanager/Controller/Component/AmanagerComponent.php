@@ -69,17 +69,24 @@ class AmanagerComponent extends Component {
  * @var array
  */
   var $access_denied = array(
-    'controller'=>'pages',
-    'plugin' => false,
-    'action'=>'display'
+    'controller'=>'users',
+    'action'=>'access_denied',
+    'plugin'=>'amanager'
   );
+
+/**
+ *
+ * Armazena a url anterior a atual para ser usada em redirecionamentos
+ *
+ * url_prev
+ *
+ * @var array
+ */
+  var $url_prev = array();
 
   function __construct(ComponentCollection $collection, $settings = array()) {
     parent::__construct($collection, $settings);
   }
-
-
-
 
 /**
  *
@@ -95,25 +102,25 @@ class AmanagerComponent extends Component {
 
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
-        echo 'Não pode!';
-    }else{
+      $this->url_prev = $controller->request->params;
+
       if( $this->is_logged() ){
 
         $this->Session->setFlash(__('Acesso negado!'), 'message/error');
-        $url = $this->previous_url();
 
-        if(!$url) $url =$this->login_redirect;
-        $controller->redirect( urldecode(Router::url($url + array('base' => false))) );
+        if(
+            $controller->request->params['action'] != $this->access_denied['action']
+            or $controller->request->params['controller'] != $this->access_denied['controller']
+            or $controller->request->params['plugin'] != $this->access_denied['plugin']
+          )
+        {
+          $this->controller->redirect( $this->access_denied );
+
+        }
+
       }
-    }
 
-    if( $controller->name == 'Users' && $controller->action == 'login' ){
-      if( $this->is_logged() ){
-
-        $url = $this->previous_url();
-
-        $controller->redirect( urldecode(Router::url($url + array('base' => false))) );
-      }
+      $this->controller->redirect( $this->login_action );
     }
 
   }
@@ -123,8 +130,6 @@ class AmanagerComponent extends Component {
   }
 
   function startup(&$controller = null) {
-
-    $this->previous_url($controller->request->params);
 
     if( isset($this->settings->login_action) )
       $this->login_action = $this->settings->login_action;
@@ -137,30 +142,13 @@ class AmanagerComponent extends Component {
 
   }
 
-  public function auth(&$controller) {
-    //$controller->Auth->allow('*');
-    //pr($controller->request->params);
-  }
-
-  public function redirect() {
-    $this->controller->redirect($this->login_redirect);
-  }
-
-
   public function login($data_login){
     $this->Session->write('Amanager', $data_login);
-
-    $this->controller->redirect($this->login_redirect);
+    $this->controller->redirect($this->url_prev);
   }
 
   public function is_logged(){
     return $this->Session->read('Amanager.User')?true:false;
-  }
-
-  public function previous_url($url = null){
-    if( !$url )
-      return $this->Session->read('Amanager.previous_url')?$this->Session->read('Amanager.previous_url'):false;
-      $this->Session->write('Amanager.previous_url', $url);
   }
 
   public function logout() {
@@ -180,7 +168,6 @@ class AmanagerComponent extends Component {
   // Função que checa se o(s) grupo(s) do usuário logado
   //... tem acesso a área solicitada
   function isAllowed($params = null) {
-
     $urls_livres = Configure::read('Amanager.urls_livres');
     unset($params['named']);
     unset($params['pass']);
@@ -192,6 +179,9 @@ class AmanagerComponent extends Component {
     }
 
     $groups = $this->Session->read('Amanager.Group');
+    $adm = Set::extract('{n}/.[name=administrators]',  $groups );
+    if($adm)  return true ;
+
     if(!$groups) return false;
     $alow = false;
     foreach( $groups as $group ){

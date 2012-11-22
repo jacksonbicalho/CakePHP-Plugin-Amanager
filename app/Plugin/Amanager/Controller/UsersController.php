@@ -7,9 +7,9 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
  */
 class UsersController extends AmanagerAppController {
   public $components = array(
-   'Security' => array(
-      'csrfCheck' =>false // Permite que seja feita n tentativas de requisições (Alterar!)
-    )
+   //'Security' => array(
+    //  'csrfCheck' =>false // Permite que seja feita n tentativas de requisições (Alterar!)
+    //)
   );
 
 /**
@@ -130,15 +130,10 @@ class UsersController extends AmanagerAppController {
       $this->Amanager->logout();
   }
 
-  public function beforeFilter() {
+  public function access_denied() { }
 
-    $this->Security->blackHoleCallback = 'blackhole';
+  public function beforeFilter() {
     parent::beforeFilter();
   }
-
-  public function blackhole($type) {
-      die("Erro: Informe o administrador: (". $type . ")");
-  }
-
 
 }
