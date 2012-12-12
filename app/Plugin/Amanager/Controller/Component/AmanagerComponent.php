@@ -102,6 +102,9 @@ class AmanagerComponent extends Component {
 
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
+
+      $this->Session->write('Amanager.url_prev', $controller->request->params);
+
       $this->url_prev = $controller->request->params;
 
       if( $this->is_logged() ){
@@ -119,7 +122,6 @@ class AmanagerComponent extends Component {
         }
 
       }
-
       $this->controller->redirect( $this->login_action );
     }
 
@@ -143,6 +145,7 @@ class AmanagerComponent extends Component {
   }
 
   public function login($data_login){
+    $this->url_prev = $this->Session->read('Amanager.url_prev');
     $this->Session->write('Amanager', $data_login);
     $this->controller->redirect($this->url_prev);
   }
