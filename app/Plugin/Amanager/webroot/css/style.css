@@ -108,3 +108,25 @@ table.table tbody#sortable.ui-sortable tr td.reorder{
   cursor:all-scroll;
 }
 
+
+/** containers **/
+div#main.container div.form,
+div#main.container div.index,
+div#main.container div.view {
+	float:right;
+	width:76%;
+	border-left:1px solid #666;
+	padding:10px 2%;
+}
+div#main.containerdiv.actions {
+	float:left;
+	width:16%;
+	padding:10px 1.5%;
+}
+
+footer {
+	clear: both;
+	padding: 6px 10px;
+}
+
+

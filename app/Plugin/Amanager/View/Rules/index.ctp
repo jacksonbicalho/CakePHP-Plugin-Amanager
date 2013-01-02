@@ -3,7 +3,7 @@
 
     <h2><?php echo __('Rules');?></h2>
 
-    <table class="table table-bordered table-striped" cellpadding="0" cellspacing="0">
+    <table class="table table-bordered table-striped">
       <tr>
         <th><?php echo __('Name');?></th>
         <th><?php echo __('Group');?></th>
