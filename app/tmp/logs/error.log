@@ -4895,3 +4895,18 @@
 2013-01-02 15:16:50 Error: [MissingControllerException] Controller class CssController could not be found.
 #0 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-01-02 16:07:35 Error: Fatal Error (4): syntax error, unexpected T_ENDIF in [/var/www/ealbum/app/Plugin/Amanager/View/Users/view.ctp, line 84]
+2013-01-02 16:07:35 Error: [FatalErrorException] syntax error, unexpected T_ENDIF
+#0 /var/www/ealbum/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/ealbum...', 84)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/ealbum...', 84, Array)
+#2 /var/www/ealbum/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/ealbum...', 84, Array)
+#3 /var/www/ealbum/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-01-02 17:01:43 Error: [NotFoundException] Invalid user
+#0 [internal function]: UsersController->edit('4')
+#1 /var/www/ealbum/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/ealbum/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ealbum/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

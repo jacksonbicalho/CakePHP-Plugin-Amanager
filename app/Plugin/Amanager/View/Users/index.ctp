@@ -6,7 +6,7 @@
 	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
 	));
 	?></p>
-  <table class="table table-bordered table-striped" cellpadding="0" cellspacing="0">
+  <table class="table table-bordered table-striped">
     <tr>
         <th><?php echo $this->Paginator->sort('id'); ?></th>
         <th><?php echo $this->Paginator->sort('username', __('User Name', true)); ?></th>
@@ -41,8 +41,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New User'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
+		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+		<li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('New Group'), array('controller' => 'groups', 'action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?> </li>
 	</ul>
 </div>

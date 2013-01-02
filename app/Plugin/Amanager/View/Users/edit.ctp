@@ -18,9 +18,9 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Form->postLink('<i class="icon-white icon-trash"></i>  ' . __('Delete'), array('action' => 'delete', $this->Form->value('User.id')), array('escape'=>false, 'class'=>'btn btn-danger'), __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
+		<li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('List Users'), array('action' => 'index'), array('escape'=>false, 'class'=>'btn')); ?></li>
+		<li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('escape'=>false, 'class'=>'btn')); ?> </li>
+		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New Group'), array('controller' => 'groups', 'action' => 'add'), array('escape'=>false, 'class'=>'btn')); ?> </li>
 	</ul>
 </div>

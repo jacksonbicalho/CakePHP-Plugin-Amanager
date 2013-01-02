@@ -11,14 +11,15 @@
 		echo $this->Form->input('group_id');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->button('<i class="icon-white icon-plus-sign"></i>  ' . __('Submit'), array('type' => 'submit', 'class'=>'btn btn-primary'), array('escape'=>false) );  ?>
+<?php echo $this->Form->end(); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('List Users'), array('controller' => 'users', 'action' => 'index'), array('escape'=>false, 'class'=>'btn')); ?> </li>
+		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+		<li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('New Group'), array('controller' => 'groups', 'action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?> </li>
 	</ul>
 </div>
