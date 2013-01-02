@@ -118,15 +118,42 @@ div#main.container div.view {
 	border-left:1px solid #666;
 	padding:10px 2%;
 }
-div#main.containerdiv.actions {
+
+/**  Actions  **/
+div#main.container div.actions {
 	float:left;
 	width:16%;
 	padding:10px 1.5%;
 }
+div#main.container .actions ul {
+	margin: 0;
+	padding: 0;
+}
+div#main.container .actions li {
+	margin:0 0 0.5em 0;
+	list-style-type: none;
+	white-space: nowrap;
+	padding: 0;
+}
+div#main.container div.actions ul li a.btn{
+  width:95%;
+  text-align:left;
+}
 
+
+/** Related **/
+.related {
+	clear: both;
+	display: block;
+}
+
+
+/**  Footer  **/
 footer {
 	clear: both;
 	padding: 6px 10px;
 }
 
-
+.icon-white{
+  background-image: url("TwitterBootstrap/img/glyphicons-halflings-white.png");
+}
