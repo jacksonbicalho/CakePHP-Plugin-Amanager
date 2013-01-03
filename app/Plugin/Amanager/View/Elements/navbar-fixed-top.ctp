@@ -30,6 +30,17 @@ if(isset($menu[$this->name]))
                 <?php echo $this->Html->link( __('Manger Rules', true), array('controller'=>'rules', 'action'=>'index', 'plugin'=>'amanager')); ?>
               </li>
             </ul>
+            <?php if ($this->Amanager->is_logged()){ ?>
+              <ul class="nav pull-right">
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->Amanager->get_user_info('email'); ?><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li><?php echo $this->Html->link(__('Logout'), array('plugin'=>'amanager','controller'=> 'users', 'action'=>'logout')); ?></li>
+                  </ul>
+                </li>
+              </ul>
+            <?php } ?>
           </div>
         </div>
       </div>
