@@ -1,0 +1,20 @@
+* {margin:0;padding:0;}
+body {
+  padding-bottom: 40px;
+  padding-top: 60px;
+}
+
+div#main.container div#amanager-index.amanager img{
+  float:right;
+}
+
+
+table.table tbody tr th.actions{
+  width:195px;
+}
+
+
+
+
+
+
