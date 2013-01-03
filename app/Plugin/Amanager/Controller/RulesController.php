@@ -8,8 +8,15 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
 class RulesController extends AmanagerAppController {
 
   function index() {
-    //$this->Rule->recursive = 2;
-    $this->set('rules', $this->Rule->find('all', array('order'=>'order')));
+
+    $this->paginate = array(
+      'order' => array(
+        'Rule.order' => 'asc'
+      )
+    );
+
+		$this->set('rules', $this->paginate());
+    //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
   }
 
   function view($id = null) {

@@ -1,8 +1,5 @@
-<div id="authake">
   <div class="rules index">
-
     <h2><?php echo __('Rules');?></h2>
-
     <table class="table table-bordered table-striped">
       <tr>
         <th><?php echo __('Name');?></th>
@@ -48,6 +45,25 @@
     <?php endforeach; ?>
       </tbody>
     </table>
+    <div class="paging">
+    <?php
+      echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+      echo $this->Paginator->numbers(array('separator' => ''));
+      echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+    ?>
+    </div>
   </div>
-</div>
+  <div class="actions">
+    <h3><?php echo __('Actions'); ?></h3>
+    <ul>
+      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New Ruler'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
+
+      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Users'), array('controller' => 'users', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+
+      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New User'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
+
+      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+      <li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('New Group'), array('controller' => 'groups', 'action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+    </ul>
+  </div>
 <?php echo $this->element('sortable', array('plugin' => 'Amanager')); ?>

@@ -102,6 +102,13 @@ if(!$plugin)
       'log',
     );
 
+echo '<pre>';
+  var_dump($aMethods);
+echo '</pre>';
+die('#DEFRG5421879');
+
+
+/*
     if($aMethods){
       foreach ($aMethods as $idx => $method) {
         $methods[$method] = $method;
@@ -114,8 +121,8 @@ if(!$plugin)
 
       }
     }
-
-    return $methods;
+*/
+   // return $methods;
 
   }
 
