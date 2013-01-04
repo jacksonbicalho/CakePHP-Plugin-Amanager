@@ -8,17 +8,18 @@ Desenvolvido e testado no cakePHP 2.2.2
 Amanager é um plugin gerenciador de acesso
 
 Principais características
-============================
-1 - Gerencianto de grupos
-2 - Gerenciamento de usuários (Podendo esses pertencerem a um ou mais grupos)
-3 - Gerenciamento de regras (que são atribuídas a um ou mais grupos)
+---------------------------
+
+1. Gerencianto de grupos
+2. Gerenciamento de usuários (Podendo esses pertencerem a um ou mais grupos)
+3. Gerenciamento de regras (que são atribuídas a um ou mais grupos)
 
 Instalação
-==========
+-----------
 
-1 - Em seu projeto entre em app/Plugin
-2 - Usando o git digite git clone git@github.com:jacksonbicalho/Amanager.git ou baixe o Plugin (https://github.com/jacksonbicalho/Amanager/archive/master.zip) e descompacte na mesmo diretório
-3 - Em seu AppController insira
+1. Em seu projeto entre em app/Plugin
+2. Usando o git digite git clone git@github.com:jacksonbicalho/Amanager.git ou baixe o Plugin (https://github.com/jacksonbicalho/Amanager/archive/master.zip) e descompacte na mesmo diretório
+3. Em seu AppController insira
 
   var $components = array(
     'Amanager.Amanager' => array(
