@@ -25,7 +25,7 @@ class Rule extends AmanagerAppModel {
  */
   var $hasMany = array(
     'Action' => array(
-      'className' => 'Action',
+      'className' => 'Amanager.Action',
       'dependent'     => true,
     )
   );
