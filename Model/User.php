@@ -23,7 +23,7 @@ class User extends AmanagerAppModel {
 		'username' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Nome de usuário não pode ficar em branco',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -33,7 +33,17 @@ class User extends AmanagerAppModel {
 		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Senha não pode ficar em branco',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'email' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'E-mail não pode ficar em branco',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -62,6 +72,20 @@ class User extends AmanagerAppModel {
 
   public function encripty_password($password, $username) {
     return md5($password . $username);
+  }
+
+/**
+ * password_generator method
+ *
+ * Gera uma senha com a quantidade de caracteres passada no parâmetro $size
+ * Se o parâmetro não for informado, a quantidade de 10 caracteres é assumida
+ *
+ * @params integer $size
+ *
+ * @var array
+ */
+  public function password_generator($size = 10) {
+    return substr( str_shuffle( 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$' ) , 0 , $size );
   }
 
 }
