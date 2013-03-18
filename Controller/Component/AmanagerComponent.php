@@ -1,5 +1,7 @@
 <?php
 App::uses('Controller', 'Controller');
+App::uses('AmanagerAppModel', 'Amanager.Model');
+
 class AmanagerComponent extends Component {
 
 /**
@@ -166,8 +168,6 @@ class AmanagerComponent extends Component {
     $this->controller->redirect($this->logout_redirect);
   }
 
-
-
   // Função que checa se o(s) grupo(s) do usuário logado
   //... tem acesso a área solicitada
   function isAllowed($params = null) {
@@ -206,6 +206,103 @@ class AmanagerComponent extends Component {
 
     return $alow;
 
+  }
+
+/**
+ * password_generator method
+ *
+ * Gera uma senha com a quantidade de caracteres passada no parâmetro $size
+ * Se o parâmetro não for informado, a quantidade de 10 caracteres é assumida
+ *
+ * @params integer $size
+ *
+ */
+  public function password_generator($size = 10) {
+    return substr( str_shuffle( 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$' ) , 0 , $size );
+  }
+
+  /* :: API :: */
+
+/**
+ *
+ * Valida os dados enviados de outro modelo
+ *
+ * valida_user method
+ *
+ * @param object $model
+ * @param array $dados
+ * @return boolean true or array $errors
+ *
+ **/
+  public function valida_user( $dados ) {
+
+    $return = array();
+
+    if ( !isset( $dados['User'] ) ){
+      $return['erro'][] = 'O índice User não foi encontrado no array de dados enviado. Por favor informe ao administrador do sistema este erro. [#ShekyuAds9';
+      return $return;
+    }
+
+    App::import('Model', 'Amanager.User');
+    $User = new User();
+    $User->set($dados);
+    if( ! $User->validates() ) {
+      $erros = $User->invalidFields();
+      foreach( $erros as $key => $var ){
+        $return['erro'][$key] = $erros[$key][0];
+      }
+      return $return;
+    }
+
+    return true;
+
+  }
+
+/**
+ *
+ * Insere um usuário enviado de fora do Plugin
+ *
+ * add_user method
+ *
+ * @param array $user
+ * @return integer with the user id or false
+ *
+ **/
+  public function add_user( $user ) {
+
+    if ( !isset( $user['User'] ) ){
+      return false;;
+    }
+
+    App::import('Model', 'Amanager.User');
+    $User = new User();
+    $User->create();
+    if ($User->save( $user )) {
+      $user = $User->read();
+      $user_id = $user['User']['id'];
+      return $user_id;
+    } else {
+      return false;
+    }
+      return false;
+  }
+
+/**
+ *
+ * get_id_group method
+ *
+ * Obtém o id do grupo de acordo com o nome passado
+ *
+ * @param string $nome
+ * @return integer $id
+ *
+ **/
+  public function get_id_group( $nome ) {
+
+    App::import('Model', 'Amanager.Group');
+    $Group = new Group();
+    $group = $Group->findByName($nome);
+    return $group['Group']['id'];
   }
 
 }
