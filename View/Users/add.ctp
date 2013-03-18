@@ -8,7 +8,7 @@
 		echo $this->Form->input('email');
 		echo $this->Form->input('passwordchangecode');
 		echo $this->Form->input('status');
-		echo $this->Form->input('group_id');
+		echo $this->Form->input('group');
 	?>
 	</fieldset>
 <?php echo $this->Form->button('<i class="icon-white icon-plus-sign"></i>  ' . __('Submit'), array('type' => 'submit', 'class'=>'btn btn-primary'), array('escape'=>false) );  ?>

@@ -9,7 +9,7 @@
 		echo $this->Form->input('email');
 		echo $this->Form->input('passwordchangecode');
 		echo $this->Form->input('status');
-		echo $this->Form->input('group_id');
+		echo $this->Form->input('Group');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
