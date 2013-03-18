@@ -21,14 +21,15 @@ class User extends AmanagerAppModel {
  */
 	public $validate = array(
 		'username' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Nome de usuário não pode ficar em branco',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+      'notempty' => array(
+        'rule'     => 'notempty',
+        'required' => true,
+        'message'  => 'Nome de usuário é obrigatório'
+      ),
+      'username-unique' => array(
+        'rule'    => 'isUnique',
+        'message' => 'Nome de usuário digitado já encontra-se cadastrado em nosso sistema'
+      )
 		),
 		'password' => array(
 			'notempty' => array(
@@ -41,14 +42,20 @@ class User extends AmanagerAppModel {
 			),
 		),
 		'email' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'E-mail não pode ficar em branco',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+      'notempty' => array(
+        'rule'     => 'notempty',
+        'required' => true,
+        'message'  => 'E-mail é obrigatório'
+      ),
+      'email' => array(
+        'rule'     => 'email',
+        'required' => true,
+        'message'  => 'O endereço digitado nẽo é um e-mail válido'
+      ),
+      'email-unique' => array(
+        'rule'    => 'isUnique',
+        'message' => 'O e-mail digitado já encontra-se cadastrado em nosso sistema'
+      )
 		),
 	);
 
@@ -65,6 +72,27 @@ class User extends AmanagerAppModel {
     ),
   );
 
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'EntitysUser' => array(
+			'className' => 'Amanager.EntitysUser',
+			'foreignKey' => 'user_id',
+			'dependent' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
   public function beforeSave($options = array()) {
     $this->data['User']['password'] = $this->encripty_password( $this->data['User']['password'], $this->data['User']['username'] );
     return true;
@@ -72,20 +100,6 @@ class User extends AmanagerAppModel {
 
   public function encripty_password($password, $username) {
     return md5($password . $username);
-  }
-
-/**
- * password_generator method
- *
- * Gera uma senha com a quantidade de caracteres passada no parâmetro $size
- * Se o parâmetro não for informado, a quantidade de 10 caracteres é assumida
- *
- * @params integer $size
- *
- * @var array
- */
-  public function password_generator($size = 10) {
-    return substr( str_shuffle( 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$' ) , 0 , $size );
   }
 
 }
