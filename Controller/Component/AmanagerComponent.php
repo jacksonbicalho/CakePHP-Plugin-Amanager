@@ -305,6 +305,24 @@ class AmanagerComponent extends Component {
     return $group['Group']['id'];
   }
 
+/**
+ *
+ * obtém os dados de usuário de acordo com o id de EntitysUser passado
+ *
+ * get_user_data method
+ *
+ * @param integer $entitys_user_id
+  * @return array $data or false
+ *
+ **/
+  public function get_user_data( $entitys_user_id ) {
+    App::import('Model', 'Amanager.EntitysUser');
+    $EntitysUser = new EntitysUser();
+    $EntitysUser->id = $entitys_user_id;
+    $entitys_user = $EntitysUser->read();
+    return $entitys_user['User'] ;
+  }
+
 }
 
 ?>
