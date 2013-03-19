@@ -323,6 +323,25 @@ class AmanagerComponent extends Component {
     return $entitys_user['User'] ;
   }
 
+/**
+ *
+ * Insere nova chave de ataulização de senha para o usuário especificado
+ *
+ * set_password_change_code method
+ *
+ * @param integer $user_id
+ * @return string $passwordchangecode
+ *
+ **/
+  public function set_password_change_code($user_id) {
+    App::import('Model', 'Amanager.User');
+    $User = new User();
+    $User->id = $user_id;
+    $passwordchangecode = hash('sha512', mktime());
+    $this->ImagesEvent->saveField('passwordchangecode', $passwordchangecode );
+    return $passwordchangecode ;
+  }
+
 }
 
 ?>
