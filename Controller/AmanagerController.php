@@ -7,12 +7,12 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
  */
 class AmanagerController extends AmanagerAppController {
 
-/**
- * uses
- *
- * @var array
- */
-	public $uses = array();
+  /**
+   * uses
+   *
+   * @var array
+   */
+  public $uses = array();
 
   public function index() {  }
 

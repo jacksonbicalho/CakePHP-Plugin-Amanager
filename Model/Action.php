@@ -6,18 +6,18 @@ App::uses('AmanagerAppModel', 'Amanager.Model');
  */
 class Action extends AmanagerAppModel {
 
-/**
- * belongsTo associations
- *
- * @var array
- */
+  /**
+   * belongsTo associations
+   *
+   * @var array
+   */
   var $belongsTo = array(
           'Rule' => array(
           'className'  => 'Rule',
           'foreignKey' => 'rule_id',
-          //'order' => 'Rule.order ASC'
-          )
-      );
+  //'order' => 'Rule.order ASC'
+  )
+  );
 
 }
 ?>

@@ -1,16 +1,16 @@
-<?php 
+<?php
 class AmanagerSchema extends CakeSchema {
 
-	public $connection = 'acessmanager';
+  public $connection = 'acessmanager';
 
-	public function before($event = array()) {
-		return true;
-	}
+  public function before($event = array()) {
+    return true;
+  }
 
-	public function after($event = array()) {
-	}
+  public function after($event = array()) {
+  }
 
-	public $groups = array(
+  public $groups = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 45, 'key' => 'unique', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
@@ -19,10 +19,10 @@ class AmanagerSchema extends CakeSchema {
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1),
 			'name_UNIQUE' => array('column' => 'name', 'unique' => 1)
-		),
+  ),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
-	);
-	public $groups_rules = array(
+  );
+  public $groups_rules = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'group_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'index'),
 		'rule_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'index'),
@@ -31,10 +31,10 @@ class AmanagerSchema extends CakeSchema {
 			'fk_group_rule_unique' => array('column' => array('group_id', 'rule_id'), 'unique' => 1),
 			'fk_group_id' => array('column' => 'group_id', 'unique' => 0),
 			'fk_rule_id' => array('column' => 'rule_id', 'unique' => 0)
-		),
+  ),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
-	);
-	public $groups_users = array(
+  );
+  public $groups_users = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'group_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'index'),
 		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'index'),
@@ -43,10 +43,10 @@ class AmanagerSchema extends CakeSchema {
 			'fk_group_user_unique' => array('column' => array('group_id', 'user_id'), 'unique' => 1),
 			'fk_group_id' => array('column' => 'group_id', 'unique' => 0),
 			'fk_user_id' => array('column' => 'user_id', 'unique' => 0)
-		),
+  ),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
-	);
-	public $rules = array(
+  );
+  public $rules = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'key' => 'unique', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'plugin' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 45, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -59,10 +59,10 @@ class AmanagerSchema extends CakeSchema {
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1),
 			'name_UNIQUE' => array('column' => 'name', 'unique' => 1)
-		),
+  ),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
-	);
-	public $users = array(
+  );
+  public $users = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
 		'username' => array('type' => 'string', 'null' => false, 'default' => null, 'key' => 'unique', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'password' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 128, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -73,7 +73,7 @@ class AmanagerSchema extends CakeSchema {
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1),
 			'username_UNIQUE' => array('column' => 'username', 'unique' => 1)
-		),
+  ),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
-	);
+  );
 }
