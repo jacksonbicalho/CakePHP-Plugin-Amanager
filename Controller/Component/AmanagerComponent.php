@@ -176,6 +176,13 @@ class AmanagerComponent extends Component {
       unset($params['pass']);
       if( empty($params['plugin']) ) unset( $params['plugin'] );
       if( isset($params['key']) ) unset( $params['key'] );
+
+echo '<pre>';
+  print_r( $urls_livres );
+echo '</pre>';
+die('#aeadjhuyt');
+
+
       foreach($urls_livres as $url_livre){
         $result = Hash::diff($url_livre, $params);
 
