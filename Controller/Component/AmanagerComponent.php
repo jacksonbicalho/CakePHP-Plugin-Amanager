@@ -175,12 +175,12 @@ class AmanagerComponent extends Component {
       unset($params['named']);
       unset($params['pass']);
       if( empty($params['plugin']) ) unset( $params['plugin'] );
+      if( isset($params['key']) ) unset( $params['key'] );
       foreach($urls_livres as $url_livre){
-        $result = Hash::diff($url_livre, $params);;
+        $result = Hash::diff($url_livre, $params);
 
         if(!$result) return true;
       }
-
       $groups = $this->Session->read('Amanager.Group');
       $adm = Set::extract('{n}/.[name=administrators]',  $groups );
       if($adm)  return true ;

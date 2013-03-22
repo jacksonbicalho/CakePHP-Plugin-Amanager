@@ -126,7 +126,8 @@ class UsersController extends AmanagerAppController {
     $user = $this->User->findByPasswordchangecode($key);
 
     if ( !$user ) {
-      throw new MethodNotAllowedException();
+      $this->Session->setFlash(__('Ocorreu um erro ao tentar processar o endereço solicitado. Caso o erro persista entre em contato com o administrador.'));
+      $this->redirect( Configure::read('Amanager.page_ini') );
     }
 
     // Verifica se ainda está dentro do prazo de validade estabelecido nas configurações
