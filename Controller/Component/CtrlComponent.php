@@ -3,11 +3,11 @@ App::uses('Folder', 'Utility');
 class CtrlComponent extends Component {
 
   /**
-  * Retorna um vetor contendo todos os diretórios existentes em ../Plugin
-  * lenvando em consideração que o componente esteja rodando em um plugin
-  *
-  * @return array
-  */
+   * Retorna um vetor contendo todos os diretórios existentes em ../Plugin
+   * lenvando em consideração que o componente esteja rodando em um plugin
+   *
+   * @return array
+   */
   public function get_plugins() {
     $dir_plugin = new Folder('../Plugin');
     $plugins = $dir_plugin->read(false) ;
@@ -16,16 +16,16 @@ class CtrlComponent extends Component {
   }
 
   /**
-  * Retorna um vetor contendo todos os controllers existentes em um plugin
-  * informado
-  * lenvando em consideração que o componente esteja rodando em um plugin
-  *
-  * @params string $plugin
-  * @return array
-  */
+   * Retorna um vetor contendo todos os controllers existentes em um plugin
+   * informado
+   * lenvando em consideração que o componente esteja rodando em um plugin
+   *
+   * @params string $plugin
+   * @return array
+   */
   public function get_controlles_plugins($plugin, $str_controller = false) {
 
-if(!$plugin)
+    if(!$plugin)
     return $this->get_controllers($str_controller);
 
 
@@ -48,11 +48,11 @@ if(!$plugin)
   }
 
   /**
-  * Retorna os métodos de um controller informado
-  *
-  * @params string $controller
-  * @return array
-  */
+   * Retorna os métodos de um controller informado
+   *
+   * @params string $controller
+   * @return array
+   */
   public function get_methods_controlles($controller) {
 
     $controller = str_replace('Controller', '', $controller);
@@ -106,10 +106,10 @@ if(!$plugin)
       foreach ($aMethods as $idx => $method) {
         $methods[$method] = $method;
         if ($method{0} == '_') {
-            unset($methods[$method]);
+          unset($methods[$method]);
         }
         if ( in_array($method, $array_exclude) ) {
-            unset($methods[$method]);
+          unset($methods[$method]);
         }
 
       }
@@ -120,32 +120,32 @@ if(!$plugin)
   }
 
   /**
-  * Retorna um vetor contendo todos os controllers do sistema
-  *
-  * @return array
-  */
-    public function get_controllers($str_controller = false) {
+   * Retorna um vetor contendo todos os controllers do sistema
+   *
+   * @return array
+   */
+  public function get_controllers($str_controller = false) {
 
-      $aCtrlClasses = App::objects('controller');
+    $aCtrlClasses = App::objects('controller');
 
-      foreach ($aCtrlClasses as $controller) {
-        if ($controller != 'AppController') {
-            // Load the controller
-            App::import('Controller', str_replace('Controller', '', $controller));
+    foreach ($aCtrlClasses as $controller) {
+      if ($controller != 'AppController') {
+        // Load the controller
+        App::import('Controller', str_replace('Controller', '', $controller));
 
-            $controllers[$controller] = $controller;
-        }
+        $controllers[$controller] = $controller;
       }
-
-      return $str_controller?$this->_str_controller($controllers):$controllers;
     }
 
+    return $str_controller?$this->_str_controller($controllers):$controllers;
+  }
+
   /**
-  * Remove o texto Controller
-  *
-  * @param array $data
-  * @return array
-  */
+   * Remove o texto Controller
+   *
+   * @param array $data
+   * @return array
+   */
 
   public function _str_controller($data){
     return str_replace('Controller', '', $data);

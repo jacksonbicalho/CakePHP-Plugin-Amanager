@@ -12,11 +12,11 @@ class RulesController extends AmanagerAppController {
     $this->paginate = array(
       'order' => array(
         'Rule.order' => 'asc'
-      )
-    );
+        )
+        );
 
-		$this->set('rules', $this->paginate());
-    //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
+        $this->set('rules', $this->paginate());
+        //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
   }
 
   function view($id = null) {
@@ -27,48 +27,48 @@ class RulesController extends AmanagerAppController {
     $this->set('rule', $this->Rule->read(null, $id));
   }
 
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
+  /**
+   * add method
+   *
+   * @return void
+   */
+  public function add() {
     if ($this->request->is('post')) {
 
       $data['Rule'] = $this->request->data['Rule'];
       $data['Action'] = $this->request->data['Action'];
       if ( isset($this->request->data['Group']) )
-        $data['Group'] = $this->request->data['Group'];
+      $data['Group'] = $this->request->data['Group'];
 
-			$this->Rule->create();
-			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
-				$this->Session->setFlash(__('The rule has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'message/error');
-			}
-		}
+      $this->Rule->create();
+      if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
+        $this->Session->setFlash(__('The rule has been saved'));
+        $this->redirect(array('action' => 'index'));
+      } else {
+        $this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'message/error');
+      }
+    }
 
-		$_plugins = $this->Ctrl->get_plugins();
+    $_plugins = $this->Ctrl->get_plugins();
     foreach($_plugins as $k => $v){
       $plugins[$v] = $v;
     }
 
-		$controllers = $this->Ctrl->get_controllers(true);
+    $controllers = $this->Ctrl->get_controllers(true);
 
     $_actions = $this->Ctrl->get_methods_controlles($controllers[key($controllers)]);
     foreach($_actions as $k => $v){
       $actions[$v] = $v;
     }
-		$groups = $this->Rule->Group->find('list');
-		$this->set(compact('groups', 'plugins', 'controllers', 'actions'));
-	}
+    $groups = $this->Rule->Group->find('list');
+    $this->set(compact('groups', 'plugins', 'controllers', 'actions'));
+  }
 
-/**
- * edit method
- *
- * @return void
- */
+  /**
+   * edit method
+   *
+   * @return void
+   */
   function edit($id = null) {
 
     $this->check_rule($id);
@@ -77,7 +77,7 @@ class RulesController extends AmanagerAppController {
 
       $data['Rule'] = $this->request->data['Rule'];
       if ( isset($this->request->data['Group']) )
-        $data['Group'] = $this->request->data['Group'];
+      $data['Group'] = $this->request->data['Group'];
 
       if ( isset($this->request->data['Action']) ){
         $data['Action'] = $this->request->data['Action'];
@@ -92,7 +92,7 @@ class RulesController extends AmanagerAppController {
         $actions_salvas = $this->Rule->read();
         $excluir = Set::extract(
           '/id',
-          array_diff_assoc($actions_salvas['Action'], $data['Action'])
+        array_diff_assoc($actions_salvas['Action'], $data['Action'])
         );
         $this->Rule->Action->deleteAll($excluir);
 
@@ -100,11 +100,11 @@ class RulesController extends AmanagerAppController {
         $this->Rule->Action->deleteAll( array('rule_id'=>$data['Rule']['id'])) ;
       }
 
-			if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
-				$this->Session->setFlash(__('The rule has been saved.'), 'message/success');
+      if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
+        $this->Session->setFlash(__('The rule has been saved.'), 'message/success');
         $this->redirect(array('action'=>'index'));
       } else {
-				$this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'message/warning');
+        $this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'message/warning');
       }
     }
     if (empty($this->data)) {
@@ -132,47 +132,47 @@ class RulesController extends AmanagerAppController {
 
   }
 
-/**
- * delete method
- *
- * @param string $id
- * @return void
- */
+  /**
+   * delete method
+   *
+   * @param string $id
+   * @return void
+   */
   public function delete($id = null) {
-      if (!$this->request->is('post')) {
-        throw new MethodNotAllowedException();
-      }
-
-      $this->check_rule($id);
-
-      if ($this->Rule->delete()) {
-        $this->Session->setFlash(__('Rule deleted.'), 'message/success');
-        $this->redirect(array('action' => 'index'));
-      }
-      $this->Session->setFlash(__('Rule was not deleted.'), 'message/error');
-      $this->redirect(array('action' => 'index'));
-  }
-
-    function up($id1, $id2) {   // swap order of two rules
-        if ($id1 != 1 && $id2 != 1) {
-            $r1 = $this->Rule->findById($id1);
-            $r2 = $this->Rule->findById($id2);
-//            pr(array($r1,$r2));
-            $order = $r1['Rule']['order'];
-            $r1['Rule']['order'] = $r2['Rule']['order'];
-            $r2['Rule']['order'] = $order;
-//            pr(array($r1,$r2));
-            $this->Rule->save($r1);
-            $this->Rule->save($r2);
-        }
-        $this->redirect(array('action'=>'index'));
+    if (!$this->request->is('post')) {
+      throw new MethodNotAllowedException();
     }
 
-/**
- * get_controlles_plugins method
- * @param post data
- * @return array
- */
+    $this->check_rule($id);
+
+    if ($this->Rule->delete()) {
+      $this->Session->setFlash(__('Rule deleted.'), 'message/success');
+      $this->redirect(array('action' => 'index'));
+    }
+    $this->Session->setFlash(__('Rule was not deleted.'), 'message/error');
+    $this->redirect(array('action' => 'index'));
+  }
+
+  function up($id1, $id2) {   // swap order of two rules
+    if ($id1 != 1 && $id2 != 1) {
+      $r1 = $this->Rule->findById($id1);
+      $r2 = $this->Rule->findById($id2);
+      //            pr(array($r1,$r2));
+      $order = $r1['Rule']['order'];
+      $r1['Rule']['order'] = $r2['Rule']['order'];
+      $r2['Rule']['order'] = $order;
+      //            pr(array($r1,$r2));
+      $this->Rule->save($r1);
+      $this->Rule->save($r2);
+    }
+    $this->redirect(array('action'=>'index'));
+  }
+
+  /**
+   * get_controlles_plugins method
+   * @param post data
+   * @return array
+   */
   public function get_controlles_plugins() {
 
     $plugin = $this->request->data['Rule']['plugin'];
@@ -183,11 +183,11 @@ class RulesController extends AmanagerAppController {
     $this->render("/Elements/options");
   }
 
-/**
- * get_methods_controlles method
- * @param post data
- * @return array
- */
+  /**
+   * get_methods_controlles method
+   * @param post data
+   * @return array
+   */
   public function get_methods_controlles() {
 
     $controller = $this->request->data['Rule']['controller'];
@@ -198,11 +198,11 @@ class RulesController extends AmanagerAppController {
     $this->render("/Elements/options");
   }
 
-/**
- * rules_list method
- *
- * @return void
- */
+  /**
+   * rules_list method
+   *
+   * @return void
+   */
   public function update_rules_list() {
 
     $rule = $this->request->data['Rule'];
@@ -231,7 +231,7 @@ class RulesController extends AmanagerAppController {
     foreach($action as $k => $v){
       if( is_array($v) ){
         if ( in_array($novo_alias, $v) ){
-           $alias = array();
+          $alias = array();
         }
       }
 
@@ -245,11 +245,11 @@ class RulesController extends AmanagerAppController {
 
   }
 
-/**
- * reorder method
- *
- * @return void
- */
+  /**
+   * reorder method
+   *
+   * @return void
+   */
   public function reorder() {
     foreach ($this->data['Rule'] as $key => $value) {
       $this->Rule->id = $value;
@@ -258,11 +258,11 @@ class RulesController extends AmanagerAppController {
     exit();
   }
 
-/**
- * check_rule method
- *
- * @return booleam
- */
+  /**
+   * check_rule method
+   *
+   * @return booleam
+   */
   public function check_rule($id = null) {
 
     if (!$id && empty($this->data)) {

@@ -7,13 +7,13 @@ App::uses('AmanagersController', 'Amanager.Controller');
  */
 class AmanagersControllerTest extends ControllerTestCase {
 
-/**
- * Fixtures
- *
- * @var array
- */
-	public $fixtures = array(
+  /**
+   * Fixtures
+   *
+   * @var array
+   */
+  public $fixtures = array(
 		'plugin.amanager.amanager'
-	);
+		);
 
 }

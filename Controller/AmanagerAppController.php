@@ -5,15 +5,15 @@ class AmanagerAppController extends AppController {
    'Session',
    'RequestHandler',
    'Amanager.Ctrl'
-  );
-  public $theme = 'Amanager';
-  public $helpers = array(
+   );
+   public $theme = 'Amanager';
+   public $helpers = array(
     'Form',
     'Time',
     'Html',
     'Session',
     'Js',
-  );
+   );
 
 }
 
