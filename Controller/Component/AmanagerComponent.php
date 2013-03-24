@@ -149,7 +149,7 @@ class AmanagerComponent extends Component {
     public function login($data_login){
       $this->url_prev = $this->Session->read('Amanager.url_prev');
       $this->Session->write('Amanager', $data_login);
-      $this->controller->redirect($this->url_prev);
+      $this->controller->redirect( Router::reverse($this->url_prev, true) );
     }
 
     public function is_logged(){
