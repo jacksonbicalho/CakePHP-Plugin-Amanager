@@ -171,23 +171,39 @@ class AmanagerComponent extends Component {
     // Função que checa se o(s) grupo(s) do usuário logado
     //... tem acesso a área solicitada
     function isAllowed($params = null) {
+
+      $parametros_levados_em_conta = array(
+        'controller',
+        'action',
+        'plugin',
+        'admin',
+      );
+
+
+      // Remove dos parâmetros os ínndices que não devem ser levados em consideração para regras deacesso
+      foreach( $params as $k=> $param  ){
+
+        if( !in_array($k, $parametros_levados_em_conta) ){
+          unset($params[$k]);
+        }
+      }
+
       $urls_livres = Configure::read('Amanager.urls_livres');
-      unset($params['named']);
-      unset($params['pass']);
       if( empty($params['plugin']) ) unset( $params['plugin'] );
       if( isset($params['key']) ) unset( $params['key'] );
-
-echo '<pre>';
-  print_r( $urls_livres );
-echo '</pre>';
-die('#aeadjhuyt');
 
 
       foreach($urls_livres as $url_livre){
         $result = Hash::diff($url_livre, $params);
+        // Se for para todas as ações do controlador permite
+        if( ($params['controller'] == $url_livre['controller'] && $url_livre['action']=='*') && ( !isset($url_livre['admin']) == !isset($params['admin']) ) ){
+            return true;
+          }
 
         if(!$result) return true;
       }
+
+      // Se estiver no grupo administrators permite
       $groups = $this->Session->read('Amanager.Group');
       $adm = Set::extract('{n}/.[name=administrators]',  $groups );
       if($adm)  return true ;
@@ -349,24 +365,6 @@ die('#aeadjhuyt');
       return $passwordchangecode ;
     }
 
-/**
- *
- * Insere nova chave de ataulização de senha para o usuário especificado
- *
- * set_password_change_code method
- *
- * @param integer $user_id
- * @return string $passwordchangecode
- *
- **/
-  public function set_password_change_code($user_id) {
-    App::import('Model', 'Amanager.User');
-    $User = new User();
-    $User->id = $user_id;
-    $passwordchangecode = hash('sha512', mktime());
-    $this->ImagesEvent->saveField('passwordchangecode', $passwordchangecode );
-    return $passwordchangecode ;
-  }
 
 }
 
