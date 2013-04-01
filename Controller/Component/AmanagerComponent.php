@@ -29,7 +29,8 @@ class AmanagerComponent extends Component {
   var $login_action = array(
     'controller'=>'users',
     'plugin' => 'amanager',
-    'action'=>'login'
+    'action'=>'login',
+  	'admin'=>false
     );
 
   /**
@@ -42,9 +43,11 @@ class AmanagerComponent extends Component {
    * @var array
    */
   var $login_redirect = array(
-  'controller'=>'amanager',
-  'plugin' => 'amanager',
-  'action'=>'index'
+    'controller'=>'amanager',
+    'plugin' => 'amanager',
+    'action'=>'index',
+  	'admin'=>false
+  		
   );
 
   /**
@@ -56,9 +59,10 @@ class AmanagerComponent extends Component {
    * @var array
    */
   var $logout_redirect = array(
-  'controller'=>'pages',
-  'plugin' => false,
-  'action'=>'display'
+    'controller'=>'pages',
+    'plugin' => false,
+    'action'=>'display',
+  	'admin'=>false
   );
 
   /**
@@ -71,9 +75,10 @@ class AmanagerComponent extends Component {
    * @var array
    */
   var $access_denied = array(
-  'controller'=>'users',
-  'action'=>'access_denied',
-  'plugin'=>'amanager'
+    'controller'=>'users',
+    'action'=>'access_denied',
+    'plugin'=>'amanager',
+  	'admin'=>false
   );
 
   /**
@@ -135,12 +140,14 @@ class AmanagerComponent extends Component {
         )
         {
           $this->controller->redirect( $this->access_denied );
-
         }
 
       }
+
       $this->controller->redirect( $this->login_action );
+
     }
+
 
   }
 
@@ -151,22 +158,21 @@ class AmanagerComponent extends Component {
   function startup(&$controller = null) {
 
     if( isset($this->settings->login_action) )
-    $this->login_action = $this->settings->login_action;
+      $this->login_action = $this->settings->login_action;
 
     if( isset($this->settings->login_redirect) )
-    $this->login_redirect = $this->settings->login_redirect;
+      $this->login_redirect = $this->settings->login_redirect;
 
     if( isset($this->settings->logout_redirect) )
-    $this->logout_redirect = $this->settings->logout_redirect;
+      $this->logout_redirect = $this->settings->logout_redirect;
 
   }
 
   public function login($data_login){
     $this->url_prev = $this->Session->read('Amanager.url_prev');
     $this->Session->write('Amanager', $data_login);
-
     $url_prev = $this->clear_url( $this->url_prev, array('pass') );
-
+    $url_prev['url'] = null;
     $this->controller->redirect( Router::reverse($url_prev, true) );
   }
 
@@ -190,62 +196,40 @@ class AmanagerComponent extends Component {
   //... tem acesso a área solicitada
   function isAllowed($params = null) {
 
-    // Remove dos parâmetros os ínndices que não devem ser levados em consideração para regras deacesso
-    foreach( $params as $k=> $param  ){
+    $params['url'] = null; // Para não retornar erro de Router::reverse
+    $teste = Router::reverse($params, false);
 
-      if( !in_array($k, $this->parametros_levados_em_conta) ){
-        unset($params[$k]);
-      }
-    }
+    // Limpa os parâmertros
+    $params = $this->clear_url( $params );
 
-    $urls_livres = Configure::read('Amanager.urls_livres');
-    if( empty($params['plugin']) ) unset( $params['plugin'] );
-    if( isset($params['key']) ) unset( $params['key'] );
-
-
-    foreach($urls_livres as $url_livre){
-      $result = Hash::diff($url_livre, $params);
-      // Se for para todas as ações do controlador permite
-      if( isset($url_livre['action'])){
-        if( ($params['controller'] == $url_livre['controller'] && $url_livre['action']=='*') && ( !isset($url_livre['admin']) == !isset($params['admin']) ) ){
-          return true;
-        }
-      }
-
-      if(!$result) return true;
-    }
+    // Verifica se a url é livre, se sim já libera o acesso
+	  if( $this->checks_urls_free( $params ) ) return true;
 
     // Se estiver no grupo administrators permite
     $groups = $this->Session->read('Amanager.Group');
+
     $adm = Set::extract('{n}/.[name=administrators]',  $groups );
     if($adm)  return true ;
 
     if(!$groups) return false;
     $alow = false;
+
     foreach( $groups as $group ){
       $rules = Hash::sort($group['Rule'], '{n}.order', 'asc');
       foreach( $rules as $actions ){
         foreach( $actions['Action'] as $action ){
-          $permission = Router::parse($action['alias'], false);
 
-          foreach( $permission as $k => $v ){
-            if( !in_array($k, $this->parametros_levados_em_conta) ){
-              unset($permission[$k]);
-            }
-          }
-          if( empty($permission['plugin']) ) unset( $permission['plugin'] );
-
-          $result = Hash::diff( $permission, $params );
-
-          $action_alow =  $action['alow'];
-          if( !$result && $action_alow ){
-            $alow = true;
-          }
-          if( !$result && $action_alow == null ){
-            $alow = false;
-          }
-        }
-      }
+					$permission = $this->clear_url( Router::parse($action['alias'], false) );
+        	$result = Hash::diff( $permission, $params );
+         	$action_alow =  $action['alow'];
+         	if( !$result && $action_alow ){
+         		$alow = true;
+         	}
+         	if( !$result && $action_alow == null ){
+         		$alow = false;
+         	}
+				}
+			}
     }
 
     return $alow;
@@ -388,6 +372,36 @@ class AmanagerComponent extends Component {
 
   /**
    *
+   * Verifica se a url pretendida está entre as url livres
+   *
+   * checks_urls_free method
+   *
+   * @param array $params
+   * @return boolean
+   *
+   **/
+  public function checks_urls_free($params) {
+
+    $urls_livres = Configure::read('Global.urls_livres');
+    foreach($urls_livres as $url_livre){
+
+      $result = Hash::diff($url_livre, $params);
+      // Se for para todas as ações do controlador permite
+      if( isset($url_livre['action'])){
+        if( ($params['controller'] == $url_livre['controller'] && $url_livre['action']=='*') && ( !isset($url_livre['admin']) == !isset($params['admin']) ) ){
+          return true;
+        }
+      }
+
+      if( count($result) == 0) return true;
+    }
+
+    return false;
+
+  }
+
+  /**
+   *
    * Limpa os parâmetros usado para gerar urls
    * só mantendo os que serão usados para verificação de permissão
    *
@@ -407,11 +421,20 @@ class AmanagerComponent extends Component {
       }
     }
 
-    if( isset($url['plugin']) ){
-      if( empty($url['plugin']) ){
-        unset($url['plugin']);
+    if (array_key_exists('key', $url)) {
+      if( $url['plugin'] == NULL ){
+        unset( $url['plugin'] );
       }
     }
+
+    if (array_key_exists('plugin', $url)) {
+      if(empty($url['plugin'])) $url['plugin'] = false;
+    }
+
+    if (array_key_exists('admin', $url)) {
+      if(empty($url['admin']))unset( $url['admin'] );
+    }
+
     return $url ;
   }
 
