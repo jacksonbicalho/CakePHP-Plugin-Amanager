@@ -23,37 +23,40 @@ Instalação
 
 3. Em seu AppController insira
 
-<?php
-  var $components = array(
-    'Amanager.Amanager' => array(
-      'login_action' => array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager', 'admin'=>false ),
-      'login_redirect' => array('controller'=>'amanager', 'plugin' => 'amanager', 'action'=>'index', 'admin'=>false ),
-      'logout_redirect' => array('controller'=>'pages', 'plugin' => false, 'action'=>'display', 'admin'=>false )
-    ),
-  );
+    <?php
+      var $components = array(
+        'Amanager.Amanager' => array(
+          'login_action' => array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager', 'admin'=>false ),
+          'login_redirect' => array('controller'=>'amanager', 'plugin' => 'amanager', 'action'=>'index', 'admin'=>false ),
+          'logout_redirect' => array('controller'=>'pages', 'plugin' => false, 'action'=>'display', 'admin'=>false )
+        ),
+      );
 
-  public function beforeFilter(){
-    $this->Amanager->beforeFilter($this);
-  }
-?>
+      public function beforeFilter(){
+        $this->Amanager->beforeFilter($this);
+      }
+    ?>
+
 
 4. Em seu boostrap
-  CakePlugin::loadAll(array(
-    'Amanager' => array('bootstrap' => true),
-  ));
 
+    <?php
+      CakePlugin::loadAll(array(
+        'Amanager' => array('bootstrap' => true),
+      ));
+    ?>
 
 5. Ainda em seu boostrap
 
 
-<?php
-  $global_urls_livres = array(
-    array('controller'=>'pages', 'action'=>'display'),
-    array('controller'=>'users', 'action'=>'logout', 'plugin'=>'amanager'),
-    array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager'),
-    array('controller'=>'users', 'action'=>'access_denied', 'plugin'=>'amanager'),
-    // Para a recuperação de senha de usuários
-    array('controller'=>'users', 'action'=>'recover_password', 'plugin'=>'amanager'),
-  );
-  Configure::write('Global.urls_livres',$global_urls_livres);
-?>
+    <?php
+      $global_urls_livres = array(
+        array('controller'=>'pages', 'action'=>'display'),
+        array('controller'=>'users', 'action'=>'logout', 'plugin'=>'amanager'),
+        array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager'),
+        array('controller'=>'users', 'action'=>'access_denied', 'plugin'=>'amanager'),
+        // Para a recuperação de senha de usuários
+        array('controller'=>'users', 'action'=>'recover_password', 'plugin'=>'amanager'),
+      );
+      Configure::write('Global.urls_livres',$global_urls_livres);
+    ?>
