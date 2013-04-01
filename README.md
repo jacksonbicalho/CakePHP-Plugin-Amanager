@@ -41,3 +41,19 @@ Instalação
   CakePlugin::loadAll(array(
     'Amanager' => array('bootstrap' => true),
   ));
+
+
+5. Ainda em seu boostrap
+
+
+<?php
+  $global_urls_livres = array(
+    array('controller'=>'pages', 'action'=>'display'),
+    array('controller'=>'users', 'action'=>'logout', 'plugin'=>'amanager'),
+    array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager'),
+    array('controller'=>'users', 'action'=>'access_denied', 'plugin'=>'amanager'),
+    // Para a recuperação de senha de usuários
+    array('controller'=>'users', 'action'=>'recover_password', 'plugin'=>'amanager'),
+  );
+  Configure::write('Global.urls_livres',$global_urls_livres);
+?>
