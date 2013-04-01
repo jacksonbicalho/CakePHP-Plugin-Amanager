@@ -40,11 +40,13 @@ Instalação
 
 
 4. Em seu boostrap
+
         <?php
           CakePlugin::loadAll(array(
             'Amanager' => array('bootstrap' => true),
           ));
         ?>
+
 
 5. Ainda em seu boostrap
 
