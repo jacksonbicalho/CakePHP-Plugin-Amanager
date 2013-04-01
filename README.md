@@ -23,19 +23,21 @@ Instalação
 
 3. Em seu AppController insira
 
-    <?php
-      var $components = array(
-        'Amanager.Amanager' => array(
-          'login_action' => array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager', 'admin'=>false ),
-          'login_redirect' => array('controller'=>'amanager', 'plugin' => 'amanager', 'action'=>'index', 'admin'=>false ),
-          'logout_redirect' => array('controller'=>'pages', 'plugin' => false, 'action'=>'display', 'admin'=>false )
-        ),
-      );
 
-      public function beforeFilter(){
-        $this->Amanager->beforeFilter($this);
-      }
-    ?>
+    <?php
+
+        var $components = array(
+          'Amanager.Amanager' => array(
+            'login_action' => array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager', 'admin'=>false ),
+            'login_redirect' => array('controller'=>'amanager', 'plugin' => 'amanager', 'action'=>'index', 'admin'=>false ),
+            'logout_redirect' => array('controller'=>'pages', 'plugin' => false, 'action'=>'display', 'admin'=>false )
+          ),
+        );
+
+        public function beforeFilter(){
+          $this->Amanager->beforeFilter($this);
+        }
+        ?>
 
 
 4. Em seu boostrap
