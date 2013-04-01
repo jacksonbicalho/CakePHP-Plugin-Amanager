@@ -47,7 +47,7 @@ class AmanagerComponent extends Component {
     'plugin' => 'amanager',
     'action'=>'index',
   	'admin'=>false
-  		
+
   );
 
   /**
@@ -106,6 +106,18 @@ class AmanagerComponent extends Component {
     'admin',
   );
 
+  /**
+   *
+   * Define as áreas a serem restritas (nomes dos controladores) obtidos com $this->name;
+   *
+   * $restricted_areas
+   *
+   * @var array
+   */
+  public $restricted_areas = array(
+    'Amanager',
+  );
+
   function __construct(ComponentCollection $collection, $settings = array()) {
     parent::__construct($collection, $settings);
   }
@@ -117,10 +129,21 @@ class AmanagerComponent extends Component {
    * beforeFilter method
    *
    * @param object $controller
+   *
+   * @param array $options
+   *
    * @return void
    *
    **/
-  function beforeFilter(&$controller) {
+  function beforeFilter(&$controller, $options = array() ) {
+
+    foreach ($options['secure'] as $key => $value) {
+      $this->add_restricted_areas( $value );
+    }
+
+    if( !array_search($controller->name, $this->restricted_areas) ){
+      return true;
+    }
 
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
@@ -438,6 +461,19 @@ class AmanagerComponent extends Component {
     return $url ;
   }
 
+  /**
+   *
+   * Insere um novo controlador nas áreas restritas
+   *
+   * add_restricted_areas method
+   *
+   * @param array $controller_name
+   * @return void
+   *
+   **/
+  public function add_restricted_areas($controller_name) {
+    $this->restricted_areas[] = $controller_name;
+  }
 
 
 }
