@@ -18,9 +18,12 @@ Instalação
 -----------
 
 1. Em seu projeto entre em app/Plugin
+
 2. Usando o git digite git clone git@github.com:jacksonbicalho/Amanager.git ou baixe o Plugin (https://github.com/jacksonbicalho/Amanager/archive/master.zip) e descompacte na mesmo diretório
+
 3. Em seu AppController insira
 
+<?php
   var $components = array(
     'Amanager.Amanager' => array(
       'login_action' => array('controller'=>'users', 'action'=>'login', 'plugin'=>'amanager', 'admin'=>false ),
@@ -32,4 +35,9 @@ Instalação
   public function beforeFilter(){
     $this->Amanager->beforeFilter($this);
   }
+?>
 
+4. Em seu boostrap
+  CakePlugin::loadAll(array(
+    'Amanager' => array('bootstrap' => true),
+  ));
