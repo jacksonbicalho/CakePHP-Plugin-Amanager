@@ -106,18 +106,6 @@ class AmanagerComponent extends Component {
     'admin',
   );
 
-  /**
-   *
-   * Define as áreas a serem restritas (nomes dos controladores) obtidos com $this->name;
-   *
-   * $restricted_areas
-   *
-   * @var array
-   */
-  public $restricted_areas = array(
-    'Amanager',
-  );
-
   function __construct(ComponentCollection $collection, $settings = array()) {
     parent::__construct($collection, $settings);
   }
@@ -136,14 +124,6 @@ class AmanagerComponent extends Component {
    *
    **/
   function beforeFilter(&$controller, $options = array() ) {
-
-    foreach ($options['secure'] as $key => $value) {
-      $this->add_restricted_areas( $value );
-    }
-
-    if( !array_search($controller->name, $this->restricted_areas) ){
-      return true;
-    }
 
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
@@ -226,6 +206,9 @@ class AmanagerComponent extends Component {
     $params = $this->clear_url( $params );
 
     // Verifica se a url é livre, se sim já libera o acesso
+
+    $teste = $this->checks_urls_free( $params ) ;
+
 	  if( $this->checks_urls_free( $params ) ) return true;
 
     // Se estiver no grupo administrators permite
@@ -405,7 +388,8 @@ class AmanagerComponent extends Component {
    **/
   public function checks_urls_free($params) {
 
-    $urls_livres = Configure::read('Global.urls_livres');
+    $urls_livres = Configure::read('Amanager.urls_livres');
+
     foreach($urls_livres as $url_livre){
 
       $result = Hash::diff($url_livre, $params);
@@ -460,21 +444,6 @@ class AmanagerComponent extends Component {
 
     return $url ;
   }
-
-  /**
-   *
-   * Insere um novo controlador nas áreas restritas
-   *
-   * add_restricted_areas method
-   *
-   * @param array $controller_name
-   * @return void
-   *
-   **/
-  public function add_restricted_areas($controller_name) {
-    $this->restricted_areas[] = $controller_name;
-  }
-
 
 }
 
