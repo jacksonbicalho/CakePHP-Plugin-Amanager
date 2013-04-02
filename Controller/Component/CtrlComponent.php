@@ -26,7 +26,7 @@ class CtrlComponent extends Component {
   public function get_controlles_plugins($plugin, $str_controller = false) {
 
     if(!$plugin)
-    return $this->get_controllers($str_controller);
+      return $this->get_controllers($str_controller);
 
 
     $dir_plugin = new Folder("../Plugin/{$plugin}");
