@@ -95,8 +95,6 @@ class AmanagerComponent extends Component {
    *
    * Parâmetros que são levados em consideração na hora da verificação de permissão
    *
-   * url_prev
-   *
    * @var array
    */
   var $parametros_levados_em_conta = array(
@@ -359,6 +357,22 @@ class AmanagerComponent extends Component {
 
   /**
    *
+   * obtém os dados do usuário logado
+   *
+   * get_user_logged method
+   *
+   * @param string $attribute
+   * @return array $data or false
+   *
+   **/
+  public function get_user_logged( $attribute = false){
+    $_attribute = !$attribute?"":".{$attribute}" ;
+    $user = $this->Session->read("Amanager.User{$_attribute}");
+    return !$user?false:$user;
+  }
+
+  /**
+   *
    * Insere nova chave de ataulização de senha para o usuário especificado
    *
    * set_password_change_code method
@@ -422,7 +436,7 @@ class AmanagerComponent extends Component {
    **/
   public function clear_url($url, $manter = array()) {
 
-    foreach( $url as $k => $v ){
+    foreach( $url as $k  => $v ){
       if( !in_array($k, $this->parametros_levados_em_conta) && !in_array($k, $manter) ){
         unset($url[$k]);
       }
