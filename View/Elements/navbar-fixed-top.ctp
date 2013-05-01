@@ -19,17 +19,19 @@ if(isset($menu[$this->name]))
           </button>
           <?php echo $this->Html->link( __('Acess Manager', true), array('controller'=>'amanager', 'action'=>'index', 'plugin'=>'amanager'), array('class'=>'brand ' . $menu['Amanager']['class'] )); ?>
           <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="<?php echo $menu['Users']['class']; ?>">
-                <?php echo $this->Html->link( __('Manager Users', true), array('controller'=>'users', 'action'=>'index', 'plugin'=>'amanager')); ?>
-              </li>
-              <li class="<?php echo $menu['Groups']['class']; ?>">
-                <?php echo $this->Html->link( __('Manager Groups', true), array('controller'=>'groups', 'action'=>'index', 'plugin'=>'amanager')); ?>
-              </li>
-              <li class="<?php echo $menu['Rules']['class']; ?>">
-                <?php echo $this->Html->link( __('Manger Rules', true), array('controller'=>'rules', 'action'=>'index', 'plugin'=>'amanager')); ?>
-              </li>
-            </ul>
+            <?php if ($this->Amanager->is_logged()){ ?>
+              <ul class="nav">
+                <li class="<?php echo $menu['Users']['class']; ?>">
+                  <?php echo $this->Html->link( __('Manager Users', true), array('controller'=>'users', 'action'=>'index', 'plugin'=>'amanager')); ?>
+                </li>
+                <li class="<?php echo $menu['Groups']['class']; ?>">
+                  <?php echo $this->Html->link( __('Manager Groups', true), array('controller'=>'groups', 'action'=>'index', 'plugin'=>'amanager')); ?>
+                </li>
+                <li class="<?php echo $menu['Rules']['class']; ?>">
+                  <?php echo $this->Html->link( __('Manger Rules', true), array('controller'=>'rules', 'action'=>'index', 'plugin'=>'amanager')); ?>
+                </li>
+              </ul>
+            <?php } ?>
             <?php if ($this->Amanager->is_logged()){ ?>
               <ul class="nav pull-right">
                 <li class="dropdown">
