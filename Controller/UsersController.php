@@ -182,6 +182,12 @@ class UsersController extends AmanagerAppController {
 
   public function login() {
 
+    // Verifica se o usuário está logado
+    if( $this->Amanager->is_logged() ){
+      $this->Session->setFlash(__('you already logged is'), 'message/warning');
+      $this->redirect(array('controller'=>'amanager', 'action' => 'index'));
+    }
+
     $this->User->recursive = 3;
     if ($this->request->is('post')) {
       $password = $this->User->encripty_password( $this->request->data['User']['password'], $this->request->data['User']['username'] );
