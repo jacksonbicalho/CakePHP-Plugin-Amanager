@@ -100,6 +100,12 @@ class UsersController extends AmanagerAppController {
     if (!$this->User->exists()) {
       throw new NotFoundException(__('Invalid user'));
     }
+
+    if($this->User->in_group($id, Configure::read('Amanager.group_master' ) ) ){
+      $this->Session->setFlash(__('The master user can not be deleted!'), 'message/warning', array('plugin'=>'Amanager'));
+      $this->redirect(array('action' => 'index'));
+    }
+
     if ($this->User->delete()) {
       $this->Session->setFlash(__('User deleted'));
       $this->redirect(array('action' => 'index'));

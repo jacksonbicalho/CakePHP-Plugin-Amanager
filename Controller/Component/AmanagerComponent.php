@@ -212,7 +212,9 @@ class AmanagerComponent extends Component {
     // Se estiver no grupo administrators permite
     $groups = $this->Session->read('Amanager.Group');
 
-    $adm = Set::extract('{n}/.[name=administrators]',  $groups );
+    $master = Configure::read('Amanager.group_master' );
+
+    $adm = Set::extract("{n}/.[name={$master}]",  $groups );
     if($adm)  return true ;
 
     if(!$groups) return false;

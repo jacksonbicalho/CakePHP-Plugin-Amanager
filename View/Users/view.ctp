@@ -1,6 +1,6 @@
 <div class="users view">
 <h2><?php  echo __('User'); ?></h2>
-	<dl>
+	<dl class="tabela table-bordered table-striped">
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
 			<?php echo h($user['User']['id']); ?>

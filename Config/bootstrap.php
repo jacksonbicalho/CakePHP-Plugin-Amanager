@@ -32,3 +32,11 @@
  *
  */
 Configure::write('Amanager.page_ini', array('plugin'=>false, 'controller' => 'pages', 'action' => 'display') );
+
+/*
+ * Define qual o o grupo é definido como grupo master (Acesso total)
+ *
+ * var group_master
+ *
+ */
+Configure::write('Amanager.group_master', 'MASTER' );

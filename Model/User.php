@@ -139,4 +139,28 @@ class User extends AmanagerAppModel {
     return md5($password . $username);
   }
 
+  /**
+   * Verifica se usuário está em especificado grupo
+   *
+   * in_group method
+   *
+   * @param string $user_id
+   * @param string $group_name
+   * @return boolean
+   */
+  public function in_group($user_id, $group_name) {
+
+    $this->id = $user_id;
+    if (!$this->exists()) {
+      throw new NotFoundException(__('Invalid user'));
+    }
+    $user = $this->read();
+    foreach( $user['Group'] as $groups ){
+      if( in_array($group_name, $groups, true) ){
+        return true;
+      }
+    }
+    return false;
+  }
+
 }

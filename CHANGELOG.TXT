@@ -1,0 +1,17 @@
+Corrigir título exibido no menu de Acess para Access bug
+Opened by jacksonbicalho a month ago
+#8
+Alterar o grupo de super "usuário" enhancement
+Opened by jacksonbicalho a month ago
+#7
+Erro ao deslogar bug
+Opened by jacksonbicalho a month ago
+#6
+Mesmo com usuário logado, a tela de login está acessível bug
+Opened by jacksonbicalho a month ago
+#5
+Os links de gerencimanto do Plugin localizados no menu fixo estão sendo exibidos no momento do login bug
+Opened by jacksonbicalho a month ago
+#3
+Quando usuário entra direto para a tela de login, não está sendo redirecionado para nenuma tela bug
+Opened by jacksonbicalho 3 months ago
