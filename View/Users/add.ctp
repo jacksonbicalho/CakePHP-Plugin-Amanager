@@ -4,12 +4,12 @@
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
 		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('password2', array('type'=>'password'));
+		echo $this->Form->input('password', array('value'=>null));
+		echo $this->Form->input('password2', array('type'=>'password', 'value'=>null));
 		echo $this->Form->input('email');
 		echo $this->Form->input('passwordchangecode');
 		echo $this->Form->input('status');
-		echo $this->Form->input('group');
+		echo $this->Form->input('Group');
 	?>
 	</fieldset>
 <?php echo $this->Form->button('<i class="icon-white icon-plus-sign"></i>  ' . __('Submit'), array('type' => 'submit', 'class'=>'btn btn-primary'), array('escape'=>false) );  ?>
