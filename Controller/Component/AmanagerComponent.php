@@ -189,7 +189,7 @@ class AmanagerComponent extends Component {
     }
 
     $this->Session->delete('Amanager');
-    $this->Session->setFlash(__('Você foi desconectado do sistema'), 'message/warning');
+    $this->Session->setFlash(__('Você foi desconectado do sistema'));
     $this->controller->redirect($this->logout_redirect);
   }
 
