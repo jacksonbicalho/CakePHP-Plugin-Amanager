@@ -57,13 +57,13 @@ class CtrlComponent extends Component {
 
     $controller = str_replace('Controller', '', $controller);
     $_controller = explode('.', $controller);
+
     if ( count($_controller)>1 ){
       App::uses("{$_controller[1]}Controller", "{$_controller[0]}.Controller");
       $aMethods = get_class_methods("{$_controller[1]}Controller");
     }else{
 
-      //App::import('Controller', str_replace('Controller', '', $Controller));
-      App::uses("{$controller}Controller", "{$_controller}Controller");
+      App::import('Controller', str_replace('Controller', '', "{$_controller[0]}Controller"));
       $aMethods = get_class_methods("{$controller}Controller");
     }
     $array_exclude = array(
@@ -151,6 +151,42 @@ class CtrlComponent extends Component {
     return str_replace('Controller', '', $data);
 
   }
+
+
+
+public function get_teste() {
+  $aCtrlClasses = App::objects('controller');
+  foreach ($aCtrlClasses as $controller) {
+    if ($controller != 'AppController') {
+      // Load the controller
+      App::import('Controller', str_replace('Controller', '', $controller));
+
+      // Load its methods / actions
+      $aMethods = get_class_methods($controller);
+
+      foreach ($aMethods as $idx => $method) {
+
+          if ($method{0} == '_') {
+              unset($aMethods[$idx]);
+          }
+      }
+
+      // Load the ApplicationController (if there is one)
+      App::import('Controller', 'AppController');
+      $parentActions = get_class_methods('AppController');
+
+      $controllers[$controller] = array_diff($aMethods, $parentActions);
+    }
+  }
+  return $controllers;
+}
+
+
+
+
+
+
+
 
 
 }
