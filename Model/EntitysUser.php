@@ -12,7 +12,7 @@ class EntitysUser extends AmanagerAppModel {
    *
    * @var string
    */
-  public $useDbConfig = 'acessmanager';
+//  public $useDbConfig = 'acessmanager';
 
   //The Associations below have been created with all possible keys, those that are not needed can be removed
 

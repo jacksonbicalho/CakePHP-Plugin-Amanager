@@ -13,7 +13,7 @@ class Module extends AmanagerAppModel {
    *
    * @var string
    */
-  public $useDbConfig = 'acessmanager';
+//  public $useDbConfig = 'acessmanager';
 
   /**
    * Display field

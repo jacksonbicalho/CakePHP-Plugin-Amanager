@@ -12,7 +12,7 @@ class User extends AmanagerAppModel {
    *
    * @var string
    */
-  public $useDbConfig = 'acessmanager';
+  //public $useDbConfig = 'acessmanager';
 
   /**
    * Validation rules

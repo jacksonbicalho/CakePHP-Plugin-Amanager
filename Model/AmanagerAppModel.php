@@ -6,7 +6,7 @@ class AmanagerAppModel extends AppModel {
    *
    * @var string
    */
-  public $useDbConfig = 'acessmanager';
+  public $useDbConfig = 'accessmanager';
 
   /**
    * ctsAs
