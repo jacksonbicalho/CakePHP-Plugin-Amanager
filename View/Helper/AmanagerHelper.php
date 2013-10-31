@@ -3,6 +3,32 @@ class AmanagerHelper extends AppHelper {
 
   var $helpers = array('Session','Html');
 
+  private $controller;
+
+  public function __construct(View $view, $settings = array()) {
+    parent::__construct($view, $settings);
+    $this->controller=$this->loadController();
+  }
+
+  protected function loadController($name=null){
+    if (is_null($name)) $name=$this->params['controller'];
+    $className = ucfirst($name) . 'Controller';
+    list($plugin, $className) = pluginSplit($className, true);
+    App::import('Controller', $name);
+    $cont = new $className;
+    $cont->constructClasses();
+    $cont->request=$this->request;
+    return $cont;
+  }
+
+  function is_allowed ($url) {
+    if( !isset($url['controller']) or empty($url['controller']) ){
+      $url['controller'] = $this->controller->request->params['controller'];
+      $url['action'] = 'admin_' . $url['action'];
+    }
+    return $this->controller->Amanager->isAllowed($url);
+  }
+
   function is_logged() {
     return $this->Session->read('Amanager.User')?true:false;
   }

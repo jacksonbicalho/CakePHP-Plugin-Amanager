@@ -30,7 +30,7 @@ class AmanagerComponent extends Component {
     'controller'=>'users',
     'plugin' => 'amanager',
     'action'=>'login',
-  	'admin'=>false
+    'admin'=>false
     );
 
   /**
@@ -46,7 +46,7 @@ class AmanagerComponent extends Component {
     'controller'=>'amanager',
     'plugin' => 'amanager',
     'action'=>'index',
-  	'admin'=>false
+    'admin'=>false
 
   );
 
@@ -62,7 +62,7 @@ class AmanagerComponent extends Component {
     'controller'=>'pages',
     'plugin' => false,
     'action'=>'display',
-  	'admin'=>false
+    'admin'=>false
   );
 
   /**
@@ -78,7 +78,7 @@ class AmanagerComponent extends Component {
     'controller'=>'users',
     'action'=>'access_denied',
     'plugin'=>'amanager',
-  	'admin'=>false
+    'admin'=>false
   );
 
   /**
@@ -121,7 +121,7 @@ class AmanagerComponent extends Component {
    * @return void
    *
    **/
-  function beforeFilter(&$controller, $options = array() ) {
+  function beforeFilter(Controller $controller, $options = array() ) {
 
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
@@ -152,11 +152,11 @@ class AmanagerComponent extends Component {
 
   }
 
-  function initialize(&$controller) {
+  function initialize(Controller $controller = null) {
     $this->controller = $controller;
   }
 
-  function startup(&$controller = null) {
+  function startup(Controller $controller = null) {
 
     if( isset($this->settings->login_action) )
       $this->login_action = $this->settings->login_action;
@@ -207,7 +207,7 @@ class AmanagerComponent extends Component {
 
     $teste = $this->checks_urls_free( $params ) ;
 
-	  if( $this->checks_urls_free( $params ) ) return true;
+    if( $this->checks_urls_free( $params ) ) return true;
 
     // Se estiver no grupo administrators permite
     $groups = $this->Session->read('Amanager.Group');
@@ -225,17 +225,17 @@ class AmanagerComponent extends Component {
       foreach( $rules as $actions ){
         foreach( $actions['Action'] as $action ){
 
-					$permission = $this->clear_url( Router::parse($action['alias'], false) );
-        	$result = Hash::diff( $permission, $params );
-         	$action_alow =  $action['alow'];
-         	if( !$result && $action_alow ){
-         		$alow = true;
-         	}
-         	if( !$result && $action_alow == null ){
-         		$alow = false;
-         	}
-				}
-			}
+          $permission = $this->clear_url( Router::parse($action['alias'], false) );
+          $result = Hash::diff( $permission, $params );
+          $action_alow =  $action['alow'];
+          if( !$result && $action_alow ){
+            $alow = true;
+          }
+          if( !$result && $action_alow == null ){
+            $alow = false;
+          }
+        }
+      }
     }
 
     return $alow;
