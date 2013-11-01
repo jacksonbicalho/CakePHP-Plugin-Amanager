@@ -47,6 +47,12 @@ class GroupsController extends AmanagerAppController {
         $this->Session->setFlash(__('The group could not be saved. Please, try again.'));
       }
     }
+    $rules = $this->Group->Rule->find('list');
+    echo '<pre>';
+            print_r($rules);
+    echo '</pre>';
+    die();
+
   }
 
   /**
