@@ -14,6 +14,8 @@ class AmanagerHelper extends AppHelper {
     if (is_null($name)) $name=$this->params['controller'];
     $className = ucfirst($name) . 'Controller';
     list($plugin, $className) = pluginSplit($className, true);
+    $className = Inflector::camelize($className);
+
     App::import('Controller', $name);
     $cont = new $className;
     $cont->constructClasses();
