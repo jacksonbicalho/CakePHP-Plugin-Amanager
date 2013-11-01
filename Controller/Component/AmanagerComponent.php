@@ -158,15 +158,11 @@ class AmanagerComponent extends Component {
 
   function startup(Controller $controller = null) {
 
-    if( isset($this->settings->login_action) )
-      $this->login_action = $this->settings->login_action;
+    if( isset($this->settings->login_action) ) $this->login_action = $this->settings['login_action'];
 
-    if( isset($this->settings->login_redirect) )
-      $this->login_redirect = $this->settings->login_redirect;
+    if( isset($this->settings->login_redirect) ) $this->login_redirect = $this->settings['login_redirect'];
 
-    if( isset($this->settings->logout_redirect) )
-      $this->logout_redirect = $this->settings->logout_redirect;
-
+    if( isset($this->settings->logout_redirect) ) $this->logout_redirect = $this->settings['logout_redirect'];
   }
 
   public function login($data_login){
