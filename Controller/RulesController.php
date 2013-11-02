@@ -94,7 +94,8 @@ class RulesController extends AmanagerAppController {
           '/id',
         array_diff_assoc($actions_salvas['Action'], $data['Action'])
         );
-        $this->Rule->Action->deleteAll($excluir);
+
+        $this->Rule->Action->deleteAll(array('Action.id' => $excluir), false);
 
       }else{ //Exclui todas as ações da regra em questão
         $this->Rule->Action->deleteAll( array('rule_id'=>$data['Rule']['id'])) ;
@@ -217,6 +218,7 @@ class RulesController extends AmanagerAppController {
     $rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
 
     $prefix = explode('_', $rule['action']);
+
     // Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
     if(isset($prefix[0])){
 
@@ -225,7 +227,9 @@ class RulesController extends AmanagerAppController {
       }
 
     }
-    $novo_alias = strtolower(Router::url($rule + array("base" => false)));
+
+    $rule['controller'] = Inflector::underscore($rule['controller']);
+    $novo_alias = strtolower(Router::url(  $rule + array("base" => false )));
     $alias[]['alias'] =  strtolower(Router::url($rule + array("base" => false)));
 
     foreach($action as $k => $v){

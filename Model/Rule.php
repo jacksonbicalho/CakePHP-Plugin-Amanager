@@ -53,6 +53,14 @@ class Rule extends AmanagerAppModel {
 
       function beforeValidate(){
 
+        $data_rules = $this->find('all');
+//echo '<pre>';
+        //print_r($data_rules['Action']);
+        //print_r($this->data['Action']);
+//echo '</pre>';
+//die('@3ed02154');
+
+
         return true;
 
       }
