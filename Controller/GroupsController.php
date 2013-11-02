@@ -48,11 +48,7 @@ class GroupsController extends AmanagerAppController {
       }
     }
     $rules = $this->Group->Rule->find('list');
-    echo '<pre>';
-            print_r($rules);
-    echo '</pre>';
-    die();
-
+    $this->set(compact('rules'));
   }
 
   /**
@@ -77,6 +73,7 @@ class GroupsController extends AmanagerAppController {
     } else {
       $this->request->data = $this->Group->read(null, $id);
     }
+    $this->list_rules();
   }
 
   /**
@@ -102,5 +99,18 @@ class GroupsController extends AmanagerAppController {
     $this->Session->setFlash(__('Group was not deleted'));
     $this->redirect(array('action' => 'index'));
   }
+
+  /**
+   * Lista todas as regras do sistema já disponibilizando a variável
+   *
+   * list_rules method
+   *
+   * @return void
+   */
+  public function list_rules() {
+    $rules = $this->Group->Rule->find('list');
+    $this->set(compact('rules'));
+  }
+
 
 }
