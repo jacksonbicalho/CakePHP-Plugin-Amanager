@@ -1,16 +1,15 @@
 {
-    "name": "jacksonbicalho/amanager",
-    "type": "library",
-    "description": "Gerenciador de acesso para CakePHP",
-    "keywords": ["cakephp","login"],
-    "homepage": "http://github.com/jacksonbicalho/amanager",
+    "name": "jackson/amanager",
+    "description": "Gerenciador de acesso para aplicação CakePHP",
     "license": "MIT",
     "authors": [
         {
             "name": "Jackson Bicalho",
-            "email": "jacksonbicalho@gmail.com",
-            "homepage": "http://github.com/jacksonbicalho/amanager",
-            "role": "Developer"
+            "email": "jacksonbicalho@gmail.com"
         }
-    ]
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    }
 }
