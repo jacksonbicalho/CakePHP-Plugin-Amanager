@@ -1,4 +1,7 @@
 <?php
+
+
+
 /*
  * Endereços liberados por padrão
  *
@@ -20,9 +23,8 @@
  *
  *
  */
-  foreach ( Configure::read('Global.urls_livres' ) as $url_livre){
-    $amanager_urls_livres[] = $url_livre;
-  }
+
+  $amanager_urls_livres = array_merge(Configure::read('Global.urls_livres' ), $amanager_urls_livres);
   Configure::write('Amanager.urls_livres',$amanager_urls_livres);
 
 /*
