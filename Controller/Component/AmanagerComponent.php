@@ -195,21 +195,26 @@ class AmanagerComponent extends Component {
   //... para ela.
   function isAllowed($params = null) {
 
-    // Ignora parâ,etros pssados pela URL
+    // Ignora parâmetros pssados pela URL
     if(isset($params['pass'])){
       $params['pass'] = array();
     }
     if(isset($params['named'])){
       $params['named'] = array();
     }
-    $url = Router::url($params  + array("base" => false));
+    if(isset($params['ext'])){
+      //$params['ext'] = array();
+      $params['ext'] = array();
+      unset($params['ext']);
+    }
+    if(isset($params['isAjax'])){
+      $params['isAjax'] = array();
+    }
 
-    // Limpa os parâmertros
-//    $params = $this->clear_url( $params );
+    $url = Router::url($params  + array("base" => false));
 
     // Verifica se a url é livre, se sim já libera o acesso
     if( $this->checks_urls_free( $params ) ) return true;
-    //$teste = $this->checks_urls_free( $params ) ;
 
     // Se estiver no grupo administrators permite
     $groups = $this->Session->read('Amanager.Group');
@@ -222,12 +227,10 @@ class AmanagerComponent extends Component {
     if(!$groups) return false;
     $alow = false;
 
-
     foreach( $groups as $group ){
       $rules = Hash::sort($group['Rule'], '{n}.order', 'desc');
       foreach( $rules as $actions ){
         foreach( $actions['Action'] as $action ){
-       //   $permission = $this->clear_url($action['alias']);
 
           $action['alias'] = Router::parse($action['alias'], false );
           $action['alias'] = Router::url($action['alias']   + array("base" => false));
@@ -242,9 +245,8 @@ class AmanagerComponent extends Component {
         }
       }
     }
-    //die('#$EDfr5487');
+    $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
     return $alow;
-
   }
 
   /**
