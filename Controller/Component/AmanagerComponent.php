@@ -195,7 +195,13 @@ class AmanagerComponent extends Component {
   //... para ela.
   function isAllowed($params = null) {
 
-
+    // Ignora parâ,etros pssados pela URL
+    if(isset($params['pass'])){
+      $params['pass'] = array();
+    }
+    if(isset($params['named'])){
+      $params['named'] = array();
+    }
     $url = Router::url($params  + array("base" => false));
 
     // Limpa os parâmertros
@@ -223,8 +229,8 @@ class AmanagerComponent extends Component {
         foreach( $actions['Action'] as $action ){
        //   $permission = $this->clear_url($action['alias']);
 
-        $action['alias'] = Router::parse($action['alias'], false );
-        $action['alias'] = Router::url($action['alias']   + array("base" => false));
+          $action['alias'] = Router::parse($action['alias'], false );
+          $action['alias'] = Router::url($action['alias']   + array("base" => false));
 
           $action_alow =  $action['alow'];
           if( $url == $action['alias'] && $action_alow ){
