@@ -191,19 +191,19 @@ class AmanagerComponent extends Component {
 
   // Função que checa se o(s) grupo(s) do usuário logado
   //... tem acesso a área solicitada
+  // Transforma os parâmetros em uma url e checa se a existe uma regra
+  //... para ela.
   function isAllowed($params = null) {
 
-    $params['url'] = null; // Para não retornar erro de Router::reverse
-    $teste = Router::reverse($params, false);
+
+    $url = Router::url($params  + array("base" => false));
 
     // Limpa os parâmertros
-    $params = $this->clear_url( $params );
+//    $params = $this->clear_url( $params );
 
     // Verifica se a url é livre, se sim já libera o acesso
-
-    $teste = $this->checks_urls_free( $params ) ;
-
     if( $this->checks_urls_free( $params ) ) return true;
+    //$teste = $this->checks_urls_free( $params ) ;
 
     // Se estiver no grupo administrators permite
     $groups = $this->Session->read('Amanager.Group');
@@ -216,24 +216,27 @@ class AmanagerComponent extends Component {
     if(!$groups) return false;
     $alow = false;
 
+
     foreach( $groups as $group ){
-      $rules = Hash::sort($group['Rule'], '{n}.order', 'asc');
+      $rules = Hash::sort($group['Rule'], '{n}.order', 'desc');
       foreach( $rules as $actions ){
         foreach( $actions['Action'] as $action ){
+       //   $permission = $this->clear_url($action['alias']);
 
-          $permission = $this->clear_url( Router::parse($action['alias'], false) );
-          $result = Hash::diff( $permission, $params );
+        $action['alias'] = Router::parse($action['alias'], false );
+        $action['alias'] = Router::url($action['alias']   + array("base" => false));
+
           $action_alow =  $action['alow'];
-          if( !$result && $action_alow ){
+          if( $url == $action['alias'] && $action_alow ){
             $alow = true;
           }
-          if( !$result && $action_alow == null ){
+          if( $url == $action['alias'] && $action_alow == null ){
             $alow = false;
           }
         }
       }
     }
-
+    //die('#$EDfr5487');
     return $alow;
 
   }
@@ -400,23 +403,23 @@ class AmanagerComponent extends Component {
    **/
   public function checks_urls_free($params) {
 
+    $return = false;
+    $params = Router::url($params  + array("base" => false));
     $urls_livres = Configure::read('Amanager.urls_livres');
-
     foreach($urls_livres as $url_livre){
-
-      $result = Hash::diff($url_livre, $params);
+      $url_livre = Router::url($url_livre  + array("base" => false));
+      //$result = Hash::diff($url_livre, $params);
       // Se for para todas as ações do controlador permite
-      if( isset($url_livre['action'])){
-        if( ($params['controller'] == $url_livre['controller'] && $url_livre['action']=='*') && ( !isset($url_livre['admin']) == !isset($params['admin']) ) ){
-          return true;
-        }
+      //if( isset($url_livre['action'])){
+      if( $url_livre == $params ){
+        //if( ($params['controller'] == $url_livre['controller'] && $url_livre['action']=='*') && ( !isset($url_livre['admin']) == !isset($params['admin']) ) ){
+          $return = true;
+        //}
       }
-
-      if( count($result) == 0) return true;
+      //if( count($result) == 0) return true;
+      //return true;
     }
-
-    return false;
-
+    return $return;
   }
 
   /**
@@ -433,6 +436,24 @@ class AmanagerComponent extends Component {
    *
    **/
   public function clear_url($url, $manter = array()) {
+
+
+    // Se não for um array o transforma em um
+    if(!is_array($url)){
+      $url = Router::parse($url, false );
+    }
+
+    // Se só foi informado o controlador
+    if(count($url) == 1){
+      if(isset($url['controller'])){
+
+echo 'clear_url<pre>';
+        print_r($url);
+echo '</pre>';
+
+        $url = Router::url($url);
+      }
+    }
 
     foreach( $url as $k  => $v ){
       if( !in_array($k, $this->parametros_levados_em_conta) && !in_array($k, $manter) ){
@@ -453,6 +474,9 @@ class AmanagerComponent extends Component {
     if (array_key_exists('admin', $url)) {
       if(empty($url['admin']))unset( $url['admin'] );
     }
+
+    // Se tiver admin no nome do controlador, remove
+    $url['controller'] = str_replace( 'admin/', '',$url['controller']);
 
     return $url ;
   }
