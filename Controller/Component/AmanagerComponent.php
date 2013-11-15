@@ -382,6 +382,24 @@ class AmanagerComponent extends Component {
 
   /**
    *
+   * Obtém os grupos do usuário logado
+   *
+   * get_group_names method
+   *
+   * @return array $groups
+   *
+   **/
+  public function get_group_names_logged(){
+    $groups = $this->Session->read('Amanager.Group');
+    $g = array();
+    foreach( $groups as $group ){
+      $g[] = $group['name'];
+    }
+    return $g;
+  }
+
+  /**
+   *
    * Insere nova chave de ataulização de senha para o usuário especificado
    *
    * set_password_change_code method
