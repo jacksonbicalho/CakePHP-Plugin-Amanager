@@ -16,7 +16,10 @@ class AmanagerHelper extends AppHelper {
     list($plugin, $className) = pluginSplit($className, true);
     $className = Inflector::camelize($className);
 
+    if (!$this->check_controller_exist($className)) return false ;
+
     App::import('Controller', $name);
+
     $cont = new $className;
     $cont->constructClasses();
     $cont->request=$this->request;
@@ -55,6 +58,21 @@ class AmanagerHelper extends AppHelper {
     App::import('Model', 'Amanager.User');
     $this->User = new User();
     return( $this->User->in_group($user_id, $group_name) );
+  }
+
+  public function check_controller_exist( $name_controller ) {
+    $aCtrlClasses = App::objects('controller');
+    foreach ($aCtrlClasses as $controller) {
+      if ($controller != 'AppController') {
+        // Load the controller
+        App::import('Controller', str_replace('Controller', '', $controller));
+
+        // Load the ApplicationController (if there is one)
+        App::import('Controller', 'AppController');
+        $controllers[] = $controller;
+      }
+    }
+    return in_array($name_controller, $controllers );
   }
 
 }
