@@ -1,28 +1,23 @@
 Amanager
 ==========
 
-Access Manager for cakePHP
+Gerenciador de acesso para aplicações desenvolvidas em cakePHP
 
-Desenvolvido e testado no cakePHP 2.2.2
-
-Amanager é um plugin gerenciador de acesso
+Desenvolvido e testado no cakePHP 2.+
 
 Principais características
 ---------------------------
 
-1. Gerencianto de grupos
-2. Gerenciamento de usuários (Podendo esses pertencerem a um ou mais grupos)
-3. Gerenciamento de regras (que são atribuídas a um ou mais grupos)
+1. Gerenciamento de grupos
+2. Gerenciamento de usuários (Podendo os usuários pertencerem a um ou mais grupos)
+3. Gerenciamento de regras (Atribuídas a um ou mais grupos)
 
 Instalação
 -----------
 
-1. Em seu projeto entre em app/Plugin
+1. git submodule add https://github.com/jacksonbicalho/Amanager.git app/Plugin/Amanager
 
-2. Usando o git digite git clone git@github.com:jacksonbicalho/Amanager.git ou baixe o Plugin (https://github.com/jacksonbicalho/Amanager/archive/master.zip) e descompacte na mesmo diretório
-
-3. Em seu AppController insira
-
+2. Referencie o componente do Plugin  em $components em seu AppController
 
         <?php
           var $components = array(
@@ -32,24 +27,17 @@ Instalação
               'logout_redirect' => array('controller'=>'pages', 'plugin' => false, 'action'=>'display', 'admin'=>false )
             ),
           );
+        ?>
 
+3. Em beforeFilter chame o compontente do plugin passando o controlador atual
+
+        <?php
           public function beforeFilter(){
             $this->Amanager->beforeFilter($this);
           }
         ?>
 
-
 4. Em seu boostrap
-
-        <?php
-          CakePlugin::loadAll(array(
-            'Amanager' => array('bootstrap' => true),
-          ));
-        ?>
-
-
-5. Ainda em seu boostrap
-
 
         <?php
           $global_urls_livres = array(
@@ -62,3 +50,14 @@ Instalação
           );
           Configure::write('Global.urls_livres',$global_urls_livres);
         ?>
+
+
+
+        <?php
+          CakePlugin::loadAll(array(
+            'Amanager' => array('bootstrap' => true),
+          ));
+        ?>
+
+
+
