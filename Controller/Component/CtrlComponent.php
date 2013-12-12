@@ -25,14 +25,13 @@ class CtrlComponent extends Component {
    */
   public function get_controlles_plugins($plugin, $str_controller = false) {
 
-    if(!$plugin)
-      return $this->get_controllers($str_controller);
-
+    if(!$plugin) return $this->get_controllers($str_controller);
 
     $dir_plugin = new Folder("../Plugin/{$plugin}");
     $_controllers = $dir_plugin->cd('Controller');
     $_controllers = $dir_plugin->read('.*\.*');
 
+    $controllers = array();
     foreach($_controllers as $k => $v){
       foreach($v as $_k => $_v){
         if($_v != $plugin.'AppController.php' && $_v != 'Component'){
