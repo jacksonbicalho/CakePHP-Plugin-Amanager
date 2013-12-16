@@ -1,7 +1,5 @@
 <?php
 
-
-
 /*
  * Endereços liberados por padrão
  *
@@ -42,3 +40,15 @@ Configure::write('Amanager.page_ini', array('plugin'=>false, 'controller' => 'pa
  *
  */
 Configure::write('Amanager.group_master', 'MASTER' );
+
+/**
+ * Usa os dados da conexão default para criar em tempo de execução
+ * a conexação accessmanager, necessário para o funcionamento do plugin
+ *
+ * @return array $menu
+ */
+$accessmanager = array('prefix' => 'am_');
+App::uses('ConnectionManager', 'Model');
+$connection_default =  ConnectionManager::enumConnectionObjects();
+$accessmanager = array_merge($connection_default['default'], $accessmanager);
+ConnectionManager::create( 'accessmanager', $accessmanager );
