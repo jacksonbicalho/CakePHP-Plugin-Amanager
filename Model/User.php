@@ -7,6 +7,8 @@ App::uses('AmanagerAppModel', 'Amanager.Model');
  */
 class User extends AmanagerAppModel {
 
+  var $alter_username = false;
+
   /**
    * Use database config
    *
@@ -39,7 +41,7 @@ class User extends AmanagerAppModel {
         //'allowEmpty' => false,
         //'required' => false,
         'last' => false, // Stop validation after this rule
-        //'on' => 'create', // Limit validation to 'create' or 'update' operations
+        'on' => 'create', // Limit validation to 'create' or 'update' operations
       ),
     ),
 
@@ -48,7 +50,7 @@ class User extends AmanagerAppModel {
         'rule'     => 'notempty',
         'required' => true,
         'message'  => 'Este campo é obrigatório',
-        //'on' => 'create', // Limit validation to 'create' or 'update' operations
+        'on' => 'create', // Limit validation to 'create' or 'update' operations
       ),
       'compare_password' => array(
         'rule'    => 'compare_password',
@@ -117,10 +119,28 @@ class User extends AmanagerAppModel {
 
   public function beforeSave($options = array()) {
 
-    if( !empty($this->data['User']['password']) or !empty($this->data['User']['password2']) ){
+    // Obtém o nome de uauário cadastrado no sistema
+    // e verifica se o mesmo foi alterado
+    $user =  $this->findById($this->id);
+    $username = $user['User']['username'];
+    $alter_username = $this->data['User']['username'] != $username?true:false;
 
-      $this->validate['password']['notempty']['on']='update';
-      $this->validate['password2']['notempty']['on']='update';
+    // Se o nome de usuário digitado for diferente do nome de usuário cadastrado
+    // se a senha nõ estiver vazia ou confirmação de senha não estiver vazia
+    if(
+        ( $username != null and $alter_username) or
+        !empty($this->data['User']['password']) or
+        !empty($this->data['User']['password2'])
+      ){
+      //$this->validate['password']['notempty']['on']='update';
+      //$this->validate['password2']['notempty']['on']='update';
+
+      // Se nome de usuário tiver sido alterado, obriga a digitar a senha
+      // levando em conta que a senha é criptografada de acordo com o nome de usuário
+      if($alter_username){
+        $this->validate['password']['notempty']['required'] = true;
+        $this->validate['password2']['notempty']['required'] = true;
+      }
 
       $this->validate['password2']['compare_password'] = array(
         'rule'    => 'compare_password',
@@ -131,9 +151,48 @@ class User extends AmanagerAppModel {
       if ( isset($this->data['User']['password2']) ){
         unset($this->data['User']['password2']);
       }
+    }else{
+      // Se a senha não tiver sido alterada, remove os campos para não sofrerem alterações
+      unset($this->data['User']['password']);
+      unset($this->data['User']['password2']);
     }
+
     return true;
   }
+
+
+
+/**
+ * Called during validation operations, before validation. Please note that custom
+ * validation rules can be defined in $validate.
+ *
+ * @param array $options Options passed from model::save(), see $options of model::save().
+ * @return boolean True if validate operation should continue, false to abort
+ * @link http://book.cakephp.org/2.0/en/models/callback-methods.html#beforevalidate
+ */
+	public function beforeValidate($options = array()) {
+
+    // Obtém o nome de uauário cadastrado no sistema
+    // e verifica se o mesmo foi alterado
+    $user =  $this->findById($this->id);
+    $username = $user['User']['username'];
+    $this->alter_username = $this->data['User']['username'] != $username?true:false;
+
+    // Se nome de usuário tiver sido alterado, obriga a digitar a senha
+    // levando em conta que a senha é criptografada de acordo com o nome de usuário
+    if($this->alter_username){
+      unset($this->validate['password']['password']['on']);
+      unset($this->validate['password2']['notempty']['on']);
+      $this->validate['password']['password'] = array(
+        'rule'    => 'notempty',
+        'message' => 'Para alterar o nome de usuário é necessário digitar a senha. Se desejar, você pode aproveitar para alter a senha.',
+      );
+
+    }
+
+		return true;
+	}
+
 
   public function encripty_password($password, $username) {
     return md5($password . $username);
