@@ -228,7 +228,7 @@ class UsersController extends AmanagerAppController {
         $data['User'] = Set::classicExtract($user, 'User');
 				if ($this->User->save($data)) {
           $email = new CakeEmail('smtp');
-          $email->theme('Defaut');
+          $email->theme('Amanager.Defaut');
           $email->template('Amanager.forgot_password');
           //$email->template('default', 'default');
           $email->emailFormat('html');
