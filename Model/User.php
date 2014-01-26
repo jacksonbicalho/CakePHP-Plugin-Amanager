@@ -171,25 +171,25 @@ class User extends AmanagerAppModel {
  * @link http://book.cakephp.org/2.0/en/models/callback-methods.html#beforevalidate
  */
 	public function beforeValidate($options = array()) {
+    // Se id não for falso está sendo alterado
+    if($this->id){
+      // Obtém o nome de uauário cadastrado no sistema
+      // e verifica se o mesmo foi alterado
+      $user =  $this->findById($this->id);
+      $username = $user['User']['username'];
+      $this->alter_username = $this->data['User']['username'] != $username?true:false;
 
-    // Obtém o nome de uauário cadastrado no sistema
-    // e verifica se o mesmo foi alterado
-    $user =  $this->findById($this->id);
-    $username = $user['User']['username'];
-    $this->alter_username = $this->data['User']['username'] != $username?true:false;
-
-    // Se nome de usuário tiver sido alterado, obriga a digitar a senha
-    // levando em conta que a senha é criptografada de acordo com o nome de usuário
-    if($this->alter_username){
-      unset($this->validate['password']['password']['on']);
-      unset($this->validate['password2']['notempty']['on']);
-      $this->validate['password']['password'] = array(
-        'rule'    => 'notempty',
-        'message' => 'Para alterar o nome de usuário é necessário digitar a senha. Se desejar, você pode aproveitar para alter a senha.',
-      );
-
+      // Se nome de usuário tiver sido alterado, obriga a digitar a senha
+      // levando em conta que a senha é criptografada de acordo com o nome de usuário
+      if($this->alter_username){
+        unset($this->validate['password']['password']['on']);
+        unset($this->validate['password2']['notempty']['on']);
+        $this->validate['password']['password'] = array(
+          'rule'    => 'notempty',
+          'message' => 'Para alterar o nome de usuário é necessário digitar a senha. Se desejar, você pode aproveitar para alter a senha.',
+        );
+      }
     }
-
 		return true;
 	}
 
