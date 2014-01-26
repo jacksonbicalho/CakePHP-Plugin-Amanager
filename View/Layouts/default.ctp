@@ -26,8 +26,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     echo $this->Html->meta('icon');
     echo $this->Html->css(
                          array(
-                           '/amanager/css/TwitterBootstrap/bootstrap.min',
-                           '/amanager/css/TwitterBootstrap/bootstrap-responsive.min',
+                           '/amanager/css/bootstrap.min',
+                           '/amanager/css/bootstrap-theme.min',
                            '/amanager/css/style',
                          )
                        );
@@ -35,7 +35,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
             array(
                 '/amanager/js/jquery/jquery-1.7.2.min',
                 '/amanager/js/jquery/plugins/jquery-ui-1.8.21.custom.min',
-                '/amanager/js/TwitterBootstrap/bootstrap.min',
+                '/amanager/js/bootstrap.min',
             )
     );
     echo $this->fetch('meta');
@@ -44,7 +44,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     ?>
   </head>
   <body>
-    <?php echo $this->element('navbar-fixed-top'); ?>
+
+    <?php echo $this->element('header'); ?>
+
     <div id="main" class="container">
       <?php echo $this->Session->flash(); ?>
       <?php echo $this->fetch('content'); ?>

@@ -9,22 +9,13 @@ div#main.container div#amanager-index.amanager img{
   float:right;
 }
 
-/* Navbar */
-body > .navbar .brand {
-    -moz-transition: all 0.2s linear 0s;
-    color: #000000;
-    font-weight: bold;
-    margin: 0 20px;
-    padding-left: 0;
-    padding-right: 0;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
+/* header Navbar */
+header.navbar div.container nav.collapse ul.nav li.dropdown img{
+  max-height:30px;
+  width:auto;
+  vertical-align:middle;
 }
 
-
-/* Caminho dos icones do bootstrap */
-[class^="icon-"], [class*=" icon-"] {
-    background-image: url("TwitterBootstrap/img/glyphicons-halflings.png");
-}
 
 /* Actions for table */
 table.table tbody tr th.actions{
@@ -171,11 +162,6 @@ footer {
 	clear: both;
 	padding: 6px 10px;
 }
-
-.icon-white{
-  background-image: url("TwitterBootstrap/img/glyphicons-halflings-white.png");
-}
-
 
 
 dl.tabela {
