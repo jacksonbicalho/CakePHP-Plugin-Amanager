@@ -16,10 +16,27 @@ header.navbar div.container nav.collapse ul.nav li.dropdown img{
   vertical-align:middle;
 }
 
+/* sidebar */
+div.container div.row div#sidebar{
+  margin-top: 25px;
+  width: auto;
+}
 
 /* Actions for table */
 table.table tbody tr th.actions{
   width:195px;
+}
+
+/* Order table */
+a.asc:before {
+  content: "";
+}
+a.desc:before {
+  content: "";
+}
+a.asc,
+a.desc {
+  font-family: 'Glyphicons Halflings';
 }
 
 /* form login */

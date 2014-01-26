@@ -44,28 +44,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     ?>
   </head>
   <body>
-
     <?php echo $this->element('header'); ?>
-
-    <div id="main" class="container">
-      <?php echo $this->Session->flash(); ?>
-      <?php echo $this->fetch('content'); ?>
-      <hr />
-      <footer>
-        <div class="vcard">
-          <span class="fn org">Organização</span>
-          <div class="adr">
-            <span class="street-address">Endereço</span>,
-            <span class="locality">Rio de Janeiro</span> / <abbr title="Rio de Janeiro" class="region">RJ</abbr>,
-            <span class="country-name">Brasil</span>
-          </div>
-          <div>
-            <span class="email">contato@email.com.br</span> -
-            <span class="url">http://www.site.com.br/</span>
-          </div>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right">
+          <?php echo $this->Session->flash(); ?>
+          <?php echo $this->fetch('content'); ?>
         </div>
-      </footer>
-    </div>
-<?php echo $this->Js->writeBuffer(); ?>
+      </div>
+    <?php echo $this->element('footer'); ?>
+    <?php echo $this->Js->writeBuffer(); ?>
   </body>
 </html>
