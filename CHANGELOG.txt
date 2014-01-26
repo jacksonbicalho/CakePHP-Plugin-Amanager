@@ -1,22 +1,4 @@
--- Changelog Version 0.0.3
+-- Changelog Version 0.0.4
 
-Ao deslogar mensagem (flash) está tentando usar um ememento que não existe
-Opened by jacksonbicalho   updated 2 minutes ago
-#8
-Alterar o grupo de super "usuário" enhancement
-Opened by jacksonbicalho   updated an hour ago
-#7
-Erro ao deslogar bug
-Opened by jacksonbicalho   updated an hour ago  1 comment
-#3
-Quando usuário entra direto para a tela de login, não está sendo redirecionado para nenuma tela bug
-Opened by jacksonbicalho   updated an hour ago
-#5
-Os links de gerencimanto do Plugin localizados no menu fixo estão sendo exibidos no momento do login bug
-Opened by jacksonbicalho   updated an hour ago
-#6
-Mesmo com usuário logado, a tela de login está acessível bug
-Opened by jacksonbicalho   updated an hour ago
-#9
-Corrigir título exibido no menu de Acess para Access bug
-Opened by jacksonbicalho   updated 2 hours ago
+Me perdi nas alterações.
+Executar git log para ver ultimas alterações, ou usar gitg ou similar para ver alterações entre tags
