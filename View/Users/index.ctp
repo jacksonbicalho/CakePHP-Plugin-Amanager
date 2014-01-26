@@ -1,18 +1,18 @@
   <div class="users index">
-    <h2><?php echo __('Users'); ?></h2>
+    <h2><?php echo __d('amanager', 'Users'); ?></h2>
     <p>
     <?php
     echo $this->Paginator->counter(array(
-    'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+    'format' => __d('amanager', 'Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
     ));
     ?></p>
     <table class="table table-bordered table-striped">
       <tr>
           <th><?php echo $this->Paginator->sort('id'); ?></th>
-          <th><?php echo $this->Paginator->sort('username', __('User Name', true)); ?></th>
-          <th><?php echo $this->Paginator->sort('email', __('E-mail', true)); ?></th>
-          <th><?php echo $this->Paginator->sort('status', __('Status', true)); ?></th>
-          <th class="actions"><?php echo __('Actions'); ?></th>
+          <th><?php echo $this->Paginator->sort('username', __d('amanager', 'User Name')); ?></th>
+          <th><?php echo $this->Paginator->sort('email', __d('amanager', 'Email')); ?></th>
+          <th><?php echo $this->Paginator->sort('status', __d('amanager', 'Status')); ?></th>
+          <th class="actions"><?php echo __d('amanager', 'Actions'); ?></th>
       </tr>
     <?php
     foreach ($users as $user): ?>
@@ -31,20 +31,19 @@
       </tr>
   <?php endforeach; ?>
     </table>
-
     <div class="paging">
     <?php
-      echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+      echo $this->Paginator->prev('< ' . __d('amanager', 'previous'), array(), null, array('class' => 'prev disabled'));
       echo $this->Paginator->numbers(array('separator' => ''));
-      echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+      echo $this->Paginator->next(__d('amanager', 'next') . ' >', array(), null, array('class' => 'next disabled'));
     ?>
     </div>
   </div>
   <div class="actions">
     <h3><?php echo __('Actions'); ?></h3>
     <ul>
-      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New User'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
-      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
-      <li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('New Group'), array('controller' => 'groups', 'action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __d('amanager', 'New User'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
+      <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __d('amanager', 'List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+      <li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __d('amanager', 'New Group'), array('controller' => 'groups', 'action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?> </li>
     </ul>
   </div>
