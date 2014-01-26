@@ -6,5 +6,7 @@ echo $this->Form->create('User', array('url' => array('controller' =>'users', 'a
 <?php
 echo $this->Form->input('User.username', array('label'=>'E-mail', 'class'=>'input-block-level', 'placeholder'=>__('Email address')));
 echo $this->Form->input('User.password', array('label'=>'Senha', 'class'=>'input-block-level', 'placeholder'=>__('Password')));
-echo $this->Form->end(array('label'=>__('Login'), 'class'=>'btn btn-large btn-primary'));
+echo $this->Form->submit(__('Login'), array('class'=>'btn btn-large btn-primary'));
+echo $this->Html->link(__('Forgot password'), array('plugin'=>'amanager', 'controller'=>'users', 'action'=>'forgot_password' ));
+echo $this->Form->end();
 ?>

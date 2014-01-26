@@ -1,5 +1,6 @@
 <?php
 App::uses('AmanagerAppController', 'Amanager.Controller');
+App::uses('CakeEmail', 'Network/Email');
 /**
  * Users Controller
  *
@@ -137,7 +138,7 @@ class UsersController extends AmanagerAppController {
     }
 
     // Verifica se ainda está dentro do prazo de validade estabelecido nas configurações
-    $prazo_validate = Configure::read('Ealbum.password_change_code.limit');
+    $prazo_validate = Configure::read('Amanager.password_change_code.limit');
 
     $data_start = strtotime( $user['User']['modified'] );
     $data_end = strtotime( date("Y-m-d H:i:s") );
@@ -157,7 +158,7 @@ class UsersController extends AmanagerAppController {
       // a nao ser que o usuário inicie o novo processo
       $this->request->data['User']['passwordchangecode'] = '';
 
-      // Obtén os dados necessários para serem validados
+      // Obtém os dados necessários para serem validados
       $this->request->data['User']['username'] = $user['User']['username'];
       $this->request->data['User']['email'] = $user['User']['email'];
 
@@ -206,6 +207,46 @@ class UsersController extends AmanagerAppController {
       }
 
       $this->Amanager->login($data_login);
+
+    }
+  }
+
+  /**
+   * forgot_password method
+   *
+   * @throws NotFoundException
+   * @return void
+   */
+  public function forgot_password() {
+
+    if ($this->request->is('post') || $this->request->is('put')) {
+
+      // Verifica se o e-mail digitado existe
+      $user = $this->User->findByEmail($this->request->data['User']['email']);
+      if( $user ){
+        $md5_code = $user['User']['passwordchangecode'] = md5(time()*rand().$user['User']['email']);
+        $data['User'] = Set::classicExtract($user, 'User');
+				if ($this->User->save($data)) {
+          $email = new CakeEmail('smtp');
+          $email->theme('Defaut');
+          $email->template('Amanager.forgot_password');
+          //$email->template('default', 'default');
+          $email->emailFormat('html');
+          $email->to($user['User']['email']);
+          $email->subject('[Nome do site] - Recuperação de senha');
+          $mensagem = "";
+          $mensagem .= "<p>" . __("Olá ") . ",<br />" . "\n";
+          //$mensagem .= __("Para continuar o processo de recuperação de sua senha, clique no link abaixo.</p>\n");
+          $mensagem .= "\n";
+          $email->viewVars(array('mensagem' => $mensagem, 'md5_code' =>$md5_code ));
+          $email->send();
+          $this->Session->setFlash(__('The Contact has been saved'));
+          $this->redirect(array('action' => 'index'));
+        }
+
+      }else{
+        $this->Session->setFlash(__('Não temos este e-mail cadastrado em nosso sistema'));
+      }
 
     }
   }
