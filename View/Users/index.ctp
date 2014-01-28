@@ -4,7 +4,9 @@
   <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>  ' . __d('amanager', 'New Group'), array('controller' => 'groups', 'action' => 'add'), array('escape'=>false)); ?></li>
 </ul>
 <div class="users index col-xs-12">
-  <h2><?php echo __d('amanager', 'Users'); ?></h2>
+  <div class="page-header">
+    <h2><?php echo __d('amanager', 'Users'); ?></h2>
+  </div>
   <p>
   <?php
   echo $this->Paginator->counter(array(

@@ -207,3 +207,12 @@ dl.tabela {
 		padding: .5em;
 		border-bottom: 1px solid #999;
 		}
+
+
+/* Helper Tbs */
+div.form-group div.input div.checkbox{
+  margin-top:0;
+  margin-bottom: 2px;
+}
+
+
