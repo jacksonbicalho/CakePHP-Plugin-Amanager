@@ -4,7 +4,7 @@ body {
   padding-bottom: 40px;
   padding-top: 60px;
 }
-.clr{clear:both;}
+.clr{clear:both}
 
 /* main container */
 div#main.container{
@@ -171,7 +171,6 @@ table.table tbody#sortable.ui-sortable tr td.reorder{
 /** Related **/
 .related {
 	clear: both;
-	display: block;
 }
 
 
