@@ -61,18 +61,21 @@
     )
   );
 ?>
-    <div id="actions-order" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="actions-order-Label" aria-hidden="true">
-      <div class="alert-info">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 class="alert-heading" id="actions-order-Label"><?php echo __('Attention!', true); ?></h3>
-        </div>
-        <div class="modal-body alert-info">
-          <p><?php echo __('The new ordinance will only be saved when you click the save button.', true)?></p>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="actions-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><?php echo __('Attention!', true); ?></h4>
+      </div>
+      <div class="modal-body alert-info">
+        <p><?php echo __('The new ordinance will only be saved when you click the save button.', true)?></p>
       </div>
       <div class="modal-footer">
-      <?php echo $this->Form->button(__('Save', true), array('action' => "#", 'id' => 'salvar', "class" => "btn", 'title' => 'Clique para salvar a nova ordenção' )); ?>
-      <?php echo $this->Html->link(__('Cancel', true), $this->Html->url(null, true), array('id' => 'salvar', "class" => "btn", 'title' => 'Clique para salvar a nova ordenção')); ?>
+        <?php echo $this->Form->button(__('Save', true), array('action' => "#", 'id' => 'salvar', "class" => "btn", 'title' => 'Clique para salvar a nova ordenção' )); ?>
+        <?php echo $this->Html->link(__('Cancel', true), $this->Html->url(null, true), array('id' => 'salvar', "class" => "btn", 'title' => 'Clique para salvar a nova ordenção')); ?>
       </div>
     </div>
+  </div>
+</div>

@@ -3,7 +3,6 @@
     <table class="table table-bordered table-striped">
       <tr>
         <th><?php echo __('Name');?></th>
-        <th><?php echo __('Group');?></th>
         <th><?php echo __('Action');?></th>
         <th class="actions"><?php echo __('Actions', true);?></th>
         <th class="reorder"><?php echo __('Reorder', true);?></th>
@@ -12,7 +11,6 @@
     <?php foreach ($rules as $k => $rule): ?>
       <tr id="Rule_<?php echo $rule['Rule']['id']; ?>">
         <td class="cancel"><?php echo $rule['Rule']['name']; ?></td>
-        <td class="cancel"><?php //pr( $rule['Group'] ); ?></td>
         <td class="cancel">
           <div id="actions_<?php echo $rule['Rule']['id']; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
@@ -40,7 +38,9 @@
           <?php echo $this->Html->link(__('Edit', true), array('action'=>'edit', $rule['Rule']['id']), array('class'=>'btn btn-link'))?>
           <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id']), array('class'=>'btn btn-link'), __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?>
         </td>
-        <td class="reorder"><i class="icon-th-list"></i></td>
+        <td class="reorder">
+          <span class="glyphicon glyphicon glyphicon-align-justify"></span>
+        </td>
       </tr>
     <?php endforeach; ?>
       </tbody>
