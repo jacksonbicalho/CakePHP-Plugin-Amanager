@@ -132,7 +132,7 @@ class AmanagerComponent extends Component {
 
       if( $this->is_logged() ){
 
-        $this->Session->setFlash(__('Acesso negado!'), 'message/error');
+        $this->Session->setFlash(__('Acesso negado!'), 'msg/error');
 
         if(
         $controller->request->params['action'] != $this->access_denied['action']
