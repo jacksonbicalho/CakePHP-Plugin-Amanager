@@ -28,6 +28,13 @@ div.container div.row div#sidebar{
 table.table tbody tr th.actions{
   width:195px;
 }
+td.actions{
+  text-align:center;
+}
+td.actions a{
+  margin: 0 5px;
+}
+
 
 /* Order table */
 a.asc:before {

@@ -3,6 +3,22 @@
   <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>  ' . __d('amanager', 'List Groups'), array('controller' => 'groups', 'action' => 'index'), array('escape'=>false)); ?></li>
   <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>  ' . __d('amanager', 'New Group'), array('controller' => 'groups', 'action' => 'add'), array('escape'=>false)); ?></li>
 </ul>
+
+
+
+  <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New Ruler'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
+
+    <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Users'), array('controller' => 'users', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+
+    <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('New User'), array('action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?></li>
+
+    <li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>  ' . __('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+    <li><?php echo $this->Html->link('<i class="icon-th-list"></i>  ' . __('New Group'), array('controller' => 'groups', 'action' => 'add'), array('class'=>'btn', 'escape'=>false)); ?> </li>
+
+
+
+
+
 <div class="users index col-xs-12">
   <div class="page-header">
     <h2><?php echo __d('amanager', 'Users'); ?></h2>

@@ -21,7 +21,7 @@ class RulesController extends AmanagerAppController {
 
   function view($id = null) {
     if (!$id) {
-      $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
+      $this->Session->setFlash(__('Invalid Rule.'), 'msg/error');
       $this->redirect(array('action'=>'index'));
     }
     $this->set('rule', $this->Rule->read(null, $id));
@@ -45,7 +45,7 @@ class RulesController extends AmanagerAppController {
         $this->Session->setFlash(__('The rule has been saved'));
         $this->redirect(array('action' => 'index'));
       } else {
-        $this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'message/error');
+        $this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'msg/error');
       }
     }
 
@@ -102,10 +102,10 @@ class RulesController extends AmanagerAppController {
       }
 
       if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
-        $this->Session->setFlash(__('The rule has been saved.'), 'message/success');
+        $this->Session->setFlash(__('The rule has been saved.'), 'msg/success');
         $this->redirect(array('action'=>'index'));
       } else {
-        $this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'message/warning');
+        $this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'msg/warning');
       }
     }
     if (empty($this->data)) {
@@ -147,10 +147,10 @@ class RulesController extends AmanagerAppController {
     $this->check_rule($id);
 
     if ($this->Rule->delete()) {
-      $this->Session->setFlash(__('Rule deleted.'), 'message/success');
+      $this->Session->setFlash(__('Rule deleted.'), 'msg/success');
       $this->redirect(array('action' => 'index'));
     }
-    $this->Session->setFlash(__('Rule was not deleted.'), 'message/error');
+    $this->Session->setFlash(__('Rule was not deleted.'), 'msg/error');
     $this->redirect(array('action' => 'index'));
   }
 
@@ -270,14 +270,14 @@ class RulesController extends AmanagerAppController {
   public function check_rule($id = null) {
 
     if (!$id && empty($this->data)) {
-      $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
+      $this->Session->setFlash(__('Invalid Rule.'), 'msg/error');
       $this->redirect(array('action'=>'index'));
     }
     $id = isset($this->data['Rule']['id'])?$this->data['Rule']['id']:$id;
 
     $this->Rule->id = $id;
     if (!$this->Rule->exists()) {
-      $this->Session->setFlash(__('Invalid Rule.'), 'message/error');
+      $this->Session->setFlash(__('Invalid Rule.'), 'msg/error');
       $this->redirect(array('action'=>'index'));
     }
   }
