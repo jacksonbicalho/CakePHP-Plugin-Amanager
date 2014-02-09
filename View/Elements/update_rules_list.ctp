@@ -5,7 +5,7 @@
         if ( isset($v['id']) )
           echo $this->Form->hidden("Action.{$k}.id", array('label'=>false, 'value'=>$v['id']));
 
-          echo $this->Form->input("Action.{$k}.alias", array('label'=>false, 'value'=>$v['alias']));
+          echo $this->Form->input("Action.{$k}.alias", array('label'=>false, 'value'=>$v['alias'], 'class'=>'form-control'));
         ?>
       </td>
       <td>
