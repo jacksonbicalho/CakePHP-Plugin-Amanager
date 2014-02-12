@@ -210,6 +210,7 @@ class RulesController extends AmanagerAppController {
 
     $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
 
+    unset($rule['select_all']);
     unset($rule['id']);
     unset($rule['name']);
     unset($rule['group_id']);

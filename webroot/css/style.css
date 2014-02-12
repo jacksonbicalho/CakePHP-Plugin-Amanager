@@ -6,6 +6,10 @@ body {
 }
 .clr{clear:both}
 
+.display_none{
+  display:none;
+}
+
 /* main container */
 div#main.container{
   margin-top:5px;
@@ -168,6 +172,25 @@ div#rules_list{
     width: 70%;
 }
 
+/* Rules Form */
+div.rules form div.form-group{
+  border-right: 1px solid #CCCCCC;
+  padding-right: 10px;
+  width: 325px;
+}
+div.rules form div.form-group a.all_actions{
+  left: 181px;
+  position: relative;
+  top: 35px;
+}
+div.rules form div.form-group div.input.checkbox.select_all{
+  left: 70px;
+  position: relative;
+  top: 80px;
+}
+
+
+
 /* Reorder */
 table.table tbody#sortable.ui-sortable tr td.reorder{
   text-align:center;
@@ -220,5 +243,3 @@ div.form-group div.input div.checkbox{
   margin-top:0;
   margin-bottom: 2px;
 }
-
-
