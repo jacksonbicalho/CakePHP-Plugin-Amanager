@@ -139,8 +139,7 @@ class UsersController extends AmanagerAppController {
 
     // Verifica se ainda está dentro do prazo de validade estabelecido nas configurações
     $prazo_validate = Configure::read('Amanager.password_change_code.limit');
-
-    $data_start = strtotime( $user['User']['modified'] );
+    $data_start = strtotime( $user['User']['updated'] );
     $data_end = strtotime( date("Y-m-d H:i:s") );
     $diff = $data_end - $data_start;
 
@@ -226,6 +225,11 @@ class UsersController extends AmanagerAppController {
       if( $user ){
         $md5_code = $user['User']['passwordchangecode'] = md5(time()*rand().$user['User']['email']);
         $data['User'] = Set::classicExtract($user, 'User');
+        unset($data['User']['password']);
+        unset($data['User']['created']);
+        unset($data['User']['updated']);
+        unset($data['User']['status']);
+
 				if ($this->User->save($data)) {
           $email = new CakeEmail('smtp');
           $email->theme('Amanager.Defaut');
