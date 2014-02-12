@@ -111,7 +111,7 @@ CREATE TABLE `am_users` (
   `passwordchangecode` varchar(128) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
+  `updated` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
