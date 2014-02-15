@@ -21,7 +21,8 @@
  * as urls como livre para o plugin
  *
  */
-  $amanager_urls_livres = array_merge(Configure::read('Global.urls_livres' ), $amanager_urls_livres);
+  $global_urls_livres = Configure::read('Global.urls_livres' ) != null?Configure::read('Global.urls_livres' ):array();
+  $amanager_urls_livres = array_merge($global_urls_livres, $amanager_urls_livres);
   Configure::write('Amanager.urls_livres',$amanager_urls_livres);
 
 /*
