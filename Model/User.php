@@ -43,6 +43,11 @@ class User extends AmanagerAppModel {
         'last' => false, // Stop validation after this rule
         'on' => 'create', // Limit validation to 'create' or 'update' operations
       ),
+      'password' => array(
+        'rule'    => array('minLength', '8'),
+        'message' => 'Minimum 8 characters long',
+        'on' => 'create', // Limit validation to 'create' or 'update' operations
+      ),
     ),
 
 		'password2' => array(
@@ -122,7 +127,7 @@ class User extends AmanagerAppModel {
     // Obtém o nome de uauário cadastrado no sistema
     // e verifica se o mesmo foi alterado
     $user =  $this->findById($this->id);
-    $username = $user['User']['username'];
+    $username = isset($user['User']['username'])?$user['User']['username']:null;
     $alter_username = $this->data['User']['username'] != $username?true:false;
 
     // Se o nome de usuário digitado for diferente do nome de usuário cadastrado

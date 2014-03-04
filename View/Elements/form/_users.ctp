@@ -14,6 +14,7 @@
     'class'=>'form-control',
     'error'=>$error,
     'required'=> $required,
+    'type'=> 'password',
   );
   if(!$required){
     $password_options['value'] = '';
@@ -50,7 +51,7 @@
           'label'=>__d('amanager', 'Password change code'),
           'class'=>'form-control',
           'error'=>$error,
-          'required'=> $required
+          'required'=> false
         )
       );
       $options = array('1'=>__d('amanager', 'Active'),'2'=>__d('amanager', 'Inactive'));
