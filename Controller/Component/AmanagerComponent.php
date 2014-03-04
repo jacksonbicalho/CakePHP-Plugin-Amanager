@@ -428,7 +428,6 @@ class AmanagerComponent extends Component {
    *
    **/
   public function checks_urls_free($params) {
-
     $return = false;
     $params = Router::url($params  + array("base" => false));
     $urls_livres = Configure::read('Amanager.urls_livres');

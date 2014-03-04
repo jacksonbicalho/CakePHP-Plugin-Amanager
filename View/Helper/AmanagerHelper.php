@@ -13,13 +13,15 @@ class AmanagerHelper extends AppHelper {
   protected function loadController($name=null){
     if (is_null($name)) $name=$this->params['controller'];
     $className = ucfirst($name) . 'Controller';
-    list($plugin, $className) = pluginSplit($className, true);
     $className = Inflector::camelize($className);
-
-    if (!$this->check_controller_exist($className)) return false ;
-
+    if( isset($this->params['plugin']) ){
+      if( !empty($this->params['plugin'])){
+        $plugin = Inflector::camelize($this->params['plugin']);
+        $name = Inflector::camelize($this->params['plugin']) . '.' . $name;
+      }
+    }
+    if (!class_exists($className)) return false ;
     App::import('Controller', $name);
-
     $cont = new $className;
     $cont->constructClasses();
     $cont->request=$this->request;
@@ -27,11 +29,7 @@ class AmanagerHelper extends AppHelper {
   }
 
   function is_allowed ($url) {
-    if( !isset($url['controller']) or empty($url['controller']) ){
-      $url['controller'] = $this->controller->request->params['controller'];
-      $url['action'] = 'admin_' . $url['action'];
-    }
-    return $this->controller->Amanager->isAllowed($url);
+    return $this->controller->Amanager->isAllowed( $this->adjusts_url($url) );
   }
 
   function is_logged() {
@@ -100,6 +98,47 @@ class AmanagerHelper extends AppHelper {
     return $url;
   }
 
+  /**
+   * Só ebibe o link se o usuário logado tiver permissão
+   *
+   * link method
+   *
+   * @param string $text
+   * @param array $url
+   * @param string $tag
+   * @return string $link
+   */
+  public function link($text, $url, $tag = false) {
+    $tag_open = $tag?"<{$tag}>":"";
+    $tag_close = $tag?"</{$tag}>":"";
+    $url = $this->adjusts_url( $url );
+    if($this->is_allowed( $this->adjusts_url($url) )){
+      echo $tag_open . $this->Html->link( $text, $url ) . $tag_close;
+    }
+  }
+
+  /**
+   * Ajusta uma url para o formato do plugin
+   *
+   * link adjusts_url
+   *
+   * @param array $url
+   * @return array $url
+   */
+  public function adjusts_url($url) {
+
+    // Se não for passado o nome do controlador a ser acessado
+    if( !isset($url['controller']) or empty($url['controller'])  ){
+      $url['controller'] = $this->controller->request->params['controller'];
+      // Verofoca se há prefico na url
+      if(isset($this->controller->request->params['prefix'])){
+        if( !empty($this->controller->request->params['prefix']) ){
+          $url['action'] = 'admin_' . $url['action'];
+        }
+      }
+    }
+    return $url;
+  }
 
 }
 
