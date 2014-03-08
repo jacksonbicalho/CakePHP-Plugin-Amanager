@@ -43,6 +43,7 @@
           <h2 id="forms"><?php echo __d('amanager', 'Add Rule'); ?></h2>
         </div>
         <?php
+          echo $this->Form->input('id');
           echo $this->Form->input('name', array('class'=>'form-control'));
           echo $this->Form->input('Group', array('label' => 'Grupos', 'type' => 'select', 'multiple' => 'checkbox'));
           echo $this->Form->input('plugin', array('empty'=> 'Selecione se for para Plugin', 'class'=>'form-control'));
