@@ -1,0 +1,16 @@
+{
+    "name": "Amanager",
+    "description": "Gerenciador de acesso para aplicações desenvolvidas em cakePHP",
+    "license": "MIT",
+    "version": "0.0.4",
+    "authors": [
+        {
+            "name": "Jackson Bicalho",
+            "email": "jacksonbicalho@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
