@@ -1,16 +1,27 @@
 {
-    "name": "Amanager",
-    "description": "Gerenciador de acesso para aplicações desenvolvidas em cakePHP",
-    "license": "MIT",
-    "version": "0.0.4",
-    "authors": [
-        {
-            "name": "Jackson Bicalho",
-            "email": "jacksonbicalho@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-
+  "name": "jacksonbicalho/amanager",
+  "description": "Gerenciador de acesso para aplicações desenvolvidas em cakePHP",
+  "keywords": ["cakephp", "access", "authentication", "security"],
+  "homepage": "http://jacksonbicalho.github.io/Amanager/",
+  "license": "MIT",
+  "version": "0.0.4",
+  "type": "cakephp-plugin",
+  "authors": [
+    {
+      "name": "Jackson Bicalho",
+      "email": "jacksonbicalho@gmail.com",
+      "homepage": "http://mark-story.com",
+      "role": "Author"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+
+  },
+  "extra": {
+    "branch-alias": {
+    },
+    "installer-name": "Amanager"
+  }
+
 }
