@@ -51,7 +51,7 @@ class Rule extends AmanagerAppModel {
         return $data;
       }
 
-      function beforeValidate(){
+      function beforeValidate($options = array()){
 
         $data_rules = $this->find('all');
 //echo '<pre>';
