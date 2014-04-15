@@ -46,7 +46,11 @@
       <td class="actions cancel">
         <?php echo $this->Html->link(__('View', true), array('action'=>'view', $rule['Rule']['id'])); ?>
         <?php echo $this->Html->link(__('Edit', true), array('action'=>'edit', $rule['Rule']['id'])); ?>
-        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id'], __('Are you sure you want to delete # %s?', $rule['Rule']['id']))); ?>
+
+
+        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $rule['Rule']['id']), null, __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?>
+
+
       </td>
       <td class="reorder">
         <span class="glyphicon glyphicon glyphicon-align-justify"></span>
