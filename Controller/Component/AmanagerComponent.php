@@ -196,56 +196,43 @@ class AmanagerComponent extends Component {
   //... para ela.
   function isAllowed($params = null) {
 
-    // Ignora parâmetros pssados pela URL
-    if(isset($params['pass'])){
-      $params['pass'] = array();
-    }
-    if(isset($params['named'])){
-      $params['named'] = array();
-    }
-    if(isset($params['ext'])){
-      //$params['ext'] = array();
-      $params['ext'] = array();
-      unset($params['ext']);
-    }
-    if(isset($params['isAjax'])){
-      $params['isAjax'] = array();
-    }
-
-    $url = Router::url($params  + array("base" => false));
-
     // Verifica se a url é livre, se sim já libera o acesso
     if( $this->checks_urls_free( $params ) ) return true;
 
     // Se estiver no grupo administrators permite
     $groups = $this->Session->read('Amanager.Group');
-
     $master = Configure::read('Amanager.group_master' );
-
     $adm = Set::extract("{n}/.[name={$master}]",  $groups );
-    if($adm)  return true ;
-
-    if(!$groups) return false;
+    if($adm){
+      return true ;
+    }
+    if(!$groups){
+      return false;
+    }
     $alow = false;
 
     foreach( $groups as $group ){
       $rules = Hash::sort($group['Rule'], '{n}.order', 'desc');
       foreach( $rules as $actions ){
+
         foreach( $actions['Action'] as $action ){
-
-          $action['alias'] = Router::parse($action['alias'], false );
-          $action['alias'] = Router::url($action['alias']   + array("base" => false));
-
           $action_alow =  $action['alow'];
-          if( $url == $action['alias'] && $action_alow ){
+          $params = $this->normalize($params);
+          $action = $this->normalize(Router::parse($action['alias']));
+          if( $params == $action && $action_alow ){
             $alow = true;
           }
-          if( $url == $action['alias'] && $action_alow == null ){
+          if( $params == $action && $action_alow == null ){
             $alow = false;
           }
         }
       }
     }
+die('Sáb 19 Abr 2014 19:36:46 BRT');
+
+
+
+    $url = Router::url($params  + array("base" => false));
     $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
     return $alow;
   }
@@ -430,20 +417,15 @@ class AmanagerComponent extends Component {
    **/
   public function checks_urls_free($params) {
     $return = false;
-    $params = Router::url($params  + array("base" => false));
+    $params = $this->normalize($params);
+    /* Obtém as urls livres configuradas */
     $urls_livres = Configure::read('Amanager.urls_livres');
+    /* Corre todas as url livres em busca da url pretendida */
     foreach($urls_livres as $url_livre){
-      $url_livre = Router::url($url_livre  + array("base" => false));
-      //$result = Hash::diff($url_livre, $params);
-      // Se for para todas as ações do controlador permite
-      //if( isset($url_livre['action'])){
+      $url_livre = $this->normalize($url_livre);
       if( $url_livre == $params ){
-        //if( ($params['controller'] == $url_livre['controller'] && $url_livre['action']=='*') && ( !isset($url_livre['admin']) == !isset($params['admin']) ) ){
           $return = true;
-        //}
       }
-      //if( count($result) == 0) return true;
-      //return true;
     }
     return $return;
   }
@@ -472,11 +454,6 @@ class AmanagerComponent extends Component {
     // Se só foi informado o controlador
     if(count($url) == 1){
       if(isset($url['controller'])){
-
-echo 'clear_url<pre>';
-        print_r($url);
-echo '</pre>';
-
         $url = Router::url($url);
       }
     }
@@ -505,6 +482,22 @@ echo '</pre>';
     $url['controller'] = str_replace( 'admin/', '',$url['controller']);
 
     return $url ;
+  }
+
+  /**
+   * Normaliza parâmetros passados para o padrão do sistema (CakePHP)
+   * @param  array  $params
+   * @return array
+   */
+  public function normalize($params =array()){
+    $url = Router::url($params  + array("base" => false));
+    $params = Router::parse($url);
+    if(isset($params['named'])){
+      unset($params['named']);
+    }
+    if(isset($params['pass'])){
+      unset($params['pass']);
+    }
   }
 
 }

@@ -12,11 +12,12 @@ class RulesController extends AmanagerAppController {
     $this->paginate = array(
       'order' => array(
         'Rule.order' => 'asc'
-        )
-        );
+      )
+    );
+    $rules = $this->paginate();
 
-        $this->set('rules', $this->paginate());
-        //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
+    $this->set('rules', $this->paginate());
+    //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
   }
 
   function view($id = null) {
@@ -37,11 +38,12 @@ class RulesController extends AmanagerAppController {
 
       $data['Rule'] = $this->request->data['Rule'];
       $data['Action'] = $this->request->data['Action'];
-      if ( isset($this->request->data['Group']) )
-      $data['Group'] = $this->request->data['Group'];
 
+      if (isset($this->request->data['Group'])){
+        $data['Group'] = $this->request->data['Group'];
+      }
       $this->Rule->create();
-      if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
+       if ($this->Rule->saveAll($data)) {
         $this->Session->setFlash(__('The rule has been saved'));
         $this->redirect(array('action' => 'index'));
       } else {
@@ -92,7 +94,7 @@ class RulesController extends AmanagerAppController {
         $actions_salvas = $this->Rule->read();
         $excluir = Set::extract(
           '/id',
-        array_diff_assoc($actions_salvas['Action'], $data['Action'])
+          Set::diff($actions_salvas['Action'], $data['Action'])
         );
 
         $this->Rule->Action->deleteAll(array('Action.id' => $excluir), false);
@@ -111,6 +113,7 @@ class RulesController extends AmanagerAppController {
     if (empty($this->data)) {
 
       $this->request->data = $this->Rule->read();
+
       $actions_salvas = $this->request->data['Action'];
 
       $this->set(compact('actions_salvas'));
@@ -126,6 +129,7 @@ class RulesController extends AmanagerAppController {
       foreach($_actions as $k => $v){
         $actions[$v] = $v;
       }
+
       $groups = $this->Rule->Group->find('list');
       $this->set(compact('groups', 'plugins', 'controllers', 'actions'));
 
@@ -229,9 +233,10 @@ class RulesController extends AmanagerAppController {
 
     }
 
-    $rule['controller'] = Inflector::underscore($rule['controller']);
-    $novo_alias = strtolower(Router::url(  $rule + array("base" => false )));
-    $alias[]['alias'] =  strtolower(Router::url($rule + array("base" => false)));
+    $rule['named'] = array();
+    $rule['pass'] = array();
+    $novo_alias = Inflector::underscore(Router::url($rule + array("base" => false)));
+    $alias[]['alias'] =  $novo_alias;
 
     foreach($action as $k => $v){
       if( is_array($v) ){

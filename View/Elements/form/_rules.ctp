@@ -23,7 +23,7 @@
                     if ( isset($action['id']) )
                       echo $this->Form->hidden("Action.{$k}.id", array('label'=>false, 'value'=>$action['id']));
 
-                      echo $this->Form->input("Action.{$k}.alias", array('label'=>false, 'value'=>$action['alias']));
+                      echo $this->Form->input("Action.{$k}.alias", array('class'=>'form-control', 'label'=>false, 'value'=>$action['alias']));
                     ?>
                   </td>
                   <td><?php  echo $this->Form->checkbox("Action.{$k}.alow", array('hiddenField' => false)  ); ?></td>
