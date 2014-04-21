@@ -190,16 +190,22 @@ class AmanagerComponent extends Component {
     $this->controller->redirect($this->logout_redirect);
   }
 
-  // Função que checa se o(s) grupo(s) do usuário logado
-  //... tem acesso a área solicitada
-  // Transforma os parâmetros em uma url e checa se a existe uma regra
-  //... para ela.
+  /**
+   * Função que checa se o(s) grupo(s) do usuário logado
+   * tem acesso a área solicitada
+   * Transforma os parâmetros em uma url e checa se a existe uma regra
+   *
+   * @param  array  $params Parâmetros da url pretendida
+   * @return boolean
+   */
   function isAllowed($params = null) {
 
-    // Verifica se a url é livre, se sim já libera o acesso
-    if( $this->checks_urls_free( $params ) ) return true;
+    /* Verifica se a url é livre, se sim já libera o acesso */
+    if($this->checks_urls_free($params)){
+      return true;
+    }
 
-    // Se estiver no grupo administrators permite
+    /* Se estiver no grupo administrators permite */
     $groups = $this->Session->read('Amanager.Group');
     $master = Configure::read('Amanager.group_master' );
     $adm = Set::extract("{n}/.[name={$master}]",  $groups );
@@ -228,10 +234,6 @@ class AmanagerComponent extends Component {
         }
       }
     }
-die('Sáb 19 Abr 2014 19:36:46 BRT');
-
-
-
     $url = Router::url($params  + array("base" => false));
     $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
     return $alow;
@@ -417,6 +419,7 @@ die('Sáb 19 Abr 2014 19:36:46 BRT');
    **/
   public function checks_urls_free($params) {
     $return = false;
+
     $params = $this->normalize($params);
     /* Obtém as urls livres configuradas */
     $urls_livres = Configure::read('Amanager.urls_livres');
@@ -498,6 +501,7 @@ die('Sáb 19 Abr 2014 19:36:46 BRT');
     if(isset($params['pass'])){
       unset($params['pass']);
     }
+    return $params;
   }
 
 }
