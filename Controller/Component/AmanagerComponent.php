@@ -123,6 +123,10 @@ class AmanagerComponent extends Component {
    **/
   function beforeFilter(Controller $controller, $options = array() ) {
 
+  	if ($controller->name == 'CakeError') {
+  		return;
+  	}
+
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
 
