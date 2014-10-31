@@ -203,70 +203,61 @@ class RulesController extends AmanagerAppController {
     $this->render("/Elements/options");
   }
 
-  /**
-   * rules_list method
-   *
-   * @return void
-   */
-  public function update_rules_list() {
-
-    $rule = $this->request->data['Rule'];
-
-    $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
-
-    unset($rule['select_all']);
-    unset($rule['id']);
-    unset($rule['name']);
-    unset($rule['group_id']);
-    $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
-    $c = explode('.', $rule['controller']);
-    $rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
-
-    $prefix = explode('_', $rule['action']);
-
-    // Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
-    if(isset($prefix[0])){
-
-      if( in_array($prefix[0], Configure::read('Routing.prefixes')) ){
-        $rule[$prefix[0]] = true;
-      }
-
-    }
-
-    $rule['named'] = array();
-    $rule['pass'] = array();
-    $novo_alias = Inflector::underscore(Router::url($rule + array("base" => false)));
-    $alias[]['alias'] =  $novo_alias;
-
-    foreach($action as $k => $v){
-      if( is_array($v) ){
-        if ( in_array($novo_alias, $v) ){
-          $alias = array();
+    /**
+     * rules_list method
+     *
+     * @return void
+     */
+    public function update_rules_list() {
+        $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
+        $rule = $this->request->data['Rule'];
+        unset($rule['select_all']);
+        unset($rule['id']);
+        unset($rule['name']);
+        unset($rule['group_id']);
+        $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
+        $c = explode('.', $rule['controller']);
+        $rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
+        $prefix = explode('_', $rule['action']);
+        // Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
+        if(isset($prefix[0])){
+            if( in_array($prefix[0], Configure::read('Routing.prefixes')) ){
+                $rule[$prefix[0]] = true;
+            }
         }
-      }
 
+        $rule['named'] = array();
+        $rule['pass'] = array();
+        $novo_alias = Inflector::underscore(Router::url($rule + array("base" => false)));
+        $alias[]['alias'] =  $novo_alias;
+
+        foreach($action as $k => $v){
+            if( is_array($v) ){
+                if ( in_array($novo_alias, $v) ){
+                    $alias = array();
+                }
+            }
+        }
+
+        $alias = array_merge( $action,$alias );
+        $this->set('alias', $alias);
+        $this->autoRender=false;
+        $this->layout = 'ajax';
+        $this->render("/Elements/update_rules_list");
     }
-    $alias = array_merge( $action,$alias );
 
-    $this->set('alias', $alias);
-    $this->autoRender=false;
-    $this->layout = 'ajax';
-    $this->render("/Elements/update_rules_list");
-
-  }
-
-  /**
-   * reorder method
-   *
-   * @return void
-   */
-  public function reorder() {
-    foreach ($this->data['Rule'] as $key => $value) {
-      $this->Rule->id = $value;
-      $this->Rule->saveField("order", $key + 1);
+    /**
+     * reorder method
+     *
+     * @return void
+     */
+    public function reorder() {
+        foreach ($this->data['Rule'] as $key => $value) {
+            $this->Rule->id = $value;
+            $this->Rule->saveField("order", $key + 1);
+        }
+        exit();
     }
-    exit();
-  }
 
   /**
    * check_rule method
