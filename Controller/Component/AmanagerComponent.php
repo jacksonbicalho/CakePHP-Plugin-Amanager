@@ -126,6 +126,13 @@ class AmanagerComponent extends Component {
     // Verifica se o usuário tem permissão para a área
     if( !$this->isAllowed($controller->request->params) ){
 
+
+echo '<pre>';
+print_r( $controller->request->params );
+echo '<\pre>';
+die('Sex 31 Out 2014 18:14:27 BRST');
+
+
       if(!$this->Session->read('Amanager.url_prev')){
         $this->Session->write('Amanager.url_prev', FULL_BASE_URL . $controller->here );
         $this->url_prev = FULL_BASE_URL . $controller->here;
@@ -190,54 +197,58 @@ class AmanagerComponent extends Component {
     $this->controller->redirect($this->logout_redirect);
   }
 
-  /**
-   * Função que checa se o(s) grupo(s) do usuário logado
-   * tem acesso a área solicitada
-   * Transforma os parâmetros em uma url e checa se a existe uma regra
-   *
-   * @param  array  $params Parâmetros da url pretendida
-   * @return boolean
-   */
-  function isAllowed($params = null) {
+    /**
+     * Função que checa se o(s) grupo(s) do usuário logado
+     * tem acesso a área solicitada
+     * Transforma os parâmetros em uma url e checa se a existe uma regra
+     *
+     * @param  array  $params Parâmetros da url pretendida
+     * @return boolean
+     */
+    function isAllowed($params = null) {
 
-    /* Verifica se a url é livre, se sim já libera o acesso */
-    if($this->checks_urls_free($params)){
-      return true;
-    }
-
-    /* Se estiver no grupo administrators permite */
-    $groups = $this->Session->read('Amanager.Group');
-    $master = Configure::read('Amanager.group_master' );
-    $adm = Set::extract("{n}/.[name={$master}]",  $groups );
-    if($adm){
-      return true ;
-    }
-    if(!$groups){
-      return false;
-    }
-    $alow = false;
-
-    foreach( $groups as $group ){
-      $rules = Hash::sort($group['Rule'], '{n}.order', 'desc');
-      foreach( $rules as $actions ){
-
-        foreach( $actions['Action'] as $action ){
-          $action_alow =  $action['alow'];
-          $params = $this->normalize($params);
-          $action = $this->normalize(Router::parse($action['alias']));
-          if( $params == $action && $action_alow ){
-            $alow = true;
-          }
-          if( $params == $action && $action_alow == null ){
-            $alow = false;
-          }
+        /* Verifica se a url é livre, se sim já libera o acesso */
+        if($this->checks_urls_free($params)){
+            return true;
         }
-      }
+
+        /* Se estiver no grupo administrators permite */
+        $groups = $this->Session->read('Amanager.Group');
+        $master = Configure::read('Amanager.group_master' );
+        $adm = Set::extract("{n}/.[name={$master}]",  $groups );
+
+        if($adm){
+            return true ;
+        }
+
+        if(!$groups){
+            return false;
+        }
+
+        $alow = false;
+
+        if ($params['controller'] == 'menus'){
+            return true;
+        }
+
+        foreach( $groups as $group ){
+            $rules = Hash::sort($group['Rule'], '{n}.order', 'desc');
+            foreach( $rules as $actions ){
+                foreach( $actions['Action'] as $action ){
+                    $action_alow =  $action['alow'];
+                    //$params = $this->normalize($params);
+                    $action =  json_decode($action['alias'], true);
+                    $diff = Hash::diff($action, $params);
+                    if(count($diff) == 0 && $action_alow){
+                        $alow = true;
+                    }
+                }
+            }
+        }
+        $url = Router::url($params  + array("base" => false));
+        $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
+        return $alow;
     }
-    $url = Router::url($params  + array("base" => false));
-    $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
-    return $alow;
-  }
 
   /**
    * password_generator method
@@ -493,8 +504,8 @@ class AmanagerComponent extends Component {
    * @return array
    */
   public function normalize($params =array()){
-    $url = Router::url($params  + array("base" => false));
-    $params = Router::parse($url);
+    //$url = Router::url($params  + array("base" => false));
+    //$params = Router::parse($url);
     if(isset($params['named'])){
       unset($params['named']);
     }
@@ -503,6 +514,12 @@ class AmanagerComponent extends Component {
     }
     return $params;
   }
+
+
+    protected function _compare(){
+
+    }
+
 
 }
 

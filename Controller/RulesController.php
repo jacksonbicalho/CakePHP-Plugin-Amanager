@@ -72,7 +72,6 @@ class RulesController extends AmanagerAppController {
    * @return void
    */
   function edit($id = null) {
-
     $this->check_rule($id);
 
     if (!empty($this->data)) {
@@ -194,9 +193,7 @@ class RulesController extends AmanagerAppController {
    * @return array
    */
   public function get_methods_controlles() {
-
     $controller = $this->request->data['Rule']['controller'];
-
     $this->set('options', $this->Ctrl->get_methods_controlles($controller, true));
     $this->autoRender=false;
     $this->layout = 'ajax';
