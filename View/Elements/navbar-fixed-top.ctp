@@ -10,14 +10,41 @@ if(isset($menu[$this->name])) $menu[$this->name]['class'] .= ' active';
 <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
   <?php if ($this->Amanager->is_logged()){ ?>
     <ul class="nav navbar-nav">
+
       <li class="<?php echo $menu['Users']['class']; ?>">
-        <?php echo $this->Html->link( __('Manager Users', true), array('controller'=>'users', 'action'=>'index', 'plugin'=>'amanager')); ?>
+        <?php $this->Amanager->link(
+          __('Manager Users'),
+          array(
+            'controller'=>'users',
+            'action'=>'index',
+            'plugin'=>false,
+            'admin'=>true
+          )
+        ); ?>
       </li>
+
       <li class="<?php echo $menu['Groups']['class']; ?>">
-        <?php echo $this->Html->link( __('Manager Groups', true), array('controller'=>'groups', 'action'=>'index', 'plugin'=>'amanager')); ?>
+        <?php echo $this->Html->link(
+          __('Manager Groups', true),
+          array(
+            'controller'=>'groups',
+            'action'=>'index',
+            'plugin'=>false,
+            'admin'=>true
+          )
+        ); ?>
       </li>
+
       <li class="<?php echo $menu['Rules']['class']; ?>">
-        <?php echo $this->Html->link( __('Manger Rules', true), array('controller'=>'rules', 'action'=>'index', 'plugin'=>'amanager')); ?>
+        <?php echo $this->Html->link(
+          __('Manger Rules', true),
+          array(
+            'controller'=>'rules',
+            'action'=>'index',
+            'plugin'=>false,
+            'admin'=>true
+          )
+        ); ?>
       </li>
     </ul>
   <?php } ?>

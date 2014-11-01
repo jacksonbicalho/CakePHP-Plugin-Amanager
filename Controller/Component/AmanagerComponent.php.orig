@@ -49,6 +49,47 @@ class AmanagerComponent extends Component {
         'admin'=>false
     );
 
+<<<<<<< HEAD
+  /**
+   *
+   * Método acionado pelo controlador do projeto
+   *
+   * beforeFilter method
+   *
+   * @param object $controller
+   *
+   * @param array $options
+   *
+   * @return void
+   *
+   **/
+  function beforeFilter(Controller $controller, $options = array() ) {
+
+  	if ($controller->name == 'CakeError') {
+  		return;
+  	}
+
+    // Verifica se o usuário tem permissão para a área
+    if( !$this->isAllowed($controller->request->params) ){
+
+      if(!$this->Session->read('Amanager.url_prev')){
+        $this->Session->write('Amanager.url_prev', FULL_BASE_URL . $controller->here );
+        $this->url_prev = FULL_BASE_URL . $controller->here;
+      }
+
+      if( $this->is_logged() ){
+
+        $this->Session->setFlash(__('Acesso negado!'), 'msg/error');
+
+        if(
+        $controller->request->params['action'] != $this->access_denied['action']
+        or $controller->request->params['controller'] != $this->access_denied['controller']
+        or $controller->request->params['plugin'] != $this->access_denied['plugin']
+        )
+        {
+          $this->controller->redirect( $this->access_denied );
+        }
+=======
     /**
      *
      * Armazena a url para onde o usuário é redirecionado após se deslogar do sistema.
@@ -63,6 +104,7 @@ class AmanagerComponent extends Component {
         'action'=>'display',
         'admin'=>false
     );
+>>>>>>> json
 
     /**
      *
@@ -218,9 +260,6 @@ class AmanagerComponent extends Component {
         $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
         return $alow;
     }
-    $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
-    return $alow;
-  }
 
     /**
      * password_generator method
@@ -262,7 +301,6 @@ class AmanagerComponent extends Component {
             return $return;
         }
     return true;
-
   }
 
     /**
@@ -300,8 +338,6 @@ class AmanagerComponent extends Component {
         $group = $Group->findByName($nome);
         return $group['Group']['id'];
     }
-    return false;
-  }
 
     /**
      * obtém os dados de usuário de acordo com o id de EntitysUser passado
@@ -316,8 +352,6 @@ class AmanagerComponent extends Component {
         $entitys_user = $EntitysUser->read();
         return $entitys_user['User'] ;
     }
-    return $g;
-  }
 
     /**
      * obtém os dados do usuário logado
@@ -330,8 +364,6 @@ class AmanagerComponent extends Component {
         $user = $this->Session->read("Amanager.User{$_attribute}");
         return !$user?false:$user;
     }
-    return $return;
-  }
 
     /**
      * Obtém os grupos do usuário logado
@@ -443,13 +475,6 @@ class AmanagerComponent extends Component {
 
     protected function _compare(){
     }
-
-    // Se tiver admin no nome do controlador, remove
-    $url['controller'] = str_replace( 'admin/', '',$url['controller']);
-
-    return $url ;
-  }
-
 }
 
 ?>

@@ -2,18 +2,25 @@
 App::uses('Folder', 'Utility');
 class CtrlComponent extends Component {
 
-  /**
-   * Retorna um vetor contendo todos os diretórios existentes em ../Plugin
-   * lenvando em consideração que o componente esteja rodando em um plugin
-   *
-   * @return array
-   */
-  public function get_plugins() {
-    $dir_plugin = new Folder('../Plugin');
-    $plugins = $dir_plugin->read(false) ;
-    return $plugins[0];
-
-  }
+    /**
+     * Retorna um vetor contendo todos os diretórios existentes
+     * nos diretórios definidos para plugins
+     * @return array
+     */
+    public function get_plugins() {
+        $pluginPaths = App::path('Plugin');
+        $plugins = [];
+        foreach ($pluginPaths as $key => $pluginPath) {
+            $dir_plugin = new Folder($pluginPath);
+            $d = $dir_plugin->read(false);
+            $_plugins[] = $d[0];
+            $plugins = [];
+            foreach ($_plugins as $key => $value) {
+                $plugins = array_merge($plugins, $value);
+            }
+        }
+        return $plugins;
+    }
 
   /**
    * Retorna um vetor contendo todos os controllers existentes em um plugin

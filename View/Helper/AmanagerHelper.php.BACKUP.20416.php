@@ -109,12 +109,20 @@ class AmanagerHelper extends AppHelper {
    * @param array $options
    * @return string $link
    */
+<<<<<<< HEAD
+  public function link($text, $url, $tag = false, $options = array()) {
+=======
   public function link($text, $url, $options = array(), $confirmMessage = false, $tag = false) {
+>>>>>>> json
     $tag_open = $tag?"<{$tag}>":"";
     $tag_close = $tag?"</{$tag}>":"";
     $url = $this->adjusts_url( $url );
     if($this->is_allowed( $this->adjusts_url($url) )){
+<<<<<<< HEAD
+      echo $tag_open . $this->Html->link( $text, $url, $options ) . $tag_close;
+=======
       echo $tag_open . $this->Html->link( $text, $url , $options, $confirmMessage) . $tag_close;
+>>>>>>> json
     }
   }
 

@@ -12,11 +12,12 @@ class RulesController extends AmanagerAppController {
     $this->paginate = array(
       'order' => array(
         'Rule.order' => 'asc'
-        )
-        );
+      )
+    );
+    $rules = $this->paginate();
 
-        $this->set('rules', $this->paginate());
-        //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
+    $this->set('rules', $this->paginate());
+    //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
   }
 
   function view($id = null) {
@@ -37,11 +38,12 @@ class RulesController extends AmanagerAppController {
 
       $data['Rule'] = $this->request->data['Rule'];
       $data['Action'] = $this->request->data['Action'];
-      if ( isset($this->request->data['Group']) )
-      $data['Group'] = $this->request->data['Group'];
 
+      if (isset($this->request->data['Group'])){
+        $data['Group'] = $this->request->data['Group'];
+      }
       $this->Rule->create();
-      if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
+       if ($this->Rule->saveAll($data)) {
         $this->Session->setFlash(__('The rule has been saved'));
         $this->redirect(array('action' => 'index'));
       } else {
@@ -70,7 +72,6 @@ class RulesController extends AmanagerAppController {
    * @return void
    */
   function edit($id = null) {
-
     $this->check_rule($id);
 
     if (!empty($this->data)) {
@@ -92,7 +93,7 @@ class RulesController extends AmanagerAppController {
         $actions_salvas = $this->Rule->read();
         $excluir = Set::extract(
           '/id',
-        array_diff_assoc($actions_salvas['Action'], $data['Action'])
+          Set::diff($actions_salvas['Action'], $data['Action'])
         );
 
         $this->Rule->Action->deleteAll(array('Action.id' => $excluir), false);
@@ -111,6 +112,7 @@ class RulesController extends AmanagerAppController {
     if (empty($this->data)) {
 
       $this->request->data = $this->Rule->read();
+
       $actions_salvas = $this->request->data['Action'];
 
       $this->set(compact('actions_salvas'));
@@ -126,6 +128,7 @@ class RulesController extends AmanagerAppController {
       foreach($_actions as $k => $v){
         $actions[$v] = $v;
       }
+
       $groups = $this->Rule->Group->find('list');
       $this->set(compact('groups', 'plugins', 'controllers', 'actions'));
 
@@ -190,78 +193,68 @@ class RulesController extends AmanagerAppController {
    * @return array
    */
   public function get_methods_controlles() {
-
     $controller = $this->request->data['Rule']['controller'];
-
     $this->set('options', $this->Ctrl->get_methods_controlles($controller, true));
     $this->autoRender=false;
     $this->layout = 'ajax';
     $this->render("/Elements/options");
   }
 
-  /**
-   * rules_list method
-   *
-   * @return void
-   */
-  public function update_rules_list() {
-
-    $rule = $this->request->data['Rule'];
-
-    $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
-
-    unset($rule['select_all']);
-    unset($rule['id']);
-    unset($rule['name']);
-    unset($rule['group_id']);
-    $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
-    $c = explode('.', $rule['controller']);
-    $rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
-
-    $prefix = explode('_', $rule['action']);
-
-    // Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
-    if(isset($prefix[0])){
-
-      if( in_array($prefix[0], Configure::read('Routing.prefixes')) ){
-        $rule[$prefix[0]] = true;
-      }
-
-    }
-
-    $rule['controller'] = Inflector::underscore($rule['controller']);
-    $novo_alias = strtolower(Router::url(  $rule + array("base" => false )));
-    $alias[]['alias'] =  strtolower(Router::url($rule + array("base" => false)));
-
-    foreach($action as $k => $v){
-      if( is_array($v) ){
-        if ( in_array($novo_alias, $v) ){
-          $alias = array();
+    /**
+     * rules_list method
+     *
+     * @return void
+     */
+    public function update_rules_list() {
+        $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
+        $rule = $this->request->data['Rule'];
+        unset($rule['select_all']);
+        unset($rule['id']);
+        unset($rule['name']);
+        unset($rule['group_id']);
+        $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
+        $c = explode('.', $rule['controller']);
+        $rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
+        $prefix = explode('_', $rule['action']);
+        // Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
+        if(isset($prefix[0])){
+            if( in_array($prefix[0], Configure::read('Routing.prefixes')) ){
+                $rule[$prefix[0]] = true;
+            }
         }
-      }
 
+        $rule['named'] = array();
+        $rule['pass'] = array();
+        $novo_alias = Inflector::underscore(Router::url($rule + array("base" => false)));
+        $alias[]['alias'] =  $novo_alias;
+
+        foreach($action as $k => $v){
+            if( is_array($v) ){
+                if ( in_array($novo_alias, $v) ){
+                    $alias = array();
+                }
+            }
+        }
+
+        $alias = array_merge( $action,$alias );
+        $this->set('alias', $alias);
+        $this->autoRender=false;
+        $this->layout = 'ajax';
+        $this->render("/Elements/update_rules_list");
     }
-    $alias = array_merge( $action,$alias );
 
-    $this->set('alias', $alias);
-    $this->autoRender=false;
-    $this->layout = 'ajax';
-    $this->render("/Elements/update_rules_list");
-
-  }
-
-  /**
-   * reorder method
-   *
-   * @return void
-   */
-  public function reorder() {
-    foreach ($this->data['Rule'] as $key => $value) {
-      $this->Rule->id = $value;
-      $this->Rule->saveField("order", $key + 1);
+    /**
+     * reorder method
+     *
+     * @return void
+     */
+    public function reorder() {
+        foreach ($this->data['Rule'] as $key => $value) {
+            $this->Rule->id = $value;
+            $this->Rule->saveField("order", $key + 1);
+        }
+        exit();
     }
-    exit();
-  }
 
   /**
    * check_rule method
