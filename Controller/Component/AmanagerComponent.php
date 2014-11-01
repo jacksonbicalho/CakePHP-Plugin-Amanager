@@ -218,9 +218,6 @@ class AmanagerComponent extends Component {
         $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
         return $alow;
     }
-    $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
-    return $alow;
-  }
 
     /**
      * password_generator method
@@ -300,8 +297,6 @@ class AmanagerComponent extends Component {
         $group = $Group->findByName($nome);
         return $group['Group']['id'];
     }
-    return false;
-  }
 
     /**
      * obtém os dados de usuário de acordo com o id de EntitysUser passado
@@ -316,8 +311,6 @@ class AmanagerComponent extends Component {
         $entitys_user = $EntitysUser->read();
         return $entitys_user['User'] ;
     }
-    return $g;
-  }
 
     /**
      * obtém os dados do usuário logado
@@ -330,8 +323,6 @@ class AmanagerComponent extends Component {
         $user = $this->Session->read("Amanager.User{$_attribute}");
         return !$user?false:$user;
     }
-    return $return;
-  }
 
     /**
      * Obtém os grupos do usuário logado
@@ -443,13 +434,6 @@ class AmanagerComponent extends Component {
 
     protected function _compare(){
     }
-
-    // Se tiver admin no nome do controlador, remove
-    $url['controller'] = str_replace( 'admin/', '',$url['controller']);
-
-    return $url ;
-  }
-
 }
 
 ?>
