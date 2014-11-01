@@ -15,7 +15,8 @@ class AmanagerController extends AmanagerAppController {
   public $uses = array();
 
   public function index() {
-    $path = APP . 'Plugin' . DS . 'Amanager' . DS . 'VERSION.txt';
+    //$path = APP . 'Plugin' . DS . 'Amanager' . DS . 'VERSION.txt';
+    $path = dirname (__DIR__) . DS . 'composer.json';;
     $this->set('version', $this->get_version($path));
   }
 
@@ -30,17 +31,10 @@ class AmanagerController extends AmanagerAppController {
    */
   public function get_version($path, $pattern = '@version\s+([0-9a-zA-Z\.-]+)@') {
     $version = false;
-    $file = fopen($path, 'r');
-    if ($file) {
-        while ($line = fgets($file)) {
-          if (preg_match($pattern, $line, $matches)) {
-            $version = $matches[1];
-            break;
-          }
-        }
-        fclose($file);
-    }
-    return $version;
+
+    $string = file_get_contents($path);
+    $json_a=json_decode($string,true);
+    return $json_a['version'];
   }
 
 
