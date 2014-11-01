@@ -4,7 +4,7 @@
   "keywords": ["cakephp", "access", "authentication", "security"],
   "homepage": "http://jacksonbicalho.github.io/Amanager/",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "cakephp-plugin",
   "authors": [
     {
