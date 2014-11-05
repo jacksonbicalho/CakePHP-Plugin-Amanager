@@ -7,18 +7,22 @@ App::uses('AmanagerAppController', 'Amanager.Controller');
  */
 class RulesController extends AmanagerAppController {
 
-  function index() {
+    /**
+     * [index description]
+     * @return Disponibiliza a variável $rules na view
+     *
+     */
+    function index() {
+        $this->Rule->recursive = 0;
+        $this->paginate = array(
+            'limit' => 25,
+            'order' => array(
+                'Rule.order' => 'asc'
+            )
+        );
+        $this->set('rules', $this->paginate());
+    }
 
-    $this->paginate = array(
-      'order' => array(
-        'Rule.order' => 'asc'
-      )
-    );
-    $rules = $this->paginate();
-
-    $this->set('rules', $this->paginate());
-    //$this->set('rules', $this->Rule->find('all', array('order'=>'order')));
-  }
 
   function view($id = null) {
     if (!$id) {
