@@ -115,7 +115,13 @@ class RulesController extends AmanagerAppController {
     }
     if (empty($this->data)) {
 
-      $this->request->data = $this->Rule->read();
+        echo '<pre>';
+        print_r($this->Rule->findById($id));
+        echo '<\pre>';
+        die('Ter 03 Fev 2015 00:33:31 BRST');
+
+
+      $this->request->data = $this->Rule->findById($id);
 
       $actions_salvas = $this->request->data['Action'];
 
@@ -182,13 +188,11 @@ class RulesController extends AmanagerAppController {
    * @return array
    */
   public function get_controlles_plugins() {
-
-    $plugin = $this->request->data['Rule']['plugin'];
-
-    $this->set('options', $this->Ctrl->get_controlles_plugins($plugin, true));
     $this->autoRender=false;
-    $this->layout = 'ajax';
+    $plugin = $this->request->data['Rule']['plugin'];
+    $this->set('options', $this->Ctrl->get_controlles_plugins($plugin, true));
     $this->render("/Elements/options");
+    $this->layout = 'ajax';
   }
 
   /**
@@ -197,11 +201,11 @@ class RulesController extends AmanagerAppController {
    * @return array
    */
   public function get_methods_controlles() {
+    $this->autoRender=false;
     $controller = $this->request->data['Rule']['controller'];
     $this->set('options', $this->Ctrl->get_methods_controlles($controller, true));
-    $this->autoRender=false;
-    $this->layout = 'ajax';
     $this->render("/Elements/options");
+    $this->layout = 'ajax';
   }
 
     /**
