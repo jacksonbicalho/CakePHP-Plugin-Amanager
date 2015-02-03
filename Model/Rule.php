@@ -43,13 +43,7 @@ class Rule extends AmanagerAppModel {
     public function afterFind($results, $primary = false) {
         foreach ($results as $key => $value) {
             if(isset($value['Action'])){
-                if(is_array($results[$key]['Action'])){
-                    foreach ($results[$key]['Action'] as $_key => $action) {
-                        $results[$key]['Action'] = $this->jsonToArray($results[$key]['Action']);
-                    }
-                }//elseif(isset($results[$key]['Action'])){
-                //    $results[$key]['Action'] = $this->jsonToArray($value['Action']);
-                //}
+                $results[$key]['Action'] = $this->jsonToArray($results[$key]['Action']);
             }
         }
         return $results;
@@ -77,6 +71,7 @@ class Rule extends AmanagerAppModel {
      * @return array dados convertidos em array
      */
     public function jsonToArray($actions = array()){
+
         /* Corre todas as ações para transformá-las em objetos json */
         foreach ($actions as $key => $action) {
             $params = (array)json_decode($action['alias']);
@@ -97,7 +92,7 @@ class Rule extends AmanagerAppModel {
             $params = Router::parse($action['alias'], false );
             $actions[$key]['alias'] = json_encode($params);
         }
-        return $actions;
+       return $actions;
     }
 }
 ?>

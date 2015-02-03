@@ -49,7 +49,6 @@ class AmanagerComponent extends Component {
         'admin'=>false
     );
 
-<<<<<<< HEAD
   /**
    *
    * Método acionado pelo controlador do projeto
@@ -89,22 +88,6 @@ class AmanagerComponent extends Component {
         {
           $this->controller->redirect( $this->access_denied );
         }
-=======
-    /**
-     *
-     * Armazena a url para onde o usuário é redirecionado após se deslogar do sistema.
-     *
-     * logout_redirect
-     *
-     * @var array
-     */
-    var $logout_redirect = array(
-        'controller'=>'pages',
-        'plugin' => false,
-        'action'=>'display',
-        'admin'=>false
-    );
->>>>>>> json
 
     /**
      *

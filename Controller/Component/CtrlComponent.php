@@ -9,12 +9,12 @@ class CtrlComponent extends Component {
      */
     public function get_plugins() {
         $pluginPaths = App::path('Plugin');
-        $plugins = [];
+        $plugins = array();
         foreach ($pluginPaths as $key => $pluginPath) {
             $dir_plugin = new Folder($pluginPath);
             $d = $dir_plugin->read(false);
             $_plugins[] = $d[0];
-            $plugins = [];
+            $plugins = array();
             foreach ($_plugins as $key => $value) {
                 $plugins = array_merge($plugins, $value);
             }
