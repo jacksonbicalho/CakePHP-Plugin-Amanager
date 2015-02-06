@@ -438,7 +438,7 @@ class AmanagerComponent extends Component {
         foreach ($parametros as $key => $parametro) {
             if ( in_array($key, $this->parametros_levados_em_conta)) {
                 if($key == 'action'){
-                    $key = Inflector::slug($key);
+                    $parametro = Inflector::underscore($parametro);
                 }
                 $acesso[$key] = $parametro;
             }
