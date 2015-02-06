@@ -15,20 +15,19 @@
                 <tbody id="sortable">
                     <tr id="Module_<?php echo "ALTERAR"; ?>"></tr>
                         <?php if(isset($actions_salvas)):
-                            foreach( $actions_salvas as $k => $action):
-                                ?>
+                            foreach( $actions_salvas as $k => $action): ?>
                                 <tr id="action_<?php echo $k; ?>">
                                     <td>
                                         <?php
                                         if(isset($action['id'])){
                                             echo $this->Form->hidden("Action.{$k}.id", array('label'=>false, 'value'=>$action['id']));
                                         }
-                                        echo $this->Form->input("Action.{$k}.alias", array('class'=>'form-control', 'label'=>false, 'value'=>'$action[\'alias\']'));
+                                        echo $this->Form->input("Action.{$k}.alias", array('class'=>'form-control', 'label'=>false, 'value'=>$action['alias']));
                                         ?>
                                     </td>
                                     <td><?php  echo $this->Form->checkbox("Action.{$k}.alow", array('hiddenField' => false)  ); ?></td>
                                     <td class="actions">
-                                        <?php echo $this->Html->Link(__('Delete'), "javascript:removeTr({$k})", array('class' => "btn btn-danger"), __('Are you sure you want to delete this action: %s?', '$action[\'alias\']')); ?>
+                                        <?php echo $this->Html->Link(__('Delete'), "javascript:removeTr({$k})", array('class' => "btn btn-danger"), __('Are you sure you want to delete this action: %s?', $action['alias'])); ?>
                                     </td>
                                 </tr>
                                 <?php

@@ -1,6 +1,7 @@
 <?php
 
 App::uses('AmanagerAppModel', 'Amanager.Model');
+App::uses('AmanagerComponent', 'Amanager.Controller');
 
 /**
  * Rule Model
@@ -87,9 +88,11 @@ class Rule extends AmanagerAppModel {
      * @return array objetos Json
      */
     public function arrayToJson($actions = array()){
+        $amanager = new AmanagerComponent(new ComponentCollection);
         /* Corre todas as ações para transformá-las em objetos json */
         foreach ($actions as $key => $action) {
             $params = Router::parse($action['alias'], false );
+            $params = $amanager->limpaPrametros($params);
             $actions[$key]['alias'] = json_encode($params);
         }
        return $actions;

@@ -115,13 +115,8 @@ class RulesController extends AmanagerAppController {
     }
     if (empty($this->data)) {
 
-        echo '<pre>';
-        print_r($this->Rule->findById($id));
-        echo '<\pre>';
-        die('Ter 03 Fev 2015 00:33:31 BRST');
+      $this->request->data = $this->Rule->read();
 
-
-      $this->request->data = $this->Rule->findById($id);
 
       $actions_salvas = $this->request->data['Action'];
 
