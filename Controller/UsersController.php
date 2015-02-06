@@ -255,6 +255,27 @@ class UsersController extends AmanagerAppController {
     }
   }
 
+    public function mycount(){
+
+        $this->theme = 'Admin';
+
+        $this->User->id = $this->Amanager->get_user_logged('id');
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__d('amanager', 'Dados alterados com sucesso'), 'msg/success');
+                //$this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'msg/error');
+            }
+        } else {
+            $this->request->data = $this->User->read(null, $this->Amanager->get_user_logged('id'));
+        }
+    }
+
   public function logout() {
     $this->Amanager->logout();
   }

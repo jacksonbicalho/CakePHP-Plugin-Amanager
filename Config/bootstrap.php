@@ -14,6 +14,7 @@
     // Para a recuperação de senha de usuários
     array('controller'=>'users', 'action'=>'forgot_password', 'plugin'=>'amanager'),
     array('controller'=>'users', 'action'=>'recover_password', 'plugin'=>'amanager'),
+    array('controller'=>'users', 'action'=>'mycount', 'plugin'=>'amanager'),
   );
 
 /*

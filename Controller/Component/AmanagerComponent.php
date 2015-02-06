@@ -100,7 +100,7 @@ class AmanagerComponent extends Component {
         'controller',
         'action',
         'plugin',
-        'admin',
+        'admin'
     );
 
     function __construct(ComponentCollection $collection, $settings = array()) {
@@ -176,46 +176,38 @@ class AmanagerComponent extends Component {
      * @return boolean
      */
     function isAllowed($params = null) {
-
+        $params = $this->limpaPrametros($params);
         /* Verifica se a url é livre, se sim já libera o acesso */
         if($this->checks_urls_free($params)){
             return true;
         }
-
         /* Se estiver no grupo administrators permite */
         $groups = $this->Session->read('Amanager.Group');
-        $master = Configure::read('Amanager.group_master' );
-        $adm = Set::extract("{n}/.[name={$master}]",  $groups );
-
+        $master = Configure::read('Amanager.group_master');
+        $adm = Set::extract("{n}/.[name={$master}]", $groups);
         if($adm){
             return true ;
         }
-
         if(!$groups){
             return false;
         }
-
         $alow = false;
-
         foreach( $groups as $group ){
             $rules = Hash::sort($group['Rule'], '{n}.order', 'desc');
             foreach( $rules as $actions ){
                 foreach( $actions['Action'] as $action ){
                     $action_alow =  $action['alow'];
-                    //$params = $this->normalize($params);
-                    $action =  json_decode($action['alias'], true);
-                    if(isset($params['pass'])){
-                        $action['pass'] = $params['pass'];
-                    }
+                    $action =   $this->limpaPrametros(json_decode($action['alias'], true));
                     $diff = Hash::diff($action, $params);
                     if(count($diff) == 0 && $action_alow){
                         $alow = true;
                     }
                 }
+
             }
         }
         $url = Router::url($params  + array("base" => false));
-        $this->log(' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url, 'amanager');
+        CakeLog::write('info', ' - IcjeckNob8' . ' > ' . ($alow?'Permitida':'Não permitida') . ' a entrada para ' . $this->get_user_logged('username') . ' em ' . $url);
         return $alow;
     }
 
@@ -361,12 +353,11 @@ class AmanagerComponent extends Component {
     */
     public function checks_urls_free($params) {
         $return = false;
-        $params = $this->normalize($params);
         /* Obtém as urls livres configuradas */
         $urls_livres = Configure::read('Amanager.urls_livres');
         /* Corre todas as url livres em busca da url pretendida */
         foreach($urls_livres as $url_livre){
-            $url_livre = $this->normalize($url_livre);
+            $url_livre = $this->limpaPrametros($url_livre);
             if( $url_livre == $params ){
                 $return = true;
             }
@@ -434,6 +425,27 @@ class AmanagerComponent extends Component {
 
     protected function _compare(){
     }
+
+    /**
+     * Limpa os parâmetros
+     * Remove os parâmetros que não estão em $this->parametros_levados_em_conta
+     * @param  array $parametros Obtidos no controlador
+     * @return array com apenas os parâmetros levados em conta para a checagem
+     * da permissão.
+     */
+    public function limpaPrametros($parametros){
+        $acesso = array();
+        foreach ($parametros as $key => $parametro) {
+            if ( in_array($key, $this->parametros_levados_em_conta)) {
+                if($key == 'action'){
+                    $key = Inflector::slug($key);
+                }
+                $acesso[$key] = $parametro;
+            }
+        }
+        return $acesso;
+    }
+
 }
 
 ?>

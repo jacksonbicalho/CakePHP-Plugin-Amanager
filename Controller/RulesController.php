@@ -117,6 +117,7 @@ class RulesController extends AmanagerAppController {
 
       $this->request->data = $this->Rule->read();
 
+
       $actions_salvas = $this->request->data['Action'];
 
       $this->set(compact('actions_salvas'));
@@ -182,13 +183,11 @@ class RulesController extends AmanagerAppController {
    * @return array
    */
   public function get_controlles_plugins() {
-
-    $plugin = $this->request->data['Rule']['plugin'];
-
-    $this->set('options', $this->Ctrl->get_controlles_plugins($plugin, true));
     $this->autoRender=false;
-    $this->layout = 'ajax';
+    $plugin = $this->request->data['Rule']['plugin'];
+    $this->set('options', $this->Ctrl->get_controlles_plugins($plugin, true));
     $this->render("/Elements/options");
+    $this->layout = 'ajax';
   }
 
   /**
@@ -197,11 +196,11 @@ class RulesController extends AmanagerAppController {
    * @return array
    */
   public function get_methods_controlles() {
+    $this->autoRender=false;
     $controller = $this->request->data['Rule']['controller'];
     $this->set('options', $this->Ctrl->get_methods_controlles($controller, true));
-    $this->autoRender=false;
-    $this->layout = 'ajax';
     $this->render("/Elements/options");
+    $this->layout = 'ajax';
   }
 
     /**
