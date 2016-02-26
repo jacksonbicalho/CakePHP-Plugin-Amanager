@@ -48,7 +48,7 @@ class RulesController extends AmanagerAppController {
       }
       $this->Rule->create();
        if ($this->Rule->saveAll($data)) {
-        $this->Session->setFlash(__('The rule has been saved'));
+        $this->Session->setFlash(__('The rule has been saved'), 'flash/success');
         $this->redirect(array('action' => 'index'));
       } else {
         $this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'flash/error');
