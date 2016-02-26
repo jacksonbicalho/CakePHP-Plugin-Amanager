@@ -9,3 +9,6 @@
 /tags
 
 /vendor/
+
+#grunt
+/node_modules
