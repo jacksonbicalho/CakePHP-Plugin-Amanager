@@ -1,9 +1,5 @@
 /* Global */
 * {margin:0;padding:0;}
-body {
-  padding-bottom: 40px;
-  padding-top: 60px;
-}
 .clr{clear:both}
 
 .display_none{
@@ -116,9 +112,6 @@ div.form-group div.input{
   margin-top:15px;
 }
 
-div.amanager.index div#content.bs-header div.container div.jumbotron div.container img{
-  float:right;
-}
 
 
 /** Paging **/
