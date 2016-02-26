@@ -7,7 +7,7 @@
       <?php
         echo $this->Form->input('id');
         echo $this->Tbs->input('name');
-        echo $this->Tbs->habtm('Rule', array('label' => 'Regras', 'type' => 'select', 'multiple' => 'checkbox'));
+        echo $this->Tbs->habtm('Rule', array('class'=>'checkbox-input', 'label' => 'Regras', 'type' => 'select', 'multiple' => 'checkbox'));
         echo $this->Tbs->input('status', array('options' => array( '1' => 'Ativado', '0' => 'Desativado')));
       ?>
       <?php echo $this->Tbs->submit( __d('amanager', 'Submit'));  ?>
