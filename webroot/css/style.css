@@ -26,13 +26,29 @@ div.container div.row div#sidebar{
 
 /* Actions for table */
 table.table tbody tr th.actions{
-  width:195px;
+  width:130px;
 }
 td.actions{
   text-align:center;
 }
 td.actions a{
   margin: 0 5px;
+}
+.check-center{
+	margin-left: auto !important;
+	margin-right: auto !important;
+	display: block;
+}
+.checkbox-input label{
+	padding-left:5px;
+	font-weight:normal;
+}
+.checkbox-input{
+	padding: 6px 0px 1px 10px;
+	background: #337ABD;
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 2px;
 }
 
 
@@ -50,6 +66,15 @@ a.desc {
 
 div.form-group div.input{
   margin-top:15px;
+}
+.modal-body.alert-info{
+	margin:20px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.modal-body.alert-info ul{
+	margin-left:15px;
 }
 
 /* .nav-justified */
@@ -188,6 +213,7 @@ div.rules form div.form-group div.input.checkbox.select_all{
 table.table tbody#sortable.ui-sortable tr td.reorder{
   text-align:center;
   cursor:all-scroll;
+  width:60px;
 }
 
 

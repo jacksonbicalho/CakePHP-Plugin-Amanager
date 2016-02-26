@@ -13,20 +13,20 @@ class RulesController extends AmanagerAppController {
      *
      */
     function index() {
-        $this->Rule->recursive = 0;
-        $this->paginate = array(
-            'limit' => 25,
-            'order' => array(
-                'Rule.order' => 'asc'
-            )
-        );
-        $this->set('rules', $this->paginate());
+			$this->Rule->recursive = 1;
+			$this->paginate = array(
+				'limit' => 25,
+				'order' => array(
+						'Rule.order' => 'asc'
+				)
+			);
+			$this->set('rules', $this->paginate());
     }
 
 
   function view($id = null) {
     if (!$id) {
-      $this->Session->setFlash(__('Invalid Rule.'), 'msg/error');
+      $this->Session->setFlash(__('Invalid Rule.'), 'flash/error');
       $this->redirect(array('action'=>'index'));
     }
     $this->set('rule', $this->Rule->read(null, $id));
@@ -51,7 +51,7 @@ class RulesController extends AmanagerAppController {
         $this->Session->setFlash(__('The rule has been saved'));
         $this->redirect(array('action' => 'index'));
       } else {
-        $this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'msg/error');
+        $this->Session->setFlash(__('The rule could not be saved. Please, try again.'), 'flash/error');
       }
     }
 
@@ -107,10 +107,10 @@ class RulesController extends AmanagerAppController {
       }
 
       if ($this->Rule->saveAssociated($data, array('atomic'=>false))) {
-        $this->Session->setFlash(__('The rule has been saved.'), 'msg/success');
+        $this->Session->setFlash(__('The rule has been saved.'), 'flash/success');
         $this->redirect(array('action'=>'index'));
       } else {
-        $this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'msg/warning');
+        $this->Session->setFlash(__('The Rule could not be saved. Please, try again.'), 'flash/warning');
       }
     }
     if (empty($this->data)) {
@@ -155,10 +155,10 @@ class RulesController extends AmanagerAppController {
     $this->check_rule($id);
 
     if ($this->Rule->delete()) {
-      $this->Session->setFlash(__('Rule deleted.'), 'msg/success');
+      $this->Session->setFlash(__('Rule deleted.'), 'flash/success');
       $this->redirect(array('action' => 'index'));
     }
-    $this->Session->setFlash(__('Rule was not deleted.'), 'msg/error');
+    $this->Session->setFlash(__('Rule was not deleted.'), 'flash/error');
     $this->redirect(array('action' => 'index'));
   }
 
@@ -209,41 +209,41 @@ class RulesController extends AmanagerAppController {
      * @return void
      */
     public function update_rules_list() {
-        $action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
-        $rule = $this->request->data['Rule'];
-        unset($rule['select_all']);
-        unset($rule['id']);
-        unset($rule['name']);
-        unset($rule['group_id']);
-        $rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
-        $c = explode('.', $rule['controller']);
-        $rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
-        $prefix = explode('_', $rule['action']);
-        // Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
-        if(isset($prefix[0])){
-            if( in_array($prefix[0], Configure::read('Routing.prefixes')) ){
-                $rule[$prefix[0]] = true;
-            }
-        }
+			$action = isset($this->request->data['Action'])?$this->request->data['Action']:array();
+			$rule = $this->request->data['Rule'];
+			unset($rule['select_all']);
+			unset($rule['id']);
+			unset($rule['name']);
+			unset($rule['group_id']);
+			$rule['controller'] = $this->Ctrl->_str_controller($rule['controller']);
+			$c = explode('.', $rule['controller']);
+			$rule['controller'] = isset($c[1])?$c[1]:$rule['controller'];
+			$prefix = explode('_', $rule['action']);
+			// Verifica se a posição[0] existe no array de prefixos definidos no bootstrap
+			if(isset($prefix[0])){
+					if( in_array($prefix[0], Configure::read('Routing.prefixes')) ){
+							$rule[$prefix[0]] = true;
+					}
+			}
 
-        $rule['named'] = array();
-        $rule['pass'] = array();
-        $novo_alias = Inflector::underscore(Router::url($rule + array("base" => false)));
-        $alias[]['alias'] =  $novo_alias;
+			$rule['named'] = array();
+			$rule['pass'] = array();
+			$novo_alias = Inflector::underscore(Router::url($rule + array("base" => false)));
+			$alias[]['alias'] =  $novo_alias;
 
-        foreach($action as $k => $v){
-            if( is_array($v) ){
-                if ( in_array($novo_alias, $v) ){
-                    $alias = array();
-                }
-            }
-        }
+			foreach($action as $k => $v){
+					if( is_array($v) ){
+							if ( in_array($novo_alias, $v) ){
+									$alias = array();
+							}
+					}
+			}
 
-        $alias = array_merge( $action,$alias );
-        $this->set('alias', $alias);
-        $this->autoRender=false;
-        $this->layout = 'ajax';
-        $this->render("/Elements/update_rules_list");
+			$alias = array_merge( $action,$alias );
+			$this->set('alias', $alias);
+			$this->autoRender=false;
+			$this->layout = 'ajax';
+			$this->render("/Elements/update_rules_list");
     }
 
     /**
@@ -267,14 +267,14 @@ class RulesController extends AmanagerAppController {
   public function check_rule($id = null) {
 
     if (!$id && empty($this->data)) {
-      $this->Session->setFlash(__('Invalid Rule.'), 'msg/error');
+      $this->Session->setFlash(__('Invalid Rule.'), 'flash/error');
       $this->redirect(array('action'=>'index'));
     }
     $id = isset($this->data['Rule']['id'])?$this->data['Rule']['id']:$id;
 
     $this->Rule->id = $id;
     if (!$this->Rule->exists()) {
-      $this->Session->setFlash(__('Invalid Rule.'), 'msg/error');
+      $this->Session->setFlash(__('Invalid Rule.'), 'flash/error');
       $this->redirect(array('action'=>'index'));
     }
   }
