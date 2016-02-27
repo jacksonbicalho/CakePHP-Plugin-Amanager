@@ -1,74 +1,72 @@
-<div id="authake">
-<div class="actions menuheader">
-    <ul>
-        <li class="icon lock"><?php echo $this->Html->link(__('Manage rules'), array('action'=>'index'));?></li>
-    </ul>
-</div>
-<div class="rules view">
-<h2><?php  echo __('Rule');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Description'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $rule['Rule']['name']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Group'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php
-             
-            if (!$rule['Group']['id'])
-                echo "<strong>".__("Everybody, including not logged users")."</strong>";
-            else
-                echo $this->Html->link($rule['Group']['name'], array('controller'=> 'groups', 'action'=>'view', $rule['Group']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Order'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $rule['Rule']['order']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Action'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php
-             echo str_replace(' or ', '<br/>', $rule['Rule']['action']);
-             ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Permission'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-            <?php
-            echo $this->Htmlbis->iconallowdeny($rule['Rule']['permission']);
-             ?>
-			&nbsp;
-		</dd>
-        <dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Forward action on deny'); ?></dt>
-        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
-            <?php
-            $fw = $rule['Rule']['forward'];
-            if ($fw)
-                echo $fw;
-            else
-                echo __('Forward to the login page, or default deny action if logged');
-?>
-            &nbsp;
-        </dd>
-        <dt<?php if ($i % 2 == 0) echo $class;?>><?php echo __('Flash message on deny'); ?></dt>
-        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
-            <?php
-            $msg = $rule['Rule']['message'];
-            if ($msg)
-                echo $msg;
-            else
-                echo __('No output');
-?>
-            &nbsp;
-        </dd>
-	</dl>
-</div>
-<div class="actions">
-	<ul>
-		<li class="icon lock_edit"><?php echo $this->Html->link(__('Edit Rule'), array('action'=>'edit', $rule['Rule']['id'])); ?> </li>
-		<li class="icon cross"><?php echo $this->Html->link(__('Delete Rule'), array('action'=>'delete', $rule['Rule']['id']), null, sprintf(__('Are you sure you want to delete # %s?'), $rule['Rule']['id'])); ?> </li>
-	</ul>
-</div>
+
+<ul class="nav nav-justified">
+  <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>  ' . __d('amanager', 'List Rules'), array('controller' => 'rules', 'action' => 'index'), array('escape'=>false)); ?>
+  <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>  ' . __d('amanager', 'Edit this rule'), array('controller' => 'rules', 'action' => 'edit', $rule['Rule']['id']), array('escape'=>false)); ?>
+  <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>  ' . __d('amanager', 'New Rule'), array('controller' => 'rules', 'action' => 'add'), array('escape'=>false)); ?>
+  <li><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-trash"></span>  ' . __('Delete'), array('action' => 'delete', $rule['Rule']['id']), array('escape'=>false), __('Are you sure you want to delete # %s?', $rule['Rule']['id'])); ?></li>
+</ul>
+<br />
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box box-primary">
+			<div class="box-header">
+				<h3 class="box-title"><?php  echo __('Rules'); ?></h3>
+				<div class="box-tools pull-right">
+					<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $rule['Rule']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+				</div>
+			</div>
+
+			<div class="box-body table-responsive">
+				<table id="News" class="table table-bordered table-striped">
+					<tbody>
+						<tr>
+							<td><strong><?php echo __('Id'); ?></strong></td>
+							<td>
+								<?php echo h($rule['Rule']['id']); ?>
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong><?php echo __('Name'); ?></strong></td>
+								<td>
+									<?php echo h($rule['Rule']['name']); ?>
+									&nbsp;
+								</td>
+						</tr>
+						<tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="box box-primary">
+			<div class="box-header">
+				<h3 class="box-title"><?php echo __('Rule Actions'); ?></h3>
+			</div>
+			<?php if (!empty($rule['Action'])): ?>
+				<div class="box-body table-responsive">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th width="80"><?php echo __('Id'); ?></th>
+								<th><?php echo __('Alias'); ?></th>
+								<th width="80" class="text-center"><?php echo __('Status'); ?></th>
+							</tr>
+						</thead>
+						<tbody>
+								<?php
+								$i = 0;
+								foreach ($rule['Action'] as $action): ?>
+									<tr>
+										<td><?php echo $action['id']; ?></td>
+										<td><h4><span class="label label-info"><?php echo $action['alias']; ?></span></h4></td>
+										<td class="text-center"><?php echo ($action['alow']) ? '<span class="label label-success"><span class="glyphicon glyphicon-ok"></span></span> ': '<span class="label label-danger"><span class="glyphicon glyphicon-remove"></span></span>'; ?></td>
+									</tr>
+								<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
 </div>
