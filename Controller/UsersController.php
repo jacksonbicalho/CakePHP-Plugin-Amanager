@@ -47,10 +47,10 @@ class UsersController extends AmanagerAppController {
     if ($this->request->is('post')) {
       $this->User->create();
       if ($this->User->save($this->request->data)) {
-        $this->Session->setFlash(__d('amanager', 'The user has been saved'), 'msg/success');
+        $this->Session->setFlash(__d('amanager', 'The user has been saved'), 'flash/success');
         $this->redirect(array('action' => 'index'));
       } else {
-        $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'msg/error');
+        $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'flash/error');
       }
     }
     $groups = $this->User->Group->find('list');
@@ -73,10 +73,10 @@ class UsersController extends AmanagerAppController {
     if ($this->request->is('post') || $this->request->is('put')) {
 
       if ($this->User->save($this->request->data)) {
-        $this->Session->setFlash(__d('amanager', 'The user has been saved'), 'msg/success');
+        $this->Session->setFlash(__d('amanager', 'The user has been saved'), 'flash/success');
         $this->redirect(array('action' => 'index'));
       } else {
-        $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'msg/error');
+        $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'flash/error');
       }
     } else {
       $this->request->data = $this->User->read(null, $id);
@@ -103,15 +103,15 @@ class UsersController extends AmanagerAppController {
     }
 
     if($this->User->in_group($id, Configure::read('Amanager.group_master' ) ) ){
-      $this->Session->setFlash(__('The master user can not be deleted!'), 'msg/warning', array('plugin'=>'Amanager'));
+      $this->Session->setFlash(__('The master user can not be deleted!'), 'flash/warning', array('plugin'=>'Amanager'));
       $this->redirect(array('action' => 'index'));
     }
 
     if ($this->User->delete()) {
-      $this->Session->setFlash(__('User deleted'));
+      $this->Session->setFlash(__('User deleted'),'flash/success');
       $this->redirect(array('action' => 'index'));
     }
-    $this->Session->setFlash(__('User was not deleted'));
+    $this->Session->setFlash(__('User was not deleted'),'flash/error');
     $this->redirect(array('action' => 'index'));
   }
 
@@ -165,7 +165,7 @@ class UsersController extends AmanagerAppController {
 
       if ($this->User->save($this->request->data)) {
 
-        $this->Session->setFlash(__d('amanager', 'Your password has been successfully saved'), 'msg/success');
+        $this->Session->setFlash(__d('amanager', 'Your password has been successfully saved'), 'flash/success');
 
         // Se usuário estiver logado, redireciona-o para a sua conta
         // Se não estiver logado, redireciona-o para a tela de login
@@ -177,7 +177,7 @@ class UsersController extends AmanagerAppController {
 
       } else {
 
-        $this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'msg/error');
+        $this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
         //$this->redirect(array('action' => 'recover_password', $key));
       }
 
@@ -190,7 +190,7 @@ class UsersController extends AmanagerAppController {
 
     // Verifica se o usuário está logado
     if( $this->Amanager->is_logged() ){
-      $this->Session->setFlash(__d('amanager', 'you already logged is'), 'msg/warning');
+      $this->Session->setFlash(__d('amanager', 'you already logged is'), 'flash/warning');
       $this->redirect(array('controller'=>'amanager', 'action' => 'index'));
     }
 
@@ -201,7 +201,7 @@ class UsersController extends AmanagerAppController {
       $data_login = $this->User->find('first', array('recursive' => 3, 'conditions'=> array('password'=>$password, 'username'=>$username) ));
 
       if (!$data_login){
-        $this->Session->setFlash(__d('amanager', 'Username or password invalid'), 'msg/error');
+        $this->Session->setFlash(__d('amanager', 'Username or password invalid'), 'flash/error');
         $this->redirect(array('action' => 'login'));
       }
 
@@ -244,12 +244,12 @@ class UsersController extends AmanagerAppController {
           $mensagem .= "\n";
           $email->viewVars(array('mensagem' => $mensagem, 'md5_code' =>$md5_code ));
           $email->send();
-          $this->Session->setFlash(__d('amanager', 'Please check your inbox'),'msg/success');
+          $this->Session->setFlash(__d('amanager', 'Please check your inbox'),'flash/success');
           $this->redirect(array('action' => 'index'));
         }
 
       }else{
-        $this->Session->setFlash(__d('amanager', 'Não temos este e-mail cadastrado em nosso sistema'));
+        $this->Session->setFlash(__d('amanager', 'Não temos este e-mail cadastrado em nosso sistema'), 'flash/error');
       }
 
     }
@@ -266,10 +266,10 @@ class UsersController extends AmanagerAppController {
         if ($this->request->is('post') || $this->request->is('put')) {
 
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__d('amanager', 'Dados alterados com sucesso'), 'msg/success');
+                $this->Session->setFlash(__d('amanager', 'Dados alterados com sucesso'), 'flash/success');
                 //$this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'msg/error');
+                $this->Session->setFlash(__d('amanager', 'The user could not be saved. Please, try again.'), 'flash/error');
             }
         } else {
             $this->request->data = $this->User->read(null, $this->Amanager->get_user_logged('id'));

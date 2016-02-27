@@ -23,8 +23,8 @@ class User extends AmanagerAppModel {
    */
   public $validate = array(
 		'username' => array(
-      'notempty' => array(
-        'rule'     => 'notempty',
+      'notBlank' => array(
+        'rule'     => 'notBlank',
         'required' => true,
         'message'  => 'Nome de usuário é obrigatório',
       ),
@@ -33,29 +33,29 @@ class User extends AmanagerAppModel {
         'message' => 'Nome de usuário digitado já encontra-se cadastrado em nosso sistema',
       )
     ),
-		'password' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-        'required' => true,
+
+    'password' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Senha não pode ficar em branco',
-        //'allowEmpty' => false,
-        //'required' => false,
-        'last' => false, // Stop validation after this rule
-        'on' => 'create', // Limit validation to 'create' or 'update' operations
-      ),
-      'password' => array(
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				'on' => 'update', // Limit validation to 'create' or 'update' operations
+			),
+			'password' => array(
         'rule'    => array('minLength', '8'),
-        'message' => 'Minimum 8 characters long',
-        'on' => 'create', // Limit validation to 'create' or 'update' operations
+        'message' => 'Mínimo 8 caracteres',
+        'on' => 'update', // Limit validation to 'create' or 'update' operations
       ),
-    ),
+		),
 
 		'password2' => array(
-      'notempty' => array(
-        'rule'     => 'notempty',
+      'notBlank' => array(
+        'rule'     => 'notBlank',
         'required' => true,
         'message'  => 'Este campo é obrigatório',
-        'on' => 'create', // Limit validation to 'create' or 'update' operations
+        'on' => 'update', // Limit validation to 'create' or 'update' operations
       ),
       'compare_password' => array(
         'rule'    => 'compare_password',
@@ -64,19 +64,19 @@ class User extends AmanagerAppModel {
     ),
 
 		'email' => array(
-      'notempty' => array(
-        'rule'     => 'notempty',
+      'notBlank' => array(
+        'rule'     => 'notBlank',
         'required' => true,
         'message'  => 'E-mail é obrigatório'
       ),
       'email' => array(
         'rule'     => 'email',
         'required' => true,
-        'message'  => 'O endereço digitado nẽo é um e-mail válido'
+        'message'  => 'O endereço digitado não é um e-mail válido!'
       ),
       'email-unique' => array(
         'rule'    => 'isUnique',
-        'message' => 'O e-mail digitado já encontra-se cadastrado em nosso sistema'
+        'message' => 'O e-mail digitado já encontra-se cadastrado em nosso sistema!'
       )
     ),
   );
