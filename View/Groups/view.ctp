@@ -95,7 +95,7 @@
 										<td class="text-center"><?php echo $user['password']; ?></td>
 										<td class="text-center"><?php echo $user['status']; ?></td>
 										<td class="text-center"><?php echo $user['created']; ?></td>
-										<td class="text-center"><?php echo $user['updated']; ?></td>
+										<td class="text-center"><?php echo $user['modified']; ?></td>
 										<td class="text-center">
 											<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'users', 'action' => 'view', $user['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 											<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'users', 'action' => 'edit', $user['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
