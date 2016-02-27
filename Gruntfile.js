@@ -9,6 +9,7 @@ module.exports = function (grunt){
 				src:[
 					'webroot/css/bootstrap.css',
 					'webroot/css/bootstrap-theme.css',
+					'webroot/css/font-awesome.min.css',
 					'webroot/css/sb-admin.css',
 					'webroot/css/style.css',
 				],
@@ -17,7 +18,8 @@ module.exports = function (grunt){
 			js:{
 				src:[
 					'webroot/js/jquery.js',
-					'webroot/js/boostrap.js',
+					'webroot/js/jquery-ui.js',
+					'webroot/js/bootstrap.js',
 				],
 				dest:'webroot/js/main.js'
 			}
