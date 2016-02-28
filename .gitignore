@@ -12,3 +12,5 @@
 
 #grunt
 /node_modules
+webroot/css/main.css
+webroot/js/main.js
