@@ -8,7 +8,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<?php echo $this->Html->link('Amanager', array('controller'=>'admin', 'action'=>'index', 'admin'=>false, 'plugin'=>false),array('class'=>'navbar-brand', 'title'=>'Serp FIP', 'escape'=>false));?>
+		<?php echo $this->Html->link('Amanager', array('controller'=>'amanager', 'action'=>'index', 'admin'=>true, 'plugin'=>false),array('class'=>'navbar-brand', 'title'=>'Serp FIP', 'escape'=>false));?>
 	</div>
 
 	<?php if ($this->Amanager->is_logged()): ?>
