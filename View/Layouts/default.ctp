@@ -53,6 +53,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 							?>
 							<?php echo $this->Flash->render(); ?>
 							<?php echo $this->fetch('content'); ?>
+							<?php
+								echo ($this->Amanager->is_logged()) ?  $this->element("footer"): "";
+							?>
 							<?php //echo $this->element('sql_dump'); ?>
 							<?php echo $this->Js->writeBuffer(); ?>
 						</div>
