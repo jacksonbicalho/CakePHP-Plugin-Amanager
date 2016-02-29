@@ -20,6 +20,10 @@ class AmanagerController extends AmanagerAppController {
     $this->set('version', $this->get_version($path));
   }
 
+	public function admin_index() {
+    $this->redirect("amanager");
+  }
+
 
   /**
    * Returns param version of a file, or false if no version detected.
